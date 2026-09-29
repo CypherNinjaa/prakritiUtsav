@@ -30,17 +30,8 @@ export default function Header({ onOpenAdmin, onOpenFileHub }) {
           .app-header {
             padding: 8px 12px !important;
           }
-          .header-brand-logo {
-            height: 26px !important;
-          }
-          .header-brand-prakriti {
-            font-size: 16px !important;
-          }
-          .header-brand-utsav {
-            font-size: 20px !important;
-          }
-          .header-subchip {
-            display: none !important;
+          .header-amity-logo {
+            height: 32px !important;
           }
           .header-json-text {
             display: none !important;
@@ -48,55 +39,32 @@ export default function Header({ onOpenAdmin, onOpenFileHub }) {
           .header-admin-text {
             display: none !important;
           }
-          .header-brand-pill {
-            padding: 4px 12px 4px 8px !important;
-            gap: 8px !important;
-          }
           .header-controls {
             gap: 6px !important;
           }
         }
       `}</style>
 
-      {/* Brand Header with Real Amity Logo (amity-aup-logo-white.png) */}
-      <div className="header-brand-pill" style={{
+      {/* Amity University Patna Logo - Only Amity Logo, No Background Color, Clean & Responsive */}
+      <div style={{
         display: 'flex',
         alignItems: 'center',
-        gap: '12px',
-        background: 'rgba(0, 43, 73, 0.94)',
-        backdropFilter: 'blur(12px)',
-        padding: '6px 18px 6px 12px',
-        borderRadius: '9999px',
-        border: '1.5px solid rgba(250, 204, 21, 0.45)',
-        boxShadow: '0 6px 20px rgba(0, 43, 73, 0.3)',
-        maxWidth: '100%'
+        background: 'transparent',
+        border: 'none',
+        padding: '2px 0'
       }}>
         <img
           src={amityLogoWhite}
           alt="Amity University Patna"
-          className="header-brand-logo"
-          style={{ height: '34px', objectFit: 'contain' }}
+          className="header-amity-logo"
+          style={{
+            height: '46px',
+            width: 'auto',
+            objectFit: 'contain',
+            filter: 'drop-shadow(0 2px 8px rgba(0, 43, 73, 0.5))',
+            transition: 'height 0.2s ease'
+          }}
         />
-        <div style={{ width: '1.5px', height: '20px', background: 'rgba(255, 255, 255, 0.25)' }} />
-        <div style={{ display: 'flex', alignItems: 'baseline', gap: '5px' }}>
-          <span className="brand-prakriti header-brand-prakriti" style={{ fontSize: '19px' }}>
-            Prakriti
-          </span>
-          <span className="brand-utsav header-brand-utsav" style={{ fontSize: '23px', color: '#4ade80' }}>
-            Utsav
-          </span>
-          <span className="brand-subheading header-subchip" style={{
-            fontSize: '9px',
-            padding: '2px 8px',
-            background: 'rgba(34, 197, 94, 0.25)',
-            color: '#86efac',
-            borderRadius: '9999px',
-            border: '1px solid rgba(134, 239, 172, 0.4)',
-            marginLeft: '2px'
-          }}>
-            Nature in Action
-          </span>
-        </div>
       </div>
 
       {/* Action Controls & File Status Indicator */}
