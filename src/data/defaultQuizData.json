@@ -1,0 +1,367 @@
+{
+  "version": "1.0.0",
+  "lastUpdated": "2026-09-29T20:30:00.000Z",
+  "config": {
+    "eventName": "Prakriti Utsav",
+    "subEventName": "Nature in Action",
+    "institution": "Amity University Patna",
+    "adminPin": "1234",
+    "timerEnabled": true,
+    "timerSeconds": 20,
+    "questionsPerSession": 10,
+    "suddenDeathMode": true
+  },
+  "questions": [
+    {
+      "id": 1,
+      "question": "Which gas do plants primarily absorb during the process of photosynthesis?",
+      "options": ["Oxygen", "Nitrogen", "Carbon Dioxide", "Hydrogen"],
+      "correctIndex": 2,
+      "explanation": "Plants take in Carbon Dioxide (CO2) and release Oxygen (O2) during photosynthesis."
+    },
+    {
+      "id": 2,
+      "question": "What is the national aquatic animal of India?",
+      "options": ["Gharial", "Ganges River Dolphin", "Olive Ridley Turtle", "Golden Mahseer"],
+      "correctIndex": 1,
+      "explanation": "The Ganges River Dolphin is the National Aquatic Animal of India, commonly seen in the Ganga river near Patna."
+    },
+    {
+      "id": 3,
+      "question": "Which atmospheric layer contains the Earth's vital Ozone Layer?",
+      "options": ["Troposphere", "Stratosphere", "Mesosphere", "Thermosphere"],
+      "correctIndex": 1,
+      "explanation": "The Ozone Layer is concentrated in the Stratosphere, shielding Earth from harmful UV radiation."
+    },
+    {
+      "id": 4,
+      "question": "Which is the largest mangrove forest ecosystem in the world?",
+      "options": ["Sundarbans", "Florida Everglades", "Pichavaram", "Bhiterkanika"],
+      "correctIndex": 0,
+      "explanation": "The Sundarbans mangrove forest spans the delta of the Ganga, Brahmaputra, and Meghna rivers across India and Bangladesh."
+    },
+    {
+      "id": 5,
+      "question": "What is the green pigment in plant leaves that captures sunlight for photosynthesis?",
+      "options": ["Carotenoid", "Chlorophyll", "Anthocyanin", "Xanthophyll"],
+      "correctIndex": 1,
+      "explanation": "Chlorophyll absorbs blue and red light while reflecting green light, giving plants their vibrant color."
+    },
+    {
+      "id": 6,
+      "question": "World Environment Day is celebrated globally every year on which date?",
+      "options": ["April 22", "June 5", "September 16", "March 21"],
+      "correctIndex": 1,
+      "explanation": "June 5 is celebrated as World Environment Day to promote environmental awareness and action."
+    },
+    {
+      "id": 7,
+      "question": "Which national park in Bihar is famous for tiger conservation?",
+      "options": ["Kanha National Park", "Valmiki National Park", "Jim Corbett National Park", "Kaziranga National Park"],
+      "correctIndex": 1,
+      "explanation": "Valmiki National Park and Tiger Reserve is located in the West Champaran district of Bihar."
+    },
+    {
+      "id": 8,
+      "question": "Which organism serves as a primary bio-indicator of clean air because it cannot tolerate sulphur dioxide?",
+      "options": ["Earthworms", "Lichens", "Mosses", "Ferns"],
+      "correctIndex": 1,
+      "explanation": "Lichens are sensitive to air pollution, particularly sulfur dioxide, making them reliable natural bio-indicators."
+    },
+    {
+      "id": 9,
+      "question": "What phenomenon causes excessive algal blooms in water bodies due to fertilizer runoff?",
+      "options": ["Biomagnification", "Eutrophication", "Bioaccumulation", "Salinization"],
+      "correctIndex": 1,
+      "explanation": "Eutrophication occurs when excess nutrients (nitrogen and phosphorus) stimulate rapid algae growth, depleting dissolved oxygen."
+    },
+    {
+      "id": 10,
+      "question": "Which renewable energy source harnesses the natural heat beneath the Earth's surface?",
+      "options": ["Biomass Energy", "Geothermal Energy", "Tidal Energy", "Hydroelectric Energy"],
+      "correctIndex": 1,
+      "explanation": "Geothermal energy captures thermal energy generated and stored within the Earth's crust."
+    },
+    {
+      "id": 11,
+      "question": "What is the only floating national park in the world, located in Manipur, India?",
+      "options": ["Keibul Lamjao National Park", "Namdapha National Park", "Silent Valley National Park", "Nokrek National Park"],
+      "correctIndex": 0,
+      "explanation": "Keibul Lamjao National Park on Loktak Lake is famed for its floating phumdis and the endangered Sangai deer."
+    },
+    {
+      "id": 12,
+      "question": "Which chemical compound is predominantly responsible for the depletion of the stratospheric ozone layer?",
+      "options": ["Carbon Monoxide", "Chlorofluorocarbons (CFCs)", "Methane", "Nitrous Oxide"],
+      "correctIndex": 1,
+      "explanation": "CFCs release chlorine atoms when struck by ultraviolet light, which catalytically break down ozone molecules."
+    },
+    {
+      "id": 13,
+      "question": "Earth Day is celebrated globally each year on which date?",
+      "options": ["March 22", "April 22", "May 22", "June 22"],
+      "correctIndex": 1,
+      "explanation": "Earth Day has been observed annually on April 22 since 1970 to demonstrate support for environmental protection."
+    },
+    {
+      "id": 14,
+      "question": "Which part of a plant is primarily responsible for transpiration?",
+      "options": ["Stem bark", "Roots", "Stomata on leaves", "Flowers"],
+      "correctIndex": 2,
+      "explanation": "Stomata are microscopic pores on plant leaves that facilitate gas exchange and water vapor transpiration."
+    },
+    {
+      "id": 15,
+      "question": "Which animal is renowned as an 'ecosystem engineer' for building natural river dams and wetlands?",
+      "options": ["Otter", "Beaver", "Platypus", "Badger"],
+      "correctIndex": 1,
+      "explanation": "Beavers construct dams that create wetlands, slowing water runoff and boosting biodiversity."
+    },
+    {
+      "id": 16,
+      "question": "Which Ramsar wetland site in Bihar is known as an important bird sanctuary along the Ganga plain?",
+      "options": ["Chilika Lake", "Kanwar Lake (Kabartal)", "Wular Lake", "Sambhar Lake"],
+      "correctIndex": 1,
+      "explanation": "Kanwar Lake (Kabartal Wetland) in Begusarai, Bihar is Bihar's first designated Ramsar site."
+    },
+    {
+      "id": 17,
+      "question": "What is the primary greenhouse gas released by enteric fermentation in livestock and flooded rice paddies?",
+      "options": ["Methane (CH4)", "Carbon Dioxide (CO2)", "Sulfur Hexafluoride", "Argon"],
+      "correctIndex": 0,
+      "explanation": "Methane is produced by anaerobic bacteria in cattle digestion and waterlogged paddy soils."
+    },
+    {
+      "id": 18,
+      "question": "Which historic Indian ecological movement was led by village women hugging forest trees to prevent logging?",
+      "options": ["Narmada Bachao Andolan", "Chipko Movement", "Appiko Movement", "Silent Valley Movement"],
+      "correctIndex": 1,
+      "explanation": "The Chipko Movement began in 1973 in Uttarakhand, where villagers hugged trees to stop commercial felling."
+    },
+    {
+      "id": 19,
+      "question": "Which bird is the State Bird of Bihar?",
+      "options": ["House Sparrow", "Great Indian Bustard", "Indian Peafowl", "Sarus Crane"],
+      "correctIndex": 0,
+      "explanation": "The House Sparrow (Passer domesticus) is the designated State Bird of Bihar."
+    },
+    {
+      "id": 20,
+      "question": "What ecological term describes the maximum population size of a species that an environment can sustain indefinitely?",
+      "options": ["Biotic Potential", "Carrying Capacity", "Ecological Niche", "Trophic Level"],
+      "correctIndex": 1,
+      "explanation": "Carrying capacity is the maximum population size that a habitat's resources can sustainably support."
+    },
+    {
+      "id": 21,
+      "question": "Which international protocol, signed in 1987, successfully phased out ozone-depleting substances?",
+      "options": ["Kyoto Protocol", "Montreal Protocol", "Paris Agreement", "Basel Convention"],
+      "correctIndex": 1,
+      "explanation": "The Montreal Protocol was created to regulate the production and consumption of ozone-depleting chemicals."
+    },
+    {
+      "id": 22,
+      "question": "Which Indian state has the highest percentage of forest cover relative to its total geographical area?",
+      "options": ["Madhya Pradesh", "Mizoram", "Arunachal Pradesh", "Kerala"],
+      "correctIndex": 1,
+      "explanation": "Mizoram has the highest percentage of forest cover (over 84% of its geographical area)."
+    },
+    {
+      "id": 23,
+      "question": "What is the process called by which toxic substances accumulate in greater concentrations at higher levels of a food chain?",
+      "options": ["Bioaccumulation", "Biomagnification", "Biodegradation", "Bioremediation"],
+      "correctIndex": 1,
+      "explanation": "Biomagnification is the increasing concentration of persistent toxins in organisms at successive trophic levels."
+    },
+    {
+      "id": 24,
+      "question": "Which gas is released during photosynthesis as a byproduct of water photolysis?",
+      "options": ["Carbon Monoxide", "Nitrogen", "Oxygen", "Methane"],
+      "correctIndex": 2,
+      "explanation": "During the light reactions, water molecules (H2O) are split, yielding protons, electrons, and Oxygen (O2)."
+    },
+    {
+      "id": 25,
+      "question": "What is the term for species that naturally occur in only one specific geographic region on Earth?",
+      "options": ["Invasive species", "Endemic species", "Keystone species", "Cosmopolitan species"],
+      "correctIndex": 1,
+      "explanation": "Endemic species are native and strictly restricted to a defined geographical territory."
+    },
+    {
+      "id": 26,
+      "question": "Project Tiger was launched by the Government of India in which year?",
+      "options": ["1971", "1973", "1985", "1992"],
+      "correctIndex": 1,
+      "explanation": "Project Tiger was inaugurated in April 1973 at Jim Corbett National Park to safeguard Royal Bengal Tigers."
+    },
+    {
+      "id": 27,
+      "question": "What is the primary constituent of biogas produced from animal and agricultural waste?",
+      "options": ["Propane", "Butane", "Methane", "Ethylene"],
+      "correctIndex": 2,
+      "explanation": "Biogas typically contains 55-75% Methane (CH4) alongside Carbon Dioxide."
+    },
+    {
+      "id": 28,
+      "question": "Which iconic tree is the State Tree of Bihar?",
+      "options": ["Banyan Tree", "Peepal Tree (Sacred Fig)", "Sal Tree", "Neem Tree"],
+      "correctIndex": 1,
+      "explanation": "The Peepal Tree (Ficus religiosa) is the revered State Tree of Bihar."
+    },
+    {
+      "id": 29,
+      "question": "Coral reefs are formed primarily by colonies of tiny marine animals secreting which mineral?",
+      "options": ["Calcium Carbonate", "Silica", "Sodium Chloride", "Iron Oxide"],
+      "correctIndex": 0,
+      "explanation": "Coral polyps extract calcium ions from seawater to build hard protective exoskeletons of Calcium Carbonate (CaCO3)."
+    },
+    {
+      "id": 30,
+      "question": "Which biological interaction benefits one species while leaving the other completely unaffected?",
+      "options": ["Mutualism", "Parasitism", "Commensalism", "Amensalism"],
+      "correctIndex": 2,
+      "explanation": "Commensalism is a relationship where one organism benefits and the host is neither helped nor harmed."
+    },
+    {
+      "id": 31,
+      "question": "What is the name of the dolphin research center established along the Ganga river in Patna?",
+      "options": ["National Dolphin Research Centre (NDRC)", "Central Aquatic Sanctuary", "Ganga Wildlife Institute", "Patna Marine Centre"],
+      "correctIndex": 0,
+      "explanation": "The National Dolphin Research Centre (NDRC) was set up at Patna University premises on the banks of the Ganga."
+    },
+    {
+      "id": 32,
+      "question": "Which of the following is considered a non-renewable natural resource?",
+      "options": ["Solar Energy", "Crude Oil (Petroleum)", "Wind Energy", "Biomass"],
+      "correctIndex": 1,
+      "explanation": "Fossil fuels like crude oil take millions of years to form and cannot be naturally replenished on human timescales."
+    },
+    {
+      "id": 33,
+      "question": "What term describes the practice of planting trees in an area where there was previously no forest cover?",
+      "options": ["Deforestation", "Afforestation", "Reforestation", "Selective Logging"],
+      "correctIndex": 1,
+      "explanation": "Afforestation refers to establishing a forest on lands that have not supported forests in recent history."
+    },
+    {
+      "id": 34,
+      "question": "Which region of India is recognized globally as one of the 36 critical Biodiversity Hotspots?",
+      "options": ["Western Ghats", "Thar Desert", "Rann of Kutch", "Deccan Plateau"],
+      "correctIndex": 0,
+      "explanation": "The Western Ghats is one of India's richest biodiversity hotspots, home to thousands of endemic species."
+    },
+    {
+      "id": 35,
+      "question": "What type of pollution causes acid rain when combined with atmospheric moisture?",
+      "options": ["Carbon Monoxide and Ozone", "Sulfur Dioxide and Nitrogen Oxides", "Methane and Chlorofluorocarbons", "Lead and Particulate Matter"],
+      "correctIndex": 1,
+      "explanation": "Sulfur dioxide (SO2) and Nitrogen oxides (NOx) react with water vapor to form sulfuric and nitric acids."
+    },
+    {
+      "id": 36,
+      "question": "Which insect is regarded as the most essential commercial pollinator of flowering food crops?",
+      "options": ["Dragonfly", "Honeybee", "Ladybird Beetle", "Mosquito"],
+      "correctIndex": 1,
+      "explanation": "Honeybees pollinate approximately one-third of the global crops humans consume."
+    },
+    {
+      "id": 37,
+      "question": "What does the 3Rs rule of waste management represent?",
+      "options": ["Repair, Replace, Restore", "Reduce, Reuse, Recycle", "Refuse, Recover, Recharge", "Rethink, Refresh, Renew"],
+      "correctIndex": 1,
+      "explanation": "Reduce, Reuse, Recycle is the fundamental hierarchy for minimizing solid waste generation."
+    },
+    {
+      "id": 38,
+      "question": "Which animal was officially reintroduced to Kuno National Park in Madhya Pradesh in 2022?",
+      "options": ["Snow Leopard", "African Cheetah", "One-horned Rhinoceros", "Asiatic Lion"],
+      "correctIndex": 1,
+      "explanation": "Cheetahs were translocated from Namibia and South Africa to Kuno National Park under Project Cheetah."
+    },
+    {
+      "id": 39,
+      "question": "What is the primary purpose of constructing rainwater harvesting structures?",
+      "options": ["Generate hydroelectricity", "Recharge groundwater aquifers", "Prevent soil erosion only", "Increase river salinity"],
+      "correctIndex": 1,
+      "explanation": "Rainwater harvesting collects runoff to percolate into the ground and recharge depleted groundwater tables."
+    },
+    {
+      "id": 40,
+      "question": "Which Indian bird sanctuary in Rajasthan is world-renowned as a wintering ground for migratory birds?",
+      "options": ["Keoladeo National Park (Bharatpur)", "Ranthambore National Park", "Sariska Tiger Reserve", "Desert National Park"],
+      "correctIndex": 0,
+      "explanation": "Keoladeo Ghana National Park in Bharatpur is a UNESCO World Heritage wetland hosting thousands of migratory waterfowl."
+    },
+    {
+      "id": 41,
+      "question": "Which organic agricultural system avoids synthetic chemical fertilizers and pesticides completely?",
+      "options": ["Hydroponic Farming", "Organic Farming", "Monoculture Farming", "Aeroponic Farming"],
+      "correctIndex": 1,
+      "explanation": "Organic farming relies on natural ecological cycles, green manure, and biological pest control."
+    },
+    {
+      "id": 42,
+      "question": "What is the main driver of global coral bleaching events in oceans?",
+      "options": ["Underwater earthquakes", "Elevated sea surface temperatures", "Excessive salt concentration", "Ocean current reversals"],
+      "correctIndex": 1,
+      "explanation": "Sustained high water temperatures cause corals to expel their symbiotic zooxanthellae algae, turning corals bone-white."
+    },
+    {
+      "id": 43,
+      "question": "Which treaty or convention focuses on the conservation and wise use of wetlands of international importance?",
+      "options": ["Stockholm Convention", "Ramsar Convention", "Bonn Convention", "Rotterdam Convention"],
+      "correctIndex": 1,
+      "explanation": "The Ramsar Convention on Wetlands was signed in Ramsar, Iran in 1971."
+    },
+    {
+      "id": 44,
+      "question": "Which of the following is a non-biodegradable pollutant?",
+      "options": ["Fruit peels", "Plastic bags (Polyethylene)", "Cotton cloth", "Fallen leaves"],
+      "correctIndex": 1,
+      "explanation": "Synthetic plastics cannot be readily broken down by natural biological decomposers and persist for centuries."
+    },
+    {
+      "id": 45,
+      "question": "The Vikramshila Gangetic Dolphin Sanctuary in Bihar is located in which district?",
+      "options": ["Patna", "Bhagalpur", "Gaya", "Muzaffarpur"],
+      "correctIndex": 1,
+      "explanation": "Vikramshila Gangetic Dolphin Sanctuary is established along a 60 km stretch of the Ganga in Bhagalpur district."
+    },
+    {
+      "id": 46,
+      "question": "What is the process of using living plants to clean up contaminated soil and groundwater called?",
+      "options": ["Biomining", "Phytoremediation", "Composting", "Bioleaching"],
+      "correctIndex": 1,
+      "explanation": "Phytoremediation uses plants to extract, sequester, or detoxify environmental pollutants."
+    },
+    {
+      "id": 47,
+      "question": "Which nocturnal mammal is the only true flying mammal in the animal kingdom?",
+      "options": ["Flying Squirrel", "Bat", "Sugar Glider", "Colugo"],
+      "correctIndex": 1,
+      "explanation": "Bats (Order Chiroptera) are the only mammals capable of sustained, powered flight."
+    },
+    {
+      "id": 48,
+      "question": "What is the title of Rachel Carson's groundbreaking 1962 book that launched the modern environmental movement?",
+      "options": ["The End of Nature", "Silent Spring", "Our Stolen Future", "A Sand County Almanac"],
+      "correctIndex": 1,
+      "explanation": "Silent Spring documented the detrimental ecological impacts of synthetic pesticides like DDT."
+    },
+    {
+      "id": 49,
+      "question": "Which trophic level in an ecological pyramid contains organisms that synthesize their own food?",
+      "options": ["Primary Consumers", "Secondary Consumers", "Primary Producers", "Tertiary Consumers"],
+      "correctIndex": 2,
+      "explanation": "Primary producers (autotrophs like plants and algae) convert solar energy into chemical energy."
+    },
+    {
+      "id": 50,
+      "question": "What is the theme and core message of Prakriti Utsav — Nature in Action?",
+      "options": ["Industrial Expansion", "Environmental Conservation & Active Sustainability", "Urbanization at all costs", "Extensive Mining"],
+      "correctIndex": 1,
+      "explanation": "Prakriti Utsav celebrates ecological consciousness, conservation, and active sustainable stewardship of nature."
+    }
+  ],
+  "participants": []
+}
