@@ -1,13 +1,12 @@
 import React, { useState } from 'react';
 import { useQuiz } from '../../context/QuizContext';
-import { Play, BookOpen, FileText, XCircle, Trophy, User, Hash, GraduationCap, ArrowLeft } from 'lucide-react';
+import { Play, BookOpen, FileText, XCircle, Trophy, User, Hash, ArrowLeft } from 'lucide-react';
 import { playClick } from '../../services/soundEffects';
 
 export default function ParticipantReadyScreen({ onBeginQuiz, onBack }) {
   const { quizData } = useQuiz();
   const [name, setName] = useState('');
   const [rollNo, setRollNo] = useState('');
-  const [department, setDepartment] = useState('');
   const [error, setError] = useState('');
 
   const totalQuestions = quizData?.questions?.length || 50;
@@ -26,8 +25,7 @@ export default function ParticipantReadyScreen({ onBeginQuiz, onBack }) {
     playClick();
     onBeginQuiz({
       name: name.trim(),
-      rollNo: rollNo.trim(),
-      department: department.trim() || 'General'
+      rollNo: rollNo.trim()
     });
   };
 
@@ -155,59 +153,31 @@ export default function ParticipantReadyScreen({ onBeginQuiz, onBack }) {
             </div>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px', marginBottom: '14px' }}>
-            <div>
-              <label style={{ display: 'block', fontSize: '13px', fontWeight: 700, color: '#334155', marginBottom: '6px' }}>
-                Roll No / ID *
-              </label>
-              <div style={{ position: 'relative' }}>
-                <Hash size={18} color="#94a3b8" style={{ position: 'absolute', left: '14px', top: '14px' }} />
-                <input
-                  type="text"
-                  value={rollNo}
-                  onChange={(e) => { setRollNo(e.target.value); setError(''); }}
-                  placeholder="e.g. AUP/2024/042"
-                  style={{
-                    width: '100%',
-                    padding: '12px 14px 12px 42px',
-                    borderRadius: '12px',
-                    border: '1.5px solid #cbd5e1',
-                    fontSize: '14px',
-                    fontFamily: 'inherit',
-                    outline: 'none',
-                    background: '#f8fafc'
-                  }}
-                  onFocus={(e) => e.target.style.borderColor = '#16a34a'}
-                  onBlur={(e) => e.target.style.borderColor = '#cbd5e1'}
-                />
-              </div>
-            </div>
-
-            <div>
-              <label style={{ display: 'block', fontSize: '13px', fontWeight: 700, color: '#334155', marginBottom: '6px' }}>
-                Department
-              </label>
-              <div style={{ position: 'relative' }}>
-                <GraduationCap size={18} color="#94a3b8" style={{ position: 'absolute', left: '14px', top: '14px' }} />
-                <input
-                  type="text"
-                  value={department}
-                  onChange={(e) => setDepartment(e.target.value)}
-                  placeholder="e.g. BCA / Biotech"
-                  style={{
-                    width: '100%',
-                    padding: '12px 14px 12px 42px',
-                    borderRadius: '12px',
-                    border: '1.5px solid #cbd5e1',
-                    fontSize: '14px',
-                    fontFamily: 'inherit',
-                    outline: 'none',
-                    background: '#f8fafc'
-                  }}
-                  onFocus={(e) => e.target.style.borderColor = '#16a34a'}
-                  onBlur={(e) => e.target.style.borderColor = '#cbd5e1'}
-                />
-              </div>
+          <div style={{ marginBottom: '18px' }}>
+            <label style={{ display: 'block', fontSize: '13px', fontWeight: 700, color: '#334155', marginBottom: '6px' }}>
+              Roll No / Student ID *
+            </label>
+            <div style={{ position: 'relative' }}>
+              <Hash size={18} color="#94a3b8" style={{ position: 'absolute', left: '14px', top: '14px' }} />
+              <input
+                type="text"
+                value={rollNo}
+                onChange={(e) => { setRollNo(e.target.value); setError(''); }}
+                placeholder="e.g. Class 10 / Roll 24 / AUP-2026"
+                style={{
+                  width: '100%',
+                  padding: '12px 14px 12px 42px',
+                  borderRadius: '12px',
+                  border: '1.5px solid #cbd5e1',
+                  fontSize: '15px',
+                  fontFamily: 'inherit',
+                  outline: 'none',
+                  transition: 'border 0.2s',
+                  background: '#f8fafc'
+                }}
+                onFocus={(e) => e.target.style.borderColor = '#16a34a'}
+                onBlur={(e) => e.target.style.borderColor = '#cbd5e1'}
+              />
             </div>
           </div>
 

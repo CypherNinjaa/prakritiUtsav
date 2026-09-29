@@ -34,7 +34,20 @@ export default function GameOverScreen({
       padding: '16px',
       textAlign: 'center'
     }}>
-      <div className="glass-panel" style={{
+      <style>{`
+        @media (max-width: 640px) {
+          .game-over-card {
+            padding: 20px 14px !important;
+          }
+          .game-over-btn {
+            width: 100% !important;
+            padding: 14px 20px !important;
+            font-size: 16px !important;
+            justify-content: center !important;
+          }
+        }
+      `}</style>
+      <div className="glass-panel game-over-card" style={{
         width: '100%',
         padding: '36px 32px',
         background: 'rgba(255, 255, 255, 0.97)',
@@ -43,8 +56,8 @@ export default function GameOverScreen({
       }}>
         {/* Red Game Over Badge */}
         <div style={{
-          width: '84px',
-          height: '84px',
+          width: '76px',
+          height: '76px',
           borderRadius: '50%',
           background: 'linear-gradient(135deg, #ef4444 0%, #b91c1c 100%)',
           color: '#ffffff',
@@ -55,13 +68,13 @@ export default function GameOverScreen({
           margin: '0 auto 16px',
           border: '4px solid #fee2e2'
         }}>
-          <XCircle size={48} strokeWidth={2.5} />
+          <XCircle size={44} strokeWidth={2.5} />
         </div>
 
         {/* Title */}
         <h2 style={{
           fontFamily: 'var(--font-heading)',
-          fontSize: '38px',
+          fontSize: 'clamp(28px, 6vw, 38px)',
           fontWeight: 900,
           color: '#991b1b',
           marginBottom: '6px'
@@ -172,7 +185,7 @@ export default function GameOverScreen({
         {/* Next Participant / Reset Button */}
         <button
           onClick={handleReset}
-          className="primary-btn"
+          className="primary-btn game-over-btn"
           style={{
             padding: '16px 42px',
             fontSize: '18px',

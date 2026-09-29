@@ -14,41 +14,78 @@ export default function Header({ onOpenAdmin, onOpenFileHub }) {
   };
 
   return (
-    <header style={{
+    <header className="app-header" style={{
       width: '100%',
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'space-between',
-      padding: '16px 28px',
+      padding: '12px 20px',
       position: 'relative',
-      zIndex: 20
+      zIndex: 20,
+      flexWrap: 'wrap',
+      gap: '10px'
     }}>
+      <style>{`
+        @media (max-width: 640px) {
+          .app-header {
+            padding: 8px 12px !important;
+          }
+          .header-brand-logo {
+            height: 26px !important;
+          }
+          .header-brand-prakriti {
+            font-size: 16px !important;
+          }
+          .header-brand-utsav {
+            font-size: 20px !important;
+          }
+          .header-subchip {
+            display: none !important;
+          }
+          .header-json-text {
+            display: none !important;
+          }
+          .header-admin-text {
+            display: none !important;
+          }
+          .header-brand-pill {
+            padding: 4px 12px 4px 8px !important;
+            gap: 8px !important;
+          }
+          .header-controls {
+            gap: 6px !important;
+          }
+        }
+      `}</style>
+
       {/* Brand Header with Real Amity Logo (amity-aup-logo-white.png) */}
-      <div style={{
+      <div className="header-brand-pill" style={{
         display: 'flex',
         alignItems: 'center',
-        gap: '14px',
+        gap: '12px',
         background: 'rgba(0, 43, 73, 0.94)',
         backdropFilter: 'blur(12px)',
-        padding: '6px 20px 6px 14px',
+        padding: '6px 18px 6px 12px',
         borderRadius: '9999px',
         border: '1.5px solid rgba(250, 204, 21, 0.45)',
-        boxShadow: '0 6px 20px rgba(0, 43, 73, 0.3)'
+        boxShadow: '0 6px 20px rgba(0, 43, 73, 0.3)',
+        maxWidth: '100%'
       }}>
         <img
           src={amityLogoWhite}
           alt="Amity University Patna"
-          style={{ height: '36px', objectFit: 'contain' }}
+          className="header-brand-logo"
+          style={{ height: '34px', objectFit: 'contain' }}
         />
-        <div style={{ width: '1.5px', height: '22px', background: 'rgba(255, 255, 255, 0.25)' }} />
-        <div style={{ display: 'flex', alignItems: 'baseline', gap: '6px' }}>
-          <span className="brand-prakriti" style={{ fontSize: '20px' }}>
+        <div style={{ width: '1.5px', height: '20px', background: 'rgba(255, 255, 255, 0.25)' }} />
+        <div style={{ display: 'flex', alignItems: 'baseline', gap: '5px' }}>
+          <span className="brand-prakriti header-brand-prakriti" style={{ fontSize: '19px' }}>
             Prakriti
           </span>
-          <span className="brand-utsav" style={{ fontSize: '24px', color: '#4ade80' }}>
+          <span className="brand-utsav header-brand-utsav" style={{ fontSize: '23px', color: '#4ade80' }}>
             Utsav
           </span>
-          <span className="brand-subheading" style={{
+          <span className="brand-subheading header-subchip" style={{
             fontSize: '9px',
             padding: '2px 8px',
             background: 'rgba(34, 197, 94, 0.25)',
@@ -63,16 +100,16 @@ export default function Header({ onOpenAdmin, onOpenFileHub }) {
       </div>
 
       {/* Action Controls & File Status Indicator */}
-      <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+      <div className="header-controls" style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
         {/* Sound Toggle */}
         <button
           onClick={handleMuteToggle}
           title={muted ? 'Unmute Sound' : 'Mute Sound'}
           style={{
-            width: '38px',
-            height: '38px',
+            width: '36px',
+            height: '36px',
             borderRadius: '50%',
-            background: 'rgba(255, 255, 255, 0.9)',
+            background: 'rgba(255, 255, 255, 0.92)',
             border: '1.5px solid #cbd5e1',
             display: 'flex',
             alignItems: 'center',
@@ -82,7 +119,7 @@ export default function Header({ onOpenAdmin, onOpenFileHub }) {
             boxShadow: '0 2px 8px rgba(0, 0, 0, 0.08)'
           }}
         >
-          {muted ? <VolumeX size={18} /> : <Volume2 size={18} />}
+          {muted ? <VolumeX size={16} /> : <Volume2 size={16} />}
         </button>
 
         {/* Re-authorize Prompt if needed */}
@@ -105,7 +142,7 @@ export default function Header({ onOpenAdmin, onOpenFileHub }) {
             }}
           >
             <RefreshCw size={14} className="animate-spin" />
-            Reconnect File
+            <span className="header-admin-text">Reconnect File</span>
           </button>
         )}
 
@@ -116,11 +153,11 @@ export default function Header({ onOpenAdmin, onOpenFileHub }) {
           style={{
             display: 'flex',
             alignItems: 'center',
-            gap: '8px',
-            padding: '6px 14px',
+            gap: '6px',
+            padding: '6px 12px',
             fontSize: '12px',
             fontWeight: 700,
-            background: fileState.fileName ? '#f0fdf4' : 'rgba(255, 255, 255, 0.9)',
+            background: fileState.fileName ? '#f0fdf4' : 'rgba(255, 255, 255, 0.92)',
             color: fileState.fileName ? '#15803d' : '#475569',
             border: `1.5px solid ${fileState.fileName ? '#86efac' : '#cbd5e1'}`,
             borderRadius: '9999px',
@@ -129,7 +166,7 @@ export default function Header({ onOpenAdmin, onOpenFileHub }) {
           }}
         >
           <HardDrive size={14} color={fileState.fileName ? '#16a34a' : '#64748b'} />
-          <span>{fileState.fileName ? fileState.fileName : 'Default JSON'}</span>
+          <span className="header-json-text">{fileState.fileName ? fileState.fileName : 'Default JSON'}</span>
           {fileState.isSaving ? (
             <RefreshCw size={12} className="animate-spin" color="#16a34a" />
           ) : (
@@ -145,7 +182,7 @@ export default function Header({ onOpenAdmin, onOpenFileHub }) {
             display: 'flex',
             alignItems: 'center',
             gap: '6px',
-            padding: '7px 16px',
+            padding: '6px 14px',
             fontSize: '12px',
             fontWeight: 800,
             background: 'linear-gradient(135deg, #002b49 0%, #0c4a6e 100%)',
@@ -157,9 +194,10 @@ export default function Header({ onOpenAdmin, onOpenFileHub }) {
           }}
         >
           <Shield size={14} color="#facc15" />
-          <span>Dashboard</span>
+          <span className="header-admin-text">Dashboard</span>
         </button>
       </div>
     </header>
+ 
   );
 }

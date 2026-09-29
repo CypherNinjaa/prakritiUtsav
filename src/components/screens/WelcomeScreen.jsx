@@ -27,24 +27,6 @@ export default function WelcomeScreen({ onStartQuiz }) {
       position: 'relative',
       zIndex: 10
     }}>
-      {/* Official Amity University Patna Header Logo */}
-      <div style={{
-        display: 'inline-flex',
-        alignItems: 'center',
-        background: 'rgba(0, 43, 73, 0.94)',
-        padding: '8px 24px',
-        borderRadius: '9999px',
-        border: '1.5px solid rgba(250, 204, 21, 0.5)',
-        boxShadow: '0 6px 18px rgba(0, 43, 73, 0.25)',
-        marginBottom: '16px'
-      }}>
-        <img
-          src={amityLogoWhite}
-          alt="Amity University Patna"
-          style={{ height: '42px', objectFit: 'contain' }}
-        />
-      </div>
-
       {/* Event Title Matching Mockup */}
       <div style={{ marginBottom: '20px', textAlign: 'center' }}>
         <div style={{
@@ -94,11 +76,11 @@ export default function WelcomeScreen({ onStartQuiz }) {
       <div className="glass-panel" style={{
         width: '100%',
         maxWidth: '720px',
-        padding: '24px 20px',
+        padding: '20px 14px',
         display: 'grid',
         gridTemplateColumns: 'repeat(3, 1fr)',
-        gap: '12px',
-        marginBottom: '36px',
+        gap: '8px',
+        marginBottom: '32px',
         background: 'rgba(255, 255, 255, 0.94)'
       }}>
         {/* Badge 1: Questions Count */}
@@ -106,26 +88,26 @@ export default function WelcomeScreen({ onStartQuiz }) {
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'center',
-          gap: '8px',
-          padding: '10px 4px',
-          borderRight: '1.5px solid rgba(0,0,0,0.06)'
+          gap: '6px',
+          padding: '6px 2px',
+          borderRight: '1px solid rgba(0,0,0,0.08)'
         }}>
           <div style={{
-            width: '50px',
-            height: '50px',
+            width: '42px',
+            height: '42px',
             borderRadius: '50%',
             background: 'linear-gradient(135deg, #22c55e 0%, #16a34a 100%)',
             color: '#ffffff',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            boxShadow: '0 6px 14px rgba(34, 197, 94, 0.35)'
+            boxShadow: '0 4px 12px rgba(34, 197, 94, 0.35)'
           }}>
-            <FileText size={26} />
+            <FileText size={22} />
           </div>
           <div style={{
             fontFamily: 'var(--font-heading)',
-            fontSize: 'clamp(24px, 3.5vw, 32px)',
+            fontSize: 'clamp(22px, 4vw, 30px)',
             fontWeight: 900,
             color: '#064e3b',
             lineHeight: 1
@@ -133,7 +115,7 @@ export default function WelcomeScreen({ onStartQuiz }) {
             {totalQuestions}
           </div>
           <div style={{
-            fontSize: '14px',
+            fontSize: 'clamp(11px, 2.5vw, 13px)',
             fontWeight: 800,
             color: '#334155'
           }}>
@@ -146,33 +128,33 @@ export default function WelcomeScreen({ onStartQuiz }) {
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'center',
-          gap: '8px',
-          padding: '10px 4px',
-          borderRight: '1.5px solid rgba(0,0,0,0.06)'
+          gap: '6px',
+          padding: '6px 2px',
+          borderRight: '1px solid rgba(0,0,0,0.08)'
         }}>
           <div style={{
-            width: '50px',
-            height: '50px',
+            width: '42px',
+            height: '42px',
             borderRadius: '50%',
             background: 'linear-gradient(135deg, #ef4444 0%, #dc2626 100%)',
             color: '#ffffff',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            boxShadow: '0 6px 14px rgba(239, 68, 68, 0.35)'
+            boxShadow: '0 4px 12px rgba(239, 68, 68, 0.35)'
           }}>
-            <XCircle size={26} />
+            <XCircle size={22} />
           </div>
           <div style={{
-            fontSize: '13px',
+            fontSize: 'clamp(10px, 2.2vw, 12px)',
             fontWeight: 800,
             color: '#991b1b',
-            lineHeight: 1.3
+            lineHeight: 1.2
           }}>
             One Wrong<br />Answer =
           </div>
           <div style={{
-            fontSize: '13px',
+            fontSize: 'clamp(11px, 2.4vw, 13px)',
             fontWeight: 900,
             color: '#b91c1c',
             textTransform: 'uppercase'
@@ -186,32 +168,32 @@ export default function WelcomeScreen({ onStartQuiz }) {
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'center',
-          gap: '8px',
-          padding: '10px 4px'
+          gap: '6px',
+          padding: '6px 2px'
         }}>
           <div style={{
-            width: '50px',
-            height: '50px',
+            width: '42px',
+            height: '42px',
             borderRadius: '50%',
             background: 'linear-gradient(135deg, #eab308 0%, #ca8a04 100%)',
             color: '#ffffff',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            boxShadow: '0 6px 14px rgba(234, 179, 8, 0.35)'
+            boxShadow: '0 4px 12px rgba(234, 179, 8, 0.35)'
           }}>
-            <Trophy size={26} />
+            <Trophy size={22} />
           </div>
           <div style={{
-            fontSize: '13px',
+            fontSize: 'clamp(10px, 2.2vw, 12px)',
             fontWeight: 800,
             color: '#854d0e',
-            lineHeight: 1.3
+            lineHeight: 1.2
           }}>
             Highest<br />Score
           </div>
           <div style={{
-            fontSize: '13px',
+            fontSize: 'clamp(11px, 2.4vw, 13px)',
             fontWeight: 900,
             color: '#a16207',
             textTransform: 'uppercase'
@@ -226,24 +208,25 @@ export default function WelcomeScreen({ onStartQuiz }) {
         onClick={handleStart}
         className="primary-btn"
         style={{
-          padding: '18px 52px',
-          fontSize: 'clamp(18px, 2.5vw, 24px)',
-          letterSpacing: '1px'
+          padding: '16px 44px',
+          fontSize: 'clamp(17px, 2.4vw, 22px)',
+          letterSpacing: '1px',
+          maxWidth: '100%'
         }}
       >
-        <Leaf size={24} />
+        <Leaf size={22} />
         <span>START QUIZ</span>
         <div style={{
-          width: '34px',
-          height: '34px',
+          width: '30px',
+          height: '30px',
           borderRadius: '50%',
           background: 'rgba(255, 255, 255, 0.25)',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
-          marginLeft: '6px'
+          marginLeft: '4px'
         }}>
-          <ArrowRight size={20} />
+          <ArrowRight size={18} />
         </div>
       </button>
     </div>

@@ -79,6 +79,32 @@ html, body {
   border: 2px solid var(--card-border);
   box-shadow: var(--card-shadow);
   border-radius: 28px;
+  transition: all 0.2s ease;
+}
+
+@media (max-width: 640px) {
+  .app-viewport {
+    background-attachment: scroll;
+  }
+  .glass-panel {
+    border-radius: 20px;
+    padding: 20px 14px !important;
+  }
+}
+
+/* Responsive Table Wrapper */
+.table-responsive {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.table-responsive::-webkit-scrollbar {
+  height: 6px;
+}
+.table-responsive::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 9999px;
 }
 
 /* Mockup Typography Classes */
@@ -104,7 +130,7 @@ html, body {
 .brand-subheading {
   font-family: var(--font-heading);
   font-weight: 800;
-  letter-spacing: 2.5px;
+  letter-spacing: 2px;
   color: #15803d;
   text-transform: uppercase;
 }
@@ -124,6 +150,7 @@ html, body {
   gap: 12px;
   transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
   box-shadow: 0 12px 25px -4px rgba(22, 101, 52, 0.5), inset 0 1px 1px rgba(255, 255, 255, 0.5);
+  touch-action: manipulation;
 }
 
 .primary-btn:hover {
@@ -150,6 +177,7 @@ html, body {
   gap: 10px;
   transition: all 0.2s ease;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  touch-action: manipulation;
 }
 
 .secondary-btn:hover {
@@ -175,4 +203,16 @@ html, body {
 
 .animate-pulse-glow {
   animation: pulseGlow 1.8s ease-in-out infinite;
+}
+
+/* Mobile Responsive Global Adjustments */
+@media (max-width: 640px) {
+  html, body {
+    font-size: 14px;
+  }
+
+  .primary-btn {
+    padding: 14px 28px !important;
+    font-size: 16px !important;
+  }
 }

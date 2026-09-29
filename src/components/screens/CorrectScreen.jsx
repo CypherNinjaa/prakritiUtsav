@@ -34,7 +34,20 @@ export default function CorrectScreen({ score, totalQuestions, onNextQuestion })
       padding: '16px',
       textAlign: 'center'
     }}>
-      <div className="glass-panel" style={{
+      <style>{`
+        @media (max-width: 640px) {
+          .correct-card {
+            padding: 24px 14px !important;
+          }
+          .correct-btn {
+            width: 100% !important;
+            padding: 14px 20px !important;
+            font-size: 17px !important;
+            justify-content: center !important;
+          }
+        }
+      `}</style>
+      <div className="glass-panel correct-card" style={{
         width: '100%',
         padding: '40px 32px',
         background: 'rgba(255, 255, 255, 0.97)',
@@ -44,8 +57,8 @@ export default function CorrectScreen({ score, totalQuestions, onNextQuestion })
         {/* Animated Check Badge with Orbital Floating Leaves */}
         <div style={{ position: 'relative', display: 'inline-block', marginBottom: '20px' }}>
           <div style={{
-            width: '96px',
-            height: '96px',
+            width: '84px',
+            height: '84px',
             borderRadius: '50%',
             background: 'linear-gradient(135deg, #22c55e 0%, #15803d 100%)',
             color: '#ffffff',
@@ -56,7 +69,7 @@ export default function CorrectScreen({ score, totalQuestions, onNextQuestion })
             margin: '0 auto',
             border: '4px solid #ffffff'
           }} className="animate-pulse-glow">
-            <Check size={52} strokeWidth={3.5} />
+            <Check size={46} strokeWidth={3.5} />
           </div>
 
           <div style={{ position: 'absolute', top: '-10px', right: '-15px', color: '#84cc16' }} className="animate-float">
@@ -67,10 +80,10 @@ export default function CorrectScreen({ score, totalQuestions, onNextQuestion })
         {/* Heading */}
         <h2 style={{
           fontFamily: 'var(--font-heading)',
-          fontSize: '44px',
+          fontSize: 'clamp(32px, 8vw, 44px)',
           fontWeight: 900,
           color: '#15803d',
-          marginBottom: '24px',
+          marginBottom: '20px',
           letterSpacing: '-0.5px'
         }}>
           Correct!
@@ -155,15 +168,15 @@ export default function CorrectScreen({ score, totalQuestions, onNextQuestion })
         {/* NEXT QUESTION Button */}
         <button
           onClick={handleNext}
-          className="primary-btn"
+          className="primary-btn correct-btn"
           style={{
-            padding: '18px 48px',
-            fontSize: '20px',
+            padding: '16px 44px',
+            fontSize: '18px',
             letterSpacing: '1px'
           }}
         >
           <span>NEXT QUESTION</span>
-          <ArrowRight size={22} />
+          <ArrowRight size={20} />
         </button>
       </div>
     </div>

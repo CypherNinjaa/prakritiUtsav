@@ -50,7 +50,22 @@ export default function QuizCompleteScreen({
       margin: '0 auto',
       padding: '16px'
     }}>
-      <div className="glass-panel" style={{
+      <style>{`
+        @media (max-width: 640px) {
+          .quiz-complete-card {
+            padding: 20px 14px !important;
+          }
+          .quiz-results-grid {
+            grid-template-columns: repeat(2, 1fr) !important;
+            gap: 8px !important;
+          }
+          .quiz-action-btn {
+            width: 100% !important;
+            justify-content: center !important;
+          }
+        }
+      `}</style>
+      <div className="glass-panel quiz-complete-card" style={{
         width: '100%',
         padding: '36px',
         background: 'rgba(255, 255, 255, 0.98)',
@@ -60,10 +75,10 @@ export default function QuizCompleteScreen({
         {/* Main Grid: Left Laurel Trophy + Right Results */}
         <div style={{
           display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
-          gap: '32px',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+          gap: '24px',
           alignItems: 'center',
-          marginBottom: '36px'
+          marginBottom: '28px'
         }}>
           {/* Left Column: Laurel Trophy Badge (Direct from Mockup) */}
           <div style={{ textAlign: 'center' }}>
@@ -130,7 +145,7 @@ export default function QuizCompleteScreen({
             </div>
 
             {/* 4 Result Metrics */}
-            <div style={{
+            <div className="quiz-results-grid" style={{
               display: 'grid',
               gridTemplateColumns: 'repeat(4, 1fr)',
               gap: '10px',
@@ -246,7 +261,7 @@ export default function QuizCompleteScreen({
         }}>
           <button
             onClick={() => { playClick(); onRetake(); }}
-            className="secondary-btn"
+            className="secondary-btn quiz-action-btn"
             style={{ padding: '14px 28px', fontSize: '16px' }}
           >
             <RotateCcw size={18} />
@@ -255,7 +270,7 @@ export default function QuizCompleteScreen({
 
           <button
             onClick={() => { playClick(); onBackToHome(); }}
-            className="primary-btn"
+            className="primary-btn quiz-action-btn"
             style={{ padding: '14px 36px', fontSize: '16px' }}
           >
             <Home size={18} />

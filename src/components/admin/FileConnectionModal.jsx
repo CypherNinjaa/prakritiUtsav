@@ -46,7 +46,17 @@ export default function FileConnectionModal({ isOpen, onClose }) {
       zIndex: 100,
       padding: '20px'
     }}>
-      <div className="glass-panel" style={{
+      <style>{`
+        @media (max-width: 600px) {
+          .file-modal-card {
+            padding: 20px 14px !important;
+          }
+          .file-modal-fallbacks {
+            flex-direction: column !important;
+          }
+        }
+      `}</style>
+      <div className="glass-panel file-modal-card" style={{
         width: '100%',
         maxWidth: '560px',
         padding: '32px',
@@ -195,7 +205,7 @@ export default function FileConnectionModal({ isOpen, onClose }) {
         </div>
 
         {/* Universal Fallback Options */}
-        <div style={{
+        <div className="file-modal-fallbacks" style={{
           paddingTop: '16px',
           borderTop: '1px solid #e2e8f0',
           display: 'flex',

@@ -59,8 +59,11 @@ export default function AdminDashboard({ onClose, onOpenFileHub }) {
   });
   const [settingsSaved, setSettingsSaved] = useState(false);
 
-  // Participant search
+  // Participant search, filters, and sorting
   const [participantSearch, setParticipantSearch] = useState('');
+  const [statusFilter, setStatusFilter] = useState('all'); // 'all' | 'completed' | 'eliminated'
+  const [scoreFilter, setScoreFilter] = useState('all'); // 'all' | 'ge5' | 'ge8'
+  const [sortBy, setSortBy] = useState('score_desc'); // 'score_desc' | 'recent' | 'name'
 
   // Handle PIN verification
   const handleVerifyPin = (e) => {
@@ -84,12 +87,11 @@ export default function AdminDashboard({ onClose, onOpenFileHub }) {
       return;
     }
 
-    const headers = ['Rank', 'Name', 'Roll Number', 'Department', 'Score', 'Total Questions', 'Status', 'Date Time'];
-    const rows = participants.map((p, idx) => [
+    const headers = ['Rank', 'Name', 'Roll Number', 'Score', 'Total Questions', 'Status', 'Date Time'];
+    const rows = filteredParticipants.map((p, idx) => [
       idx + 1,
       `"${p.name || ''}"`,
       `"${p.rollNo || ''}"`,
-      `"${p.department || ''}"`,
       p.score || 0,
       p.totalQuestions || 0,
       p.completed ? 'Completed' : 'Eliminated',
@@ -290,12 +292,40 @@ export default function AdminDashboard({ onClose, onOpenFileHub }) {
     q.question.toLowerCase().includes(questionSearch.toLowerCase())
   );
 
-  // Filtered Participants
-  const filteredParticipants = participants.filter(p =>
-    (p.name || '').toLowerCase().includes(participantSearch.toLowerCase()) ||
-    (p.rollNo || '').toLowerCase().includes(participantSearch.toLowerCase()) ||
-    (p.department || '').toLowerCase().includes(participantSearch.toLowerCase())
-  );
+  const completedCount = participants.filter(p => p.completed).length;
+  const eliminatedCount = participants.filter(p => !p.completed).length;
+
+  // Filtered & Sorted Participants (without department requirement)
+  const filteredParticipants = participants
+    .filter(p => {
+      // Text search by name or roll number
+      const matchesSearch =
+        (p.name || '').toLowerCase().includes(participantSearch.toLowerCase()) ||
+        (p.rollNo || '').toLowerCase().includes(participantSearch.toLowerCase());
+      if (!matchesSearch) return false;
+
+      // Status filter
+      if (statusFilter === 'completed' && !p.completed) return false;
+      if (statusFilter === 'eliminated' && p.completed) return false;
+
+      // Score filter
+      if (scoreFilter === 'ge5' && (p.score || 0) < 5) return false;
+      if (scoreFilter === 'ge8' && (p.score || 0) < 8) return false;
+
+      return true;
+    })
+    .sort((a, b) => {
+      if (sortBy === 'score_desc') {
+        return (b.score || 0) - (a.score || 0);
+      }
+      if (sortBy === 'recent') {
+        return new Date(b.timestamp || 0) - new Date(a.timestamp || 0);
+      }
+      if (sortBy === 'name') {
+        return (a.name || '').localeCompare(b.name || '');
+      }
+      return 0;
+    });
 
   return (
     <div style={{
@@ -307,9 +337,68 @@ export default function AdminDashboard({ onClose, onOpenFileHub }) {
       alignItems: 'center',
       justifyContent: 'center',
       zIndex: 100,
-      padding: '16px'
+      padding: '12px'
     }}>
-      <div className="glass-panel" style={{
+      <style>{`
+        @media (max-width: 680px) {
+          .admin-modal-card {
+            width: 100% !important;
+            height: 96vh !important;
+            border-radius: 18px !important;
+          }
+          .admin-top-bar {
+            padding: 10px 14px !important;
+            flex-direction: column !important;
+            align-items: stretch !important;
+            gap: 10px !important;
+          }
+          .admin-top-actions {
+            justify-content: space-between !important;
+            width: 100% !important;
+          }
+          .admin-tab-bar {
+            padding: 0 8px !important;
+            overflow-x: auto !important;
+            white-space: nowrap !important;
+            -webkit-overflow-scrolling: touch !important;
+          }
+          .admin-tab-btn {
+            padding: 10px 12px !important;
+            font-size: 13px !important;
+            flex-shrink: 0 !important;
+          }
+          .admin-tab-body {
+            padding: 12px 10px !important;
+          }
+          .admin-stats-grid {
+            grid-template-columns: repeat(2, 1fr) !important;
+            gap: 8px !important;
+            margin-bottom: 16px !important;
+          }
+          .admin-stats-grid > div {
+            padding: 12px !important;
+          }
+          .admin-filter-bar {
+            flex-direction: column !important;
+            align-items: stretch !important;
+            gap: 10px !important;
+          }
+          .admin-filter-pills {
+            overflow-x: auto !important;
+            padding-bottom: 4px !important;
+            width: 100% !important;
+          }
+          .question-action-bar {
+            flex-direction: column !important;
+            align-items: stretch !important;
+          }
+          .question-add-btn {
+            width: 100% !important;
+            justify-content: center !important;
+          }
+        }
+      `}</style>
+      <div className="glass-panel admin-modal-card" style={{
         width: '100%',
         maxWidth: '1060px',
         height: '92vh',
@@ -320,45 +409,48 @@ export default function AdminDashboard({ onClose, onOpenFileHub }) {
         border: '2px solid #86efac'
       }}>
         {/* Dashboard Top Bar */}
-        <div style={{
+        <div className="admin-top-bar" style={{
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'space-between',
-          padding: '18px 24px',
+          padding: '16px 22px',
           borderBottom: '1.5px solid #e2e8f0',
-          background: '#f8fafc'
+          background: '#f8fafc',
+          flexWrap: 'wrap',
+          gap: '12px'
         }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '14px' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
             <div style={{
-              width: '42px',
-              height: '42px',
-              borderRadius: '12px',
+              width: '38px',
+              height: '38px',
+              borderRadius: '10px',
               background: '#002b49',
               color: '#facc15',
               display: 'flex',
               alignItems: 'center',
-              justifyContent: 'center'
+              justifyContent: 'center',
+              flexShrink: 0
             }}>
-              <Shield size={24} />
+              <Shield size={22} />
             </div>
             <div>
-              <h2 style={{ fontFamily: 'var(--font-heading)', fontSize: '20px', fontWeight: 800, color: '#0f172a' }}>
+              <h2 style={{ fontFamily: 'var(--font-heading)', fontSize: 'clamp(17px, 3vw, 20px)', fontWeight: 800, color: '#0f172a', lineHeight: 1.2 }}>
                 Coordinator & Analytics Hub
               </h2>
-              <div style={{ fontSize: '12px', color: '#64748b' }}>
+              <div style={{ fontSize: '11px', color: '#64748b' }}>
                 Active File: <strong style={{ color: '#15803d' }}>{fileState.fileName || 'Default Dataset'}</strong>
               </div>
             </div>
           </div>
 
-          <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+          <div className="admin-top-actions" style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
             <button
               onClick={() => { playClick(); onOpenFileHub(); }}
               style={{
                 display: 'flex',
                 alignItems: 'center',
                 gap: '6px',
-                padding: '8px 14px',
+                padding: '7px 12px',
                 fontSize: '12px',
                 fontWeight: 700,
                 background: '#f0fdf4',
@@ -375,25 +467,26 @@ export default function AdminDashboard({ onClose, onOpenFileHub }) {
             <button
               onClick={() => { playClick(); onClose(); }}
               className="primary-btn"
-              style={{ padding: '8px 16px', fontSize: '13px' }}
+              style={{ padding: '7px 14px', fontSize: '12px' }}
             >
-              <ArrowLeft size={16} />
-              <span>Back to Kiosk</span>
+              <ArrowLeft size={15} />
+              <span>home</span>
             </button>
           </div>
         </div>
 
         {/* Tab Navigation */}
-        <div style={{
+        <div className="admin-tab-bar" style={{
           display: 'flex',
           borderBottom: '1px solid #e2e8f0',
-          padding: '0 24px',
+          padding: '0 20px',
           background: '#ffffff'
         }}>
           <button
             onClick={() => { playClick(); setActiveTab('leaderboard'); }}
+            className="admin-tab-btn"
             style={{
-              padding: '14px 20px',
+              padding: '12px 18px',
               fontSize: '14px',
               fontWeight: 800,
               border: 'none',
@@ -412,8 +505,9 @@ export default function AdminDashboard({ onClose, onOpenFileHub }) {
 
           <button
             onClick={() => { playClick(); setActiveTab('questions'); }}
+            className="admin-tab-btn"
             style={{
-              padding: '14px 20px',
+              padding: '12px 18px',
               fontSize: '14px',
               fontWeight: 800,
               border: 'none',
@@ -432,8 +526,9 @@ export default function AdminDashboard({ onClose, onOpenFileHub }) {
 
           <button
             onClick={() => { playClick(); setActiveTab('settings'); }}
+            className="admin-tab-btn"
             style={{
-              padding: '14px 20px',
+              padding: '12px 18px',
               fontSize: '14px',
               fontWeight: 800,
               border: 'none',
@@ -452,106 +547,227 @@ export default function AdminDashboard({ onClose, onOpenFileHub }) {
         </div>
 
         {/* Tab Body */}
-        <div style={{ flex: 1, overflowY: 'auto', padding: '24px' }}>
+        <div className="admin-tab-body" style={{ flex: 1, overflowY: 'auto', padding: '20px' }}>
           {/* TAB 1: LEADERBOARD & METRICS */}
           {activeTab === 'leaderboard' && (
             <div>
               {/* Stat Summary Cards */}
-              <div style={{
+              <div className="admin-stats-grid" style={{
                 display: 'grid',
-                gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
-                gap: '16px',
-                marginBottom: '24px'
+                gridTemplateColumns: 'repeat(auto-fit, minmax(160px, 1fr))',
+                gap: '12px',
+                marginBottom: '20px'
               }}>
-                <div style={{ background: '#f0fdf4', border: '1.5px solid #bbf7d0', borderRadius: '16px', padding: '16px' }}>
+                <div style={{ background: '#f0fdf4', border: '1.5px solid #bbf7d0', borderRadius: '14px', padding: '14px' }}>
                   <div style={{ fontSize: '11px', fontWeight: 800, color: '#166534', textTransform: 'uppercase' }}>Total Attempts</div>
-                  <div style={{ fontSize: '28px', fontWeight: 900, color: '#064e3b', fontFamily: 'var(--font-heading)' }}>{totalParticipants}</div>
+                  <div style={{ fontSize: '26px', fontWeight: 900, color: '#064e3b', fontFamily: 'var(--font-heading)' }}>{totalParticipants}</div>
                 </div>
-                <div style={{ background: '#f0f9ff', border: '1.5px solid #bae6fd', borderRadius: '16px', padding: '16px' }}>
+                <div style={{ background: '#f0f9ff', border: '1.5px solid #bae6fd', borderRadius: '14px', padding: '14px' }}>
                   <div style={{ fontSize: '11px', fontWeight: 800, color: '#0369a1', textTransform: 'uppercase' }}>Average Score</div>
-                  <div style={{ fontSize: '28px', fontWeight: 900, color: '#0c4a6e', fontFamily: 'var(--font-heading)' }}>{avgScore}</div>
+                  <div style={{ fontSize: '26px', fontWeight: 900, color: '#0c4a6e', fontFamily: 'var(--font-heading)' }}>{avgScore}</div>
                 </div>
-                <div style={{ background: '#fefce8', border: '1.5px solid #fef08a', borderRadius: '16px', padding: '16px' }}>
+                <div style={{ background: '#fefce8', border: '1.5px solid #fef08a', borderRadius: '14px', padding: '14px' }}>
                   <div style={{ fontSize: '11px', fontWeight: 800, color: '#854d0e', textTransform: 'uppercase' }}>Top Score</div>
-                  <div style={{ fontSize: '28px', fontWeight: 900, color: '#713f12', fontFamily: 'var(--font-heading)' }}>{topScore}</div>
+                  <div style={{ fontSize: '26px', fontWeight: 900, color: '#713f12', fontFamily: 'var(--font-heading)' }}>{topScore}</div>
                 </div>
-                <div style={{ background: '#faf5ff', border: '1.5px solid #e9d5ff', borderRadius: '16px', padding: '16px' }}>
+                <div style={{ background: '#faf5ff', border: '1.5px solid #e9d5ff', borderRadius: '14px', padding: '14px' }}>
                   <div style={{ fontSize: '11px', fontWeight: 800, color: '#7e22ce', textTransform: 'uppercase' }}>Completion Rate</div>
-                  <div style={{ fontSize: '28px', fontWeight: 900, color: '#581c87', fontFamily: 'var(--font-heading)' }}>{passRate}%</div>
+                  <div style={{ fontSize: '26px', fontWeight: 900, color: '#581c87', fontFamily: 'var(--font-heading)' }}>{passRate}%</div>
                 </div>
               </div>
 
-              {/* Controls: Search + CSV Export */}
-              <div style={{ display: 'flex', justifyContent: 'space-between', gap: '12px', marginBottom: '16px', flexWrap: 'wrap' }}>
-                <div style={{ position: 'relative', flex: 1, minWidth: '240px' }}>
-                  <Search size={16} color="#94a3b8" style={{ position: 'absolute', left: '12px', top: '12px' }} />
-                  <input
-                    type="text"
-                    value={participantSearch}
-                    onChange={(e) => setParticipantSearch(e.target.value)}
-                    placeholder="Search by name, roll no, or department..."
+              {/* Controls: Search + Filter Pills + Sorting + CSV Export */}
+              <div className="admin-filter-bar" style={{ display: 'flex', flexDirection: 'column', gap: '10px', marginBottom: '16px' }}>
+                <div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap', alignItems: 'center' }}>
+                  <div style={{ position: 'relative', flex: 1, minWidth: '200px' }}>
+                    <Search size={16} color="#94a3b8" style={{ position: 'absolute', left: '12px', top: '12px' }} />
+                    <input
+                      type="text"
+                      value={participantSearch}
+                      onChange={(e) => setParticipantSearch(e.target.value)}
+                      placeholder="Search by student name or roll number..."
+                      style={{
+                        width: '100%',
+                        padding: '10px 12px 10px 36px',
+                        borderRadius: '10px',
+                        border: '1.5px solid #cbd5e1',
+                        fontSize: '14px',
+                        outline: 'none'
+                      }}
+                    />
+                  </div>
+
+                  <button
+                    onClick={exportLeaderboardCSV}
                     style={{
-                      width: '100%',
-                      padding: '10px 12px 10px 36px',
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: '8px',
+                      padding: '10px 16px',
+                      background: '#15803d',
+                      color: '#ffffff',
+                      border: 'none',
                       borderRadius: '10px',
-                      border: '1.5px solid #cbd5e1',
-                      fontSize: '14px',
-                      outline: 'none'
+                      fontSize: '13px',
+                      fontWeight: 700,
+                      cursor: 'pointer',
+                      flexShrink: 0
                     }}
-                  />
+                  >
+                    <Download size={16} />
+                    <span>Export CSV</span>
+                  </button>
                 </div>
 
-                <button
-                  onClick={exportLeaderboardCSV}
-                  style={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: '8px',
-                    padding: '10px 18px',
-                    background: '#15803d',
-                    color: '#ffffff',
-                    border: 'none',
-                    borderRadius: '10px',
-                    fontSize: '13px',
-                    fontWeight: 700,
-                    cursor: 'pointer'
-                  }}
-                >
-                  <Download size={16} />
-                  <span>Export CSV</span>
-                </button>
+                {/* Filter Pills and Sort Bar */}
+                <div style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'space-between',
+                  gap: '10px',
+                  flexWrap: 'wrap',
+                  background: '#f8fafc',
+                  padding: '8px 12px',
+                  borderRadius: '12px',
+                  border: '1px solid #e2e8f0'
+                }}>
+                  {/* Status Filter Buttons */}
+                  <div className="admin-filter-pills" style={{ display: 'flex', alignItems: 'center', gap: '6px', flexWrap: 'wrap' }}>
+                    <span style={{ fontSize: '11px', fontWeight: 800, color: '#475569', marginRight: '2px' }}>
+                      Status:
+                    </span>
+                    <button
+                      type="button"
+                      onClick={() => setStatusFilter('all')}
+                      style={{
+                        padding: '4px 10px',
+                        borderRadius: '9999px',
+                        fontSize: '11px',
+                        fontWeight: 700,
+                        border: 'none',
+                        cursor: 'pointer',
+                        background: statusFilter === 'all' ? '#15803d' : '#ffffff',
+                        color: statusFilter === 'all' ? '#ffffff' : '#475569',
+                        boxShadow: statusFilter === 'all' ? '0 2px 6px rgba(21, 128, 61, 0.3)' : '0 1px 2px rgba(0,0,0,0.06)'
+                      }}
+                    >
+                      All ({participants.length})
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => setStatusFilter('completed')}
+                      style={{
+                        padding: '4px 10px',
+                        borderRadius: '9999px',
+                        fontSize: '11px',
+                        fontWeight: 700,
+                        border: 'none',
+                        cursor: 'pointer',
+                        background: statusFilter === 'completed' ? '#166534' : '#ffffff',
+                        color: statusFilter === 'completed' ? '#ffffff' : '#166534',
+                        boxShadow: statusFilter === 'completed' ? '0 2px 6px rgba(22, 101, 52, 0.3)' : '0 1px 2px rgba(0,0,0,0.06)'
+                      }}
+                    >
+                      🏆 Completed ({completedCount})
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => setStatusFilter('eliminated')}
+                      style={{
+                        padding: '4px 10px',
+                        borderRadius: '9999px',
+                        fontSize: '11px',
+                        fontWeight: 700,
+                        border: 'none',
+                        cursor: 'pointer',
+                        background: statusFilter === 'eliminated' ? '#dc2626' : '#ffffff',
+                        color: statusFilter === 'eliminated' ? '#ffffff' : '#991b1b',
+                        boxShadow: statusFilter === 'eliminated' ? '0 2px 6px rgba(220, 38, 38, 0.3)' : '0 1px 2px rgba(0,0,0,0.06)'
+                      }}
+                    >
+                      Eliminated ({eliminatedCount})
+                    </button>
+                  </div>
+
+                  {/* Score & Sort Controls */}
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '8px', flexWrap: 'wrap' }}>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>
+                      <span style={{ fontSize: '11px', fontWeight: 700, color: '#64748b' }}>Score:</span>
+                      <select
+                        value={scoreFilter}
+                        onChange={(e) => setScoreFilter(e.target.value)}
+                        style={{
+                          padding: '4px 8px',
+                          borderRadius: '8px',
+                          border: '1px solid #cbd5e1',
+                          fontSize: '11px',
+                          fontWeight: 700,
+                          background: '#ffffff',
+                          color: '#334155',
+                          outline: 'none',
+                          cursor: 'pointer'
+                        }}
+                      >
+                        <option value="all">All Scores</option>
+                        <option value="ge5">Score ≥ 5</option>
+                        <option value="ge8">Score ≥ 8</option>
+                      </select>
+                    </div>
+
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>
+                      <span style={{ fontSize: '11px', fontWeight: 700, color: '#64748b' }}>Sort:</span>
+                      <select
+                        value={sortBy}
+                        onChange={(e) => setSortBy(e.target.value)}
+                        style={{
+                          padding: '4px 8px',
+                          borderRadius: '8px',
+                          border: '1px solid #cbd5e1',
+                          fontSize: '11px',
+                          fontWeight: 700,
+                          background: '#ffffff',
+                          color: '#334155',
+                          outline: 'none',
+                          cursor: 'pointer'
+                        }}
+                      >
+                        <option value="score_desc">🏆 Highest Score</option>
+                        <option value="recent">⏱ Most Recent</option>
+                        <option value="name">🔤 Name</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
               </div>
 
-              {/* Leaderboard Table */}
-              <div style={{ border: '1px solid #e2e8f0', borderRadius: '14px', overflow: 'hidden' }}>
-                <table style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'left', fontSize: '13px' }}>
+              {/* Leaderboard Table (Responsive scroll without Department) */}
+              <div className="table-responsive" style={{ border: '1px solid #e2e8f0', borderRadius: '14px', overflowX: 'auto', width: '100%' }}>
+                <table style={{ width: '100%', minWidth: '480px', borderCollapse: 'collapse', textAlign: 'left', fontSize: '13px' }}>
                   <thead style={{ background: '#f8fafc', borderBottom: '1px solid #e2e8f0' }}>
                     <tr>
-                      <th style={{ padding: '12px 16px', fontWeight: 800, color: '#475569' }}>Rank</th>
-                      <th style={{ padding: '12px 16px', fontWeight: 800, color: '#475569' }}>Name</th>
-                      <th style={{ padding: '12px 16px', fontWeight: 800, color: '#475569' }}>Roll No</th>
-                      <th style={{ padding: '12px 16px', fontWeight: 800, color: '#475569' }}>Dept</th>
-                      <th style={{ padding: '12px 16px', fontWeight: 800, color: '#475569' }}>Score</th>
-                      <th style={{ padding: '12px 16px', fontWeight: 800, color: '#475569' }}>Status</th>
-                      <th style={{ padding: '12px 16px', fontWeight: 800, color: '#475569' }}>Date Time</th>
+                      <th style={{ padding: '12px 14px', fontWeight: 800, color: '#475569' }}>Rank</th>
+                      <th style={{ padding: '12px 14px', fontWeight: 800, color: '#475569' }}>Name</th>
+                      <th style={{ padding: '12px 14px', fontWeight: 800, color: '#475569' }}>Roll No / ID</th>
+                      <th style={{ padding: '12px 14px', fontWeight: 800, color: '#475569' }}>Score</th>
+                      <th style={{ padding: '12px 14px', fontWeight: 800, color: '#475569' }}>Status</th>
+                      <th style={{ padding: '12px 14px', fontWeight: 800, color: '#475569' }}>Date Time</th>
                     </tr>
                   </thead>
                   <tbody>
                     {filteredParticipants.length === 0 ? (
                       <tr>
-                        <td colSpan={7} style={{ padding: '36px', textAlign: 'center', color: '#94a3b8' }}>
-                          No participant attempts recorded yet.
+                        <td colSpan={6} style={{ padding: '36px', textAlign: 'center', color: '#94a3b8' }}>
+                          No participant attempts found matching your filter.
                         </td>
                       </tr>
                     ) : (
                       filteredParticipants.map((p, idx) => (
                         <tr key={`${p.id || 'run'}-${idx}`} style={{ borderBottom: '1px solid #f1f5f9' }}>
-                          <td style={{ padding: '12px 16px', fontWeight: 800, color: '#16a34a' }}>#{idx + 1}</td>
-                          <td style={{ padding: '12px 16px', fontWeight: 700, color: '#0f172a' }}>{p.name}</td>
-                          <td style={{ padding: '12px 16px', color: '#475569' }}>{p.rollNo}</td>
-                          <td style={{ padding: '12px 16px', color: '#475569' }}>{p.department}</td>
-                          <td style={{ padding: '12px 16px', fontWeight: 900, color: '#064e3b' }}>{p.score}</td>
-                          <td style={{ padding: '12px 16px' }}>
+                          <td style={{ padding: '12px 14px', fontWeight: 800, color: '#16a34a' }}>#{idx + 1}</td>
+                          <td style={{ padding: '12px 14px', fontWeight: 700, color: '#0f172a' }}>{p.name}</td>
+                          <td style={{ padding: '12px 14px', color: '#475569' }}>{p.rollNo}</td>
+                          <td style={{ padding: '12px 14px', fontWeight: 900, color: '#064e3b' }}>{p.score}</td>
+                          <td style={{ padding: '12px 14px' }}>
                             <span style={{
                               padding: '2px 8px',
                               borderRadius: '6px',
@@ -563,7 +779,7 @@ export default function AdminDashboard({ onClose, onOpenFileHub }) {
                               {p.completed ? 'Completed' : 'Eliminated'}
                             </span>
                           </td>
-                          <td style={{ padding: '12px 16px', color: '#94a3b8', fontSize: '11px' }}>
+                          <td style={{ padding: '12px 14px', color: '#94a3b8', fontSize: '11px' }}>
                             {p.timestamp ? new Date(p.timestamp).toLocaleTimeString() : 'N/A'}
                           </td>
                         </tr>
@@ -579,8 +795,8 @@ export default function AdminDashboard({ onClose, onOpenFileHub }) {
           {activeTab === 'questions' && (
             <div>
               {/* Question Header & Add Trigger */}
-              <div style={{ display: 'flex', justifyContent: 'space-between', gap: '12px', marginBottom: '20px', flexWrap: 'wrap' }}>
-                <div style={{ position: 'relative', flex: 1, minWidth: '240px' }}>
+              <div className="question-action-bar" style={{ display: 'flex', justifyContent: 'space-between', gap: '12px', marginBottom: '20px', flexWrap: 'wrap' }}>
+                <div style={{ position: 'relative', flex: 1, minWidth: '220px' }}>
                   <Search size={16} color="#94a3b8" style={{ position: 'absolute', left: '12px', top: '12px' }} />
                   <input
                     type="text"
@@ -605,7 +821,7 @@ export default function AdminDashboard({ onClose, onOpenFileHub }) {
                     setNewQuestionForm({ question: '', options: ['', '', '', ''], correctIndex: 0, explanation: '' });
                     setIsAddingQuestion(!isAddingQuestion);
                   }}
-                  className="primary-btn"
+                  className="primary-btn question-add-btn"
                   style={{ padding: '10px 20px', fontSize: '14px' }}
                 >
                   <Plus size={16} />
@@ -619,7 +835,7 @@ export default function AdminDashboard({ onClose, onOpenFileHub }) {
                   background: '#f8fafc',
                   border: '2px solid #86efac',
                   borderRadius: '16px',
-                  padding: '24px',
+                  padding: '20px 16px',
                   marginBottom: '24px'
                 }}>
                   <h3 style={{ fontSize: '16px', fontWeight: 800, color: '#064e3b', marginBottom: '16px' }}>
@@ -640,7 +856,7 @@ export default function AdminDashboard({ onClose, onOpenFileHub }) {
                     />
                   </div>
 
-                  <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px', marginBottom: '14px' }}>
+                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '12px', marginBottom: '14px' }}>
                     {newQuestionForm.options.map((opt, idx) => (
                       <div key={idx}>
                         <label style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', fontSize: '12px', fontWeight: 700, color: '#334155', marginBottom: '4px' }}>
