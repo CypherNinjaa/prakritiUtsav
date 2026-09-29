@@ -116,13 +116,21 @@ export default function QuizCompleteScreen({
 
             <h2 style={{
               fontFamily: 'var(--font-heading)',
-              fontSize: '32px',
+              fontSize: 'clamp(24px, 5vw, 32px)',
               fontWeight: 900,
               color: '#064e3b',
               marginBottom: '6px'
             }}>
               Great Job, {participant?.name || 'Explorer'}!
             </h2>
+
+            {(participant?.classGrade || participant?.rollNo) && (
+              <div style={{ fontSize: '13px', fontWeight: 800, color: '#15803d', marginBottom: '8px' }}>
+                {participant.classGrade ? participant.classGrade : ''}
+                {participant.classGrade && participant.rollNo ? ' • ' : ''}
+                {participant.rollNo ? `Roll No: ${participant.rollNo}` : ''}
+              </div>
+            )}
 
             <p style={{ fontSize: '14px', color: '#64748b' }}>
               You have successfully completed the Nature in Action quiz challenge!

@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import { useQuiz } from '../../context/QuizContext';
-import { Play, BookOpen, FileText, XCircle, Trophy, User, Hash, ArrowLeft } from 'lucide-react';
+import { Play, BookOpen, FileText, XCircle, Trophy, User, Hash, ArrowLeft, GraduationCap } from 'lucide-react';
 import { playClick } from '../../services/soundEffects';
 
 export default function ParticipantReadyScreen({ onBeginQuiz, onBack }) {
   const { quizData } = useQuiz();
   const [name, setName] = useState('');
+  const [classGrade, setClassGrade] = useState('');
   const [rollNo, setRollNo] = useState('');
   const [error, setError] = useState('');
 
@@ -18,13 +19,18 @@ export default function ParticipantReadyScreen({ onBeginQuiz, onBack }) {
       setError('Please enter your full name');
       return;
     }
+    if (!classGrade.trim()) {
+      setError('Please enter your class (e.g. Class 6)');
+      return;
+    }
     if (!rollNo.trim()) {
-      setError('Please enter your Roll Number / Student ID');
+      setError('Please enter your Roll No.');
       return;
     }
     playClick();
     onBeginQuiz({
       name: name.trim(),
+      classGrade: classGrade.trim(),
       rollNo: rollNo.trim()
     });
   };
@@ -40,6 +46,13 @@ export default function ParticipantReadyScreen({ onBeginQuiz, onBack }) {
       margin: '0 auto',
       padding: '16px'
     }}>
+      <style>{`
+        @media (max-width: 560px) {
+          .participant-grid-row {
+            grid-template-columns: 1fr !important;
+          }
+        }
+      `}</style>
       <div className="glass-panel" style={{
         width: '100%',
         padding: '36px 32px',
@@ -108,7 +121,7 @@ export default function ParticipantReadyScreen({ onBeginQuiz, onBack }) {
           When you press <strong>BEGIN</strong>, your quiz starts immediately.
         </p>
 
-        {/* Participant Registration Inputs */}
+        {/* Participant Registration Inputs (Name, Class, Roll No) */}
         <form onSubmit={handleSubmit} style={{ textAlign: 'left', marginBottom: '24px' }}>
           {error && (
             <div style={{
@@ -125,9 +138,10 @@ export default function ParticipantReadyScreen({ onBeginQuiz, onBack }) {
             </div>
           )}
 
+          {/* 1. Full Name */}
           <div style={{ marginBottom: '14px' }}>
             <label style={{ display: 'block', fontSize: '13px', fontWeight: 700, color: '#334155', marginBottom: '6px' }}>
-              Full Name *
+              Student Full Name *
             </label>
             <div style={{ position: 'relative' }}>
               <User size={18} color="#94a3b8" style={{ position: 'absolute', left: '14px', top: '14px' }} />
@@ -153,31 +167,67 @@ export default function ParticipantReadyScreen({ onBeginQuiz, onBack }) {
             </div>
           </div>
 
-          <div style={{ marginBottom: '18px' }}>
-            <label style={{ display: 'block', fontSize: '13px', fontWeight: 700, color: '#334155', marginBottom: '6px' }}>
-              Roll No / Student ID *
-            </label>
-            <div style={{ position: 'relative' }}>
-              <Hash size={18} color="#94a3b8" style={{ position: 'absolute', left: '14px', top: '14px' }} />
-              <input
-                type="text"
-                value={rollNo}
-                onChange={(e) => { setRollNo(e.target.value); setError(''); }}
-                placeholder="e.g. Class 10 / Roll 24 / AUP-2026"
-                style={{
-                  width: '100%',
-                  padding: '12px 14px 12px 42px',
-                  borderRadius: '12px',
-                  border: '1.5px solid #cbd5e1',
-                  fontSize: '15px',
-                  fontFamily: 'inherit',
-                  outline: 'none',
-                  transition: 'border 0.2s',
-                  background: '#f8fafc'
-                }}
-                onFocus={(e) => e.target.style.borderColor = '#16a34a'}
-                onBlur={(e) => e.target.style.borderColor = '#cbd5e1'}
-              />
+          {/* 2. Class & Roll No (Two Columns Responsive) */}
+          <div className="participant-grid-row" style={{
+            display: 'grid',
+            gridTemplateColumns: '1fr 1fr',
+            gap: '12px',
+            marginBottom: '18px'
+          }}>
+            <div>
+              <label style={{ display: 'block', fontSize: '13px', fontWeight: 700, color: '#334155', marginBottom: '6px' }}>
+                Class / Standard *
+              </label>
+              <div style={{ position: 'relative' }}>
+                <GraduationCap size={18} color="#94a3b8" style={{ position: 'absolute', left: '14px', top: '14px' }} />
+                <input
+                  type="text"
+                  value={classGrade}
+                  onChange={(e) => { setClassGrade(e.target.value); setError(''); }}
+                  placeholder="e.g. Class 6 / 10"
+                  style={{
+                    width: '100%',
+                    padding: '12px 14px 12px 42px',
+                    borderRadius: '12px',
+                    border: '1.5px solid #cbd5e1',
+                    fontSize: '15px',
+                    fontFamily: 'inherit',
+                    outline: 'none',
+                    transition: 'border 0.2s',
+                    background: '#f8fafc'
+                  }}
+                  onFocus={(e) => e.target.style.borderColor = '#16a34a'}
+                  onBlur={(e) => e.target.style.borderColor = '#cbd5e1'}
+                />
+              </div>
+            </div>
+
+            <div>
+              <label style={{ display: 'block', fontSize: '13px', fontWeight: 700, color: '#334155', marginBottom: '6px' }}>
+                Roll No. *
+              </label>
+              <div style={{ position: 'relative' }}>
+                <Hash size={18} color="#94a3b8" style={{ position: 'absolute', left: '14px', top: '14px' }} />
+                <input
+                  type="text"
+                  value={rollNo}
+                  onChange={(e) => { setRollNo(e.target.value); setError(''); }}
+                  placeholder="e.g. 24 / AUP-042"
+                  style={{
+                    width: '100%',
+                    padding: '12px 14px 12px 42px',
+                    borderRadius: '12px',
+                    border: '1.5px solid #cbd5e1',
+                    fontSize: '15px',
+                    fontFamily: 'inherit',
+                    outline: 'none',
+                    transition: 'border 0.2s',
+                    background: '#f8fafc'
+                  }}
+                  onFocus={(e) => e.target.style.borderColor = '#16a34a'}
+                  onBlur={(e) => e.target.style.borderColor = '#cbd5e1'}
+                />
+              </div>
             </div>
           </div>
 

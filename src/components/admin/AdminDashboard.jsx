@@ -87,10 +87,11 @@ export default function AdminDashboard({ onClose, onOpenFileHub }) {
       return;
     }
 
-    const headers = ['Rank', 'Name', 'Roll Number', 'Score', 'Total Questions', 'Status', 'Date Time'];
+    const headers = ['Rank', 'Student Name', 'Class', 'Roll Number', 'Score', 'Total Questions', 'Status', 'Date Time'];
     const rows = filteredParticipants.map((p, idx) => [
       idx + 1,
       `"${p.name || ''}"`,
+      `"${p.classGrade || ''}"`,
       `"${p.rollNo || ''}"`,
       p.score || 0,
       p.totalQuestions || 0,
@@ -295,13 +296,15 @@ export default function AdminDashboard({ onClose, onOpenFileHub }) {
   const completedCount = participants.filter(p => p.completed).length;
   const eliminatedCount = participants.filter(p => !p.completed).length;
 
-  // Filtered & Sorted Participants (without department requirement)
+  // Filtered & Sorted Participants (Name, Class, Roll No)
   const filteredParticipants = participants
     .filter(p => {
-      // Text search by name or roll number
+      // Text search by name, class, or roll number
+      const term = participantSearch.toLowerCase();
       const matchesSearch =
-        (p.name || '').toLowerCase().includes(participantSearch.toLowerCase()) ||
-        (p.rollNo || '').toLowerCase().includes(participantSearch.toLowerCase());
+        (p.name || '').toLowerCase().includes(term) ||
+        (p.classGrade || '').toLowerCase().includes(term) ||
+        (p.rollNo || '').toLowerCase().includes(term);
       if (!matchesSearch) return false;
 
       // Status filter
@@ -585,7 +588,7 @@ export default function AdminDashboard({ onClose, onOpenFileHub }) {
                       type="text"
                       value={participantSearch}
                       onChange={(e) => setParticipantSearch(e.target.value)}
-                      placeholder="Search by student name or roll number..."
+                      placeholder="Search by student name, class, or roll no..."
                       style={{
                         width: '100%',
                         padding: '10px 12px 10px 36px',
@@ -740,14 +743,15 @@ export default function AdminDashboard({ onClose, onOpenFileHub }) {
                 </div>
               </div>
 
-              {/* Leaderboard Table (Responsive scroll without Department) */}
+              {/* Leaderboard Table (Responsive scroll with Name, Class, Roll No) */}
               <div className="table-responsive" style={{ border: '1px solid #e2e8f0', borderRadius: '14px', overflowX: 'auto', width: '100%' }}>
-                <table style={{ width: '100%', minWidth: '480px', borderCollapse: 'collapse', textAlign: 'left', fontSize: '13px' }}>
+                <table style={{ width: '100%', minWidth: '540px', borderCollapse: 'collapse', textAlign: 'left', fontSize: '13px' }}>
                   <thead style={{ background: '#f8fafc', borderBottom: '1px solid #e2e8f0' }}>
                     <tr>
                       <th style={{ padding: '12px 14px', fontWeight: 800, color: '#475569' }}>Rank</th>
-                      <th style={{ padding: '12px 14px', fontWeight: 800, color: '#475569' }}>Name</th>
-                      <th style={{ padding: '12px 14px', fontWeight: 800, color: '#475569' }}>Roll No / ID</th>
+                      <th style={{ padding: '12px 14px', fontWeight: 800, color: '#475569' }}>Student Name</th>
+                      <th style={{ padding: '12px 14px', fontWeight: 800, color: '#475569' }}>Class</th>
+                      <th style={{ padding: '12px 14px', fontWeight: 800, color: '#475569' }}>Roll No</th>
                       <th style={{ padding: '12px 14px', fontWeight: 800, color: '#475569' }}>Score</th>
                       <th style={{ padding: '12px 14px', fontWeight: 800, color: '#475569' }}>Status</th>
                       <th style={{ padding: '12px 14px', fontWeight: 800, color: '#475569' }}>Date Time</th>
@@ -756,7 +760,7 @@ export default function AdminDashboard({ onClose, onOpenFileHub }) {
                   <tbody>
                     {filteredParticipants.length === 0 ? (
                       <tr>
-                        <td colSpan={6} style={{ padding: '36px', textAlign: 'center', color: '#94a3b8' }}>
+                        <td colSpan={7} style={{ padding: '36px', textAlign: 'center', color: '#94a3b8' }}>
                           No participant attempts found matching your filter.
                         </td>
                       </tr>
@@ -765,6 +769,7 @@ export default function AdminDashboard({ onClose, onOpenFileHub }) {
                         <tr key={`${p.id || 'run'}-${idx}`} style={{ borderBottom: '1px solid #f1f5f9' }}>
                           <td style={{ padding: '12px 14px', fontWeight: 800, color: '#16a34a' }}>#{idx + 1}</td>
                           <td style={{ padding: '12px 14px', fontWeight: 700, color: '#0f172a' }}>{p.name}</td>
+                          <td style={{ padding: '12px 14px', color: '#15803d', fontWeight: 700 }}>{p.classGrade || '—'}</td>
                           <td style={{ padding: '12px 14px', color: '#475569' }}>{p.rollNo}</td>
                           <td style={{ padding: '12px 14px', fontWeight: 900, color: '#064e3b' }}>{p.score}</td>
                           <td style={{ padding: '12px 14px' }}>

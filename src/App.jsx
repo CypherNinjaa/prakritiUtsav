@@ -44,9 +44,13 @@ function QuizApp() {
     setParticipant(participantInfo);
 
     const allQuestions = quizData?.questions || [];
-    // Shuffle questions
-    const shuffled = [...allQuestions].sort(() => 0.5 - Math.random());
-    // Limit to questionsPerSession
+    // Robust Fisher-Yates shuffle across all 50 questions from all 5 sets
+    const shuffled = [...allQuestions];
+    for (let i = shuffled.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+    }
+    // Limit to questionsPerSession configured by admin (defaults to 10)
     const selected = shuffled.slice(0, Math.min(questionsPerSession, shuffled.length));
 
     setSessionQuestions(selected);

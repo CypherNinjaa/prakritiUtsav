@@ -101,11 +101,18 @@ export default function GameOverScreen({
         }}>
           <div>
             <div style={{ fontSize: '11px', fontWeight: 800, color: '#7f1d1d', textTransform: 'uppercase' }}>
-              Participant
+              Student
             </div>
             <div style={{ fontSize: '16px', fontWeight: 800, color: '#0f172a' }}>
               {participant?.name || 'Anonymous'}
             </div>
+            {(participant?.classGrade || participant?.rollNo) && (
+              <div style={{ fontSize: '12px', fontWeight: 600, color: '#7f1d1d', marginTop: '2px' }}>
+                {participant.classGrade ? participant.classGrade : ''}
+                {participant.classGrade && participant.rollNo ? ' • ' : ''}
+                {participant.rollNo ? `Roll: ${participant.rollNo}` : ''}
+              </div>
+            )}
           </div>
 
           <div style={{ width: '1px', height: '36px', background: '#fca5a5' }} />

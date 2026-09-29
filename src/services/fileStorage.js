@@ -122,6 +122,12 @@ export async function loadInitialData() {
   try {
     const mirror = await get(MIRROR_KEY);
     if (mirror) {
+      // If defaultQuizData has a newer question set, update questions while preserving existing participants!
+      if (!mirror.lastUpdated || mirror.lastUpdated < defaultQuizData.lastUpdated) {
+        mirror.questions = defaultQuizData.questions;
+        mirror.lastUpdated = defaultQuizData.lastUpdated;
+        await set(MIRROR_KEY, mirror);
+      }
       return {
         data: validateQuizData(mirror),
         source: 'local_mirror',

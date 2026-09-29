@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "lastUpdated": "2026-09-29T20:30:00.000Z",
+  "lastUpdated": "2026-09-30T00:00:00.000Z",
   "config": {
     "eventName": "Prakriti Utsav",
     "subEventName": "Nature in Action",
@@ -14,353 +14,653 @@
   "questions": [
     {
       "id": 1,
-      "question": "Which gas do plants primarily absorb during the process of photosynthesis?",
-      "options": ["Oxygen", "Nitrogen", "Carbon Dioxide", "Hydrogen"],
-      "correctIndex": 2,
-      "explanation": "Plants take in Carbon Dioxide (CO2) and release Oxygen (O2) during photosynthesis."
+      "round": "Round 1: Plants & Living Things",
+      "question": "Which part of a plant absorbs water and minerals from the soil?",
+      "options": [
+        "Leaf",
+        "Root",
+        "Flower",
+        "Fruit"
+      ],
+      "correctIndex": 1,
+      "explanation": "Correct answer: Root. (Round 1: Plants & Living Things)"
     },
     {
       "id": 2,
-      "question": "What is the national aquatic animal of India?",
-      "options": ["Gharial", "Ganges River Dolphin", "Olive Ridley Turtle", "Golden Mahseer"],
-      "correctIndex": 1,
-      "explanation": "The Ganges River Dolphin is the National Aquatic Animal of India, commonly seen in the Ganga river near Patna."
+      "round": "Round 1: Plants & Living Things",
+      "question": "What do green plants mainly use sunlight for?",
+      "options": [
+        "Making food",
+        "Making noise",
+        "Producing soil",
+        "Making rocks"
+      ],
+      "correctIndex": 0,
+      "explanation": "Correct answer: Making food. (Round 1: Plants & Living Things)"
     },
     {
       "id": 3,
-      "question": "Which atmospheric layer contains the Earth's vital Ozone Layer?",
-      "options": ["Troposphere", "Stratosphere", "Mesosphere", "Thermosphere"],
-      "correctIndex": 1,
-      "explanation": "The Ozone Layer is concentrated in the Stratosphere, shielding Earth from harmful UV radiation."
+      "round": "Round 1: Plants & Living Things",
+      "question": "Which gas do plants take in during photosynthesis?",
+      "options": [
+        "Oxygen",
+        "Nitrogen",
+        "Carbon dioxide",
+        "Hydrogen"
+      ],
+      "correctIndex": 2,
+      "explanation": "Correct answer: Carbon dioxide. (Round 1: Plants & Living Things)"
     },
     {
       "id": 4,
-      "question": "Which is the largest mangrove forest ecosystem in the world?",
-      "options": ["Sundarbans", "Florida Everglades", "Pichavaram", "Bhiterkanika"],
-      "correctIndex": 0,
-      "explanation": "The Sundarbans mangrove forest spans the delta of the Ganga, Brahmaputra, and Meghna rivers across India and Bangladesh."
+      "round": "Round 1: Plants & Living Things",
+      "question": "Which gas do plants release during photosynthesis?",
+      "options": [
+        "Carbon dioxide",
+        "Oxygen",
+        "Nitrogen",
+        "Methane"
+      ],
+      "correctIndex": 1,
+      "explanation": "Correct answer: Oxygen. (Round 1: Plants & Living Things)"
     },
     {
       "id": 5,
-      "question": "What is the green pigment in plant leaves that captures sunlight for photosynthesis?",
-      "options": ["Carotenoid", "Chlorophyll", "Anthocyanin", "Xanthophyll"],
+      "round": "Round 1: Plants & Living Things",
+      "question": "Why are trees important for the environment?",
+      "options": [
+        "They increase pollution",
+        "They provide oxygen and habitats",
+        "They produce plastic",
+        "They reduce rainfall"
+      ],
       "correctIndex": 1,
-      "explanation": "Chlorophyll absorbs blue and red light while reflecting green light, giving plants their vibrant color."
+      "explanation": "Correct answer: They provide oxygen and habitats. (Round 1: Plants & Living Things)"
     },
     {
       "id": 6,
-      "question": "World Environment Day is celebrated globally every year on which date?",
-      "options": ["April 22", "June 5", "September 16", "March 21"],
-      "correctIndex": 1,
-      "explanation": "June 5 is celebrated as World Environment Day to promote environmental awareness and action."
+      "round": "Round 1: Plants & Living Things",
+      "question": "Which part of a plant usually contains seeds?",
+      "options": [
+        "Root",
+        "Stem",
+        "Fruit",
+        "Bark"
+      ],
+      "correctIndex": 2,
+      "explanation": "Correct answer: Fruit. (Round 1: Plants & Living Things)"
     },
     {
       "id": 7,
-      "question": "Which national park in Bihar is famous for tiger conservation?",
-      "options": ["Kanha National Park", "Valmiki National Park", "Jim Corbett National Park", "Kaziranga National Park"],
-      "correctIndex": 1,
-      "explanation": "Valmiki National Park and Tiger Reserve is located in the West Champaran district of Bihar."
+      "round": "Round 1: Plants & Living Things",
+      "question": "What is the process by which a seed starts growing into a plant called?",
+      "options": [
+        "Germination",
+        "Pollution",
+        "Erosion",
+        "Migration"
+      ],
+      "correctIndex": 0,
+      "explanation": "Correct answer: Germination. (Round 1: Plants & Living Things)"
     },
     {
       "id": 8,
-      "question": "Which organism serves as a primary bio-indicator of clean air because it cannot tolerate sulphur dioxide?",
-      "options": ["Earthworms", "Lichens", "Mosses", "Ferns"],
-      "correctIndex": 1,
-      "explanation": "Lichens are sensitive to air pollution, particularly sulfur dioxide, making them reliable natural bio-indicators."
+      "round": "Round 1: Plants & Living Things",
+      "question": "Which of these is a natural habitat?",
+      "options": [
+        "Forest",
+        "Shopping mall",
+        "Factory",
+        "Parking lot"
+      ],
+      "correctIndex": 0,
+      "explanation": "Correct answer: Forest. (Round 1: Plants & Living Things)"
     },
     {
       "id": 9,
-      "question": "What phenomenon causes excessive algal blooms in water bodies due to fertilizer runoff?",
-      "options": ["Biomagnification", "Eutrophication", "Bioaccumulation", "Salinization"],
+      "round": "Round 1: Plants & Living Things",
+      "question": "Which animal is commonly known as the largest land animal?",
+      "options": [
+        "Tiger",
+        "Elephant",
+        "Giraffe",
+        "Rhino"
+      ],
       "correctIndex": 1,
-      "explanation": "Eutrophication occurs when excess nutrients (nitrogen and phosphorus) stimulate rapid algae growth, depleting dissolved oxygen."
+      "explanation": "Correct answer: Elephant. (Round 1: Plants & Living Things)"
     },
     {
       "id": 10,
-      "question": "Which renewable energy source harnesses the natural heat beneath the Earth's surface?",
-      "options": ["Biomass Energy", "Geothermal Energy", "Tidal Energy", "Hydroelectric Energy"],
-      "correctIndex": 1,
-      "explanation": "Geothermal energy captures thermal energy generated and stored within the Earth's crust."
+      "round": "Round 1: Plants & Living Things",
+      "question": "Which animal is an important pollinator?",
+      "options": [
+        "Bee",
+        "Lion",
+        "Crocodile",
+        "Deer"
+      ],
+      "correctIndex": 0,
+      "explanation": "Correct answer: Bee. (Round 1: Plants & Living Things)"
     },
     {
       "id": 11,
-      "question": "What is the only floating national park in the world, located in Manipur, India?",
-      "options": ["Keibul Lamjao National Park", "Namdapha National Park", "Silent Valley National Park", "Nokrek National Park"],
+      "round": "Round 2: Animals, Birds & Forests",
+      "question": "What is pollination?",
+      "options": [
+        "Movement of pollen between flowers",
+        "Cutting trees",
+        "Cleaning rivers",
+        "Formation of clouds"
+      ],
       "correctIndex": 0,
-      "explanation": "Keibul Lamjao National Park on Loktak Lake is famed for its floating phumdis and the endangered Sangai deer."
+      "explanation": "Correct answer: Movement of pollen between flowers. (Round 2: Animals, Birds & Forests)"
     },
     {
       "id": 12,
-      "question": "Which chemical compound is predominantly responsible for the depletion of the stratospheric ozone layer?",
-      "options": ["Carbon Monoxide", "Chlorofluorocarbons (CFCs)", "Methane", "Nitrous Oxide"],
-      "correctIndex": 1,
-      "explanation": "CFCs release chlorine atoms when struck by ultraviolet light, which catalytically break down ozone molecules."
+      "round": "Round 2: Animals, Birds & Forests",
+      "question": "Why are bees important to many ecosystems?",
+      "options": [
+        "They help pollinate plants",
+        "They remove all insects",
+        "They create rainfall",
+        "They produce oxygen"
+      ],
+      "correctIndex": 0,
+      "explanation": "Correct answer: They help pollinate plants. (Round 2: Animals, Birds & Forests)"
     },
     {
       "id": 13,
-      "question": "Earth Day is celebrated globally each year on which date?",
-      "options": ["March 22", "April 22", "May 22", "June 22"],
+      "round": "Round 2: Animals, Birds & Forests",
+      "question": "Which of these is a herbivore?",
+      "options": [
+        "Tiger",
+        "Cow",
+        "Eagle",
+        "Snake"
+      ],
       "correctIndex": 1,
-      "explanation": "Earth Day has been observed annually on April 22 since 1970 to demonstrate support for environmental protection."
+      "explanation": "Correct answer: Cow. (Round 2: Animals, Birds & Forests)"
     },
     {
       "id": 14,
-      "question": "Which part of a plant is primarily responsible for transpiration?",
-      "options": ["Stem bark", "Roots", "Stomata on leaves", "Flowers"],
+      "round": "Round 2: Animals, Birds & Forests",
+      "question": "Which of these is a carnivore?",
+      "options": [
+        "Deer",
+        "Cow",
+        "Tiger",
+        "Rabbit"
+      ],
       "correctIndex": 2,
-      "explanation": "Stomata are microscopic pores on plant leaves that facilitate gas exchange and water vapor transpiration."
+      "explanation": "Correct answer: Tiger. (Round 2: Animals, Birds & Forests)"
     },
     {
       "id": 15,
-      "question": "Which animal is renowned as an 'ecosystem engineer' for building natural river dams and wetlands?",
-      "options": ["Otter", "Beaver", "Platypus", "Badger"],
-      "correctIndex": 1,
-      "explanation": "Beavers construct dams that create wetlands, slowing water runoff and boosting biodiversity."
+      "round": "Round 2: Animals, Birds & Forests",
+      "question": "What do we call animals that eat both plants and animals?",
+      "options": [
+        "Herbivores",
+        "Carnivores",
+        "Omnivores",
+        "Producers"
+      ],
+      "correctIndex": 2,
+      "explanation": "Correct answer: Omnivores. (Round 2: Animals, Birds & Forests)"
     },
     {
       "id": 16,
-      "question": "Which Ramsar wetland site in Bihar is known as an important bird sanctuary along the Ganga plain?",
-      "options": ["Chilika Lake", "Kanwar Lake (Kabartal)", "Wular Lake", "Sambhar Lake"],
-      "correctIndex": 1,
-      "explanation": "Kanwar Lake (Kabartal Wetland) in Begusarai, Bihar is Bihar's first designated Ramsar site."
+      "round": "Round 2: Animals, Birds & Forests",
+      "question": "Which animal is known for helping spread seeds by eating fruits?",
+      "options": [
+        "Many birds",
+        "Sharks",
+        "Whales",
+        "Crocodiles"
+      ],
+      "correctIndex": 0,
+      "explanation": "Correct answer: Many birds. (Round 2: Animals, Birds & Forests)"
     },
     {
       "id": 17,
-      "question": "What is the primary greenhouse gas released by enteric fermentation in livestock and flooded rice paddies?",
-      "options": ["Methane (CH4)", "Carbon Dioxide (CO2)", "Sulfur Hexafluoride", "Argon"],
+      "round": "Round 2: Animals, Birds & Forests",
+      "question": "Why are forests called homes for biodiversity?",
+      "options": [
+        "They support many kinds of living organisms",
+        "They contain only trees",
+        "They have no animals",
+        "They prevent all rainfall"
+      ],
       "correctIndex": 0,
-      "explanation": "Methane is produced by anaerobic bacteria in cattle digestion and waterlogged paddy soils."
+      "explanation": "Correct answer: They support many kinds of living organisms. (Round 2: Animals, Birds & Forests)"
     },
     {
       "id": 18,
-      "question": "Which historic Indian ecological movement was led by village women hugging forest trees to prevent logging?",
-      "options": ["Narmada Bachao Andolan", "Chipko Movement", "Appiko Movement", "Silent Valley Movement"],
-      "correctIndex": 1,
-      "explanation": "The Chipko Movement began in 1973 in Uttarakhand, where villagers hugged trees to stop commercial felling."
+      "round": "Round 2: Animals, Birds & Forests",
+      "question": "What happens when a forest is cleared on a large scale?",
+      "options": [
+        "Habitat loss can occur",
+        "Biodiversity always increases",
+        "Soil becomes permanently stronger",
+        "All animals gain new homes"
+      ],
+      "correctIndex": 0,
+      "explanation": "Correct answer: Habitat loss can occur. (Round 2: Animals, Birds & Forests)"
     },
     {
       "id": 19,
-      "question": "Which bird is the State Bird of Bihar?",
-      "options": ["House Sparrow", "Great Indian Bustard", "Indian Peafowl", "Sarus Crane"],
+      "round": "Round 2: Animals, Birds & Forests",
+      "question": "Which layer of a forest is mainly formed by the tops of tall trees?",
+      "options": [
+        "Canopy",
+        "Root zone",
+        "Forest floor",
+        "Soil bed"
+      ],
       "correctIndex": 0,
-      "explanation": "The House Sparrow (Passer domesticus) is the designated State Bird of Bihar."
+      "explanation": "Correct answer: Canopy. (Round 2: Animals, Birds & Forests)"
     },
     {
       "id": 20,
-      "question": "What ecological term describes the maximum population size of a species that an environment can sustain indefinitely?",
-      "options": ["Biotic Potential", "Carrying Capacity", "Ecological Niche", "Trophic Level"],
-      "correctIndex": 1,
-      "explanation": "Carrying capacity is the maximum population size that a habitat's resources can sustainably support."
+      "round": "Round 2: Animals, Birds & Forests",
+      "question": "Which of these is a major benefit of forests?",
+      "options": [
+        "They help store carbon",
+        "They create plastic waste",
+        "They increase soil erosion",
+        "They remove all wildlife"
+      ],
+      "correctIndex": 0,
+      "explanation": "Correct answer: They help store carbon. (Round 2: Animals, Birds & Forests)"
     },
     {
       "id": 21,
-      "question": "Which international protocol, signed in 1987, successfully phased out ozone-depleting substances?",
-      "options": ["Kyoto Protocol", "Montreal Protocol", "Paris Agreement", "Basel Convention"],
+      "round": "Round 3: Biodiversity & Natural Resources",
+      "question": "Which practice helps protect forests?",
+      "options": [
+        "Uncontrolled tree cutting",
+        "Afforestation and responsible forest management",
+        "Burning forests",
+        "Overgrazing"
+      ],
       "correctIndex": 1,
-      "explanation": "The Montreal Protocol was created to regulate the production and consumption of ozone-depleting chemicals."
+      "explanation": "Correct answer: Afforestation and responsible forest management. (Round 3: Biodiversity & Natural Resources)"
     },
     {
       "id": 22,
-      "question": "Which Indian state has the highest percentage of forest cover relative to its total geographical area?",
-      "options": ["Madhya Pradesh", "Mizoram", "Arunachal Pradesh", "Kerala"],
-      "correctIndex": 1,
-      "explanation": "Mizoram has the highest percentage of forest cover (over 84% of its geographical area)."
+      "round": "Round 3: Biodiversity & Natural Resources",
+      "question": "What is biodiversity?",
+      "options": [
+        "Variety of living organisms",
+        "Only the number of trees",
+        "Amount of rainfall",
+        "Number of buildings"
+      ],
+      "correctIndex": 0,
+      "explanation": "Correct answer: Variety of living organisms. (Round 3: Biodiversity & Natural Resources)"
     },
     {
       "id": 23,
-      "question": "What is the process called by which toxic substances accumulate in greater concentrations at higher levels of a food chain?",
-      "options": ["Bioaccumulation", "Biomagnification", "Biodegradation", "Bioremediation"],
-      "correctIndex": 1,
-      "explanation": "Biomagnification is the increasing concentration of persistent toxins in organisms at successive trophic levels."
+      "round": "Round 3: Biodiversity & Natural Resources",
+      "question": "Why is biodiversity important?",
+      "options": [
+        "It supports healthy and balanced ecosystems",
+        "It eliminates all diseases",
+        "It stops every natural disaster",
+        "It removes the need for water"
+      ],
+      "correctIndex": 0,
+      "explanation": "Correct answer: It supports healthy and balanced ecosystems. (Round 3: Biodiversity & Natural Resources)"
     },
     {
       "id": 24,
-      "question": "Which gas is released during photosynthesis as a byproduct of water photolysis?",
-      "options": ["Carbon Monoxide", "Nitrogen", "Oxygen", "Methane"],
-      "correctIndex": 2,
-      "explanation": "During the light reactions, water molecules (H2O) are split, yielding protons, electrons, and Oxygen (O2)."
+      "round": "Round 3: Biodiversity & Natural Resources",
+      "question": "What is an endangered species?",
+      "options": [
+        "A species at risk of extinction",
+        "A newly planted tree",
+        "A common garden plant",
+        "A type of soil"
+      ],
+      "correctIndex": 0,
+      "explanation": "Correct answer: A species at risk of extinction. (Round 3: Biodiversity & Natural Resources)"
     },
     {
       "id": 25,
-      "question": "What is the term for species that naturally occur in only one specific geographic region on Earth?",
-      "options": ["Invasive species", "Endemic species", "Keystone species", "Cosmopolitan species"],
+      "round": "Round 3: Biodiversity & Natural Resources",
+      "question": "Which action can help protect endangered animals?",
+      "options": [
+        "Destroying habitats",
+        "Protecting habitats and stopping illegal hunting",
+        "Increasing pollution",
+        "Removing forests"
+      ],
       "correctIndex": 1,
-      "explanation": "Endemic species are native and strictly restricted to a defined geographical territory."
+      "explanation": "Correct answer: Protecting habitats and stopping illegal hunting. (Round 3: Biodiversity & Natural Resources)"
     },
     {
       "id": 26,
-      "question": "Project Tiger was launched by the Government of India in which year?",
-      "options": ["1971", "1973", "1985", "1992"],
-      "correctIndex": 1,
-      "explanation": "Project Tiger was inaugurated in April 1973 at Jim Corbett National Park to safeguard Royal Bengal Tigers."
+      "round": "Round 3: Biodiversity & Natural Resources",
+      "question": "What is a food chain?",
+      "options": [
+        "A sequence showing how energy passes between organisms",
+        "A chain used by farmers",
+        "A list of forests",
+        "A type of pollution"
+      ],
+      "correctIndex": 0,
+      "explanation": "Correct answer: A sequence showing how energy passes between organisms. (Round 3: Biodiversity & Natural Resources)"
     },
     {
       "id": 27,
-      "question": "What is the primary constituent of biogas produced from animal and agricultural waste?",
-      "options": ["Propane", "Butane", "Methane", "Ethylene"],
-      "correctIndex": 2,
-      "explanation": "Biogas typically contains 55-75% Methane (CH4) alongside Carbon Dioxide."
+      "round": "Round 3: Biodiversity & Natural Resources",
+      "question": "In a simple food chain, plants are usually called:",
+      "options": [
+        "Consumers",
+        "Producers",
+        "Predators",
+        "Decomposers"
+      ],
+      "correctIndex": 1,
+      "explanation": "Correct answer: Producers. (Round 3: Biodiversity & Natural Resources)"
     },
     {
       "id": 28,
-      "question": "Which iconic tree is the State Tree of Bihar?",
-      "options": ["Banyan Tree", "Peepal Tree (Sacred Fig)", "Sal Tree", "Neem Tree"],
-      "correctIndex": 1,
-      "explanation": "The Peepal Tree (Ficus religiosa) is the revered State Tree of Bihar."
+      "round": "Round 3: Biodiversity & Natural Resources",
+      "question": "What is the role of decomposers such as fungi and many bacteria?",
+      "options": [
+        "They break down dead organic matter",
+        "They stop plant growth",
+        "They produce plastic",
+        "They hunt all animals"
+      ],
+      "correctIndex": 0,
+      "explanation": "Correct answer: They break down dead organic matter. (Round 3: Biodiversity & Natural Resources)"
     },
     {
       "id": 29,
-      "question": "Coral reefs are formed primarily by colonies of tiny marine animals secreting which mineral?",
-      "options": ["Calcium Carbonate", "Silica", "Sodium Chloride", "Iron Oxide"],
+      "round": "Round 3: Biodiversity & Natural Resources",
+      "question": "Which natural resource is essential for plants, animals and humans?",
+      "options": [
+        "Water",
+        "Plastic",
+        "Concrete",
+        "Petrol"
+      ],
       "correctIndex": 0,
-      "explanation": "Coral polyps extract calcium ions from seawater to build hard protective exoskeletons of Calcium Carbonate (CaCO3)."
+      "explanation": "Correct answer: Water. (Round 3: Biodiversity & Natural Resources)"
     },
     {
       "id": 30,
-      "question": "Which biological interaction benefits one species while leaving the other completely unaffected?",
-      "options": ["Mutualism", "Parasitism", "Commensalism", "Amensalism"],
-      "correctIndex": 2,
-      "explanation": "Commensalism is a relationship where one organism benefits and the host is neither helped nor harmed."
+      "round": "Round 3: Biodiversity & Natural Resources",
+      "question": "Which method helps conserve water at home?",
+      "options": [
+        "Leaving taps running",
+        "Fixing leaks and using water carefully",
+        "Washing roads daily",
+        "Wasting drinking water"
+      ],
+      "correctIndex": 1,
+      "explanation": "Correct answer: Fixing leaks and using water carefully. (Round 3: Biodiversity & Natural Resources)"
     },
     {
       "id": 31,
-      "question": "What is the name of the dolphin research center established along the Ganga river in Patna?",
-      "options": ["National Dolphin Research Centre (NDRC)", "Central Aquatic Sanctuary", "Ganga Wildlife Institute", "Patna Marine Centre"],
+      "round": "Round 4: Water, Waste & Conservation",
+      "question": "What is rainwater harvesting?",
+      "options": [
+        "Collecting and storing rainwater",
+        "Preventing rainfall",
+        "Polluting rainwater",
+        "Turning rain into plastic"
+      ],
       "correctIndex": 0,
-      "explanation": "The National Dolphin Research Centre (NDRC) was set up at Patna University premises on the banks of the Ganga."
+      "explanation": "Correct answer: Collecting and storing rainwater. (Round 4: Water, Waste & Conservation)"
     },
     {
       "id": 32,
-      "question": "Which of the following is considered a non-renewable natural resource?",
-      "options": ["Solar Energy", "Crude Oil (Petroleum)", "Wind Energy", "Biomass"],
-      "correctIndex": 1,
-      "explanation": "Fossil fuels like crude oil take millions of years to form and cannot be naturally replenished on human timescales."
+      "round": "Round 4: Water, Waste & Conservation",
+      "question": "Why are wetlands important for nature?",
+      "options": [
+        "They provide habitats and can help reduce flooding",
+        "They destroy all aquatic life",
+        "They always cause drought",
+        "They contain no plants"
+      ],
+      "correctIndex": 0,
+      "explanation": "Correct answer: They provide habitats and can help reduce flooding. (Round 4: Water, Waste & Conservation)"
     },
     {
       "id": 33,
-      "question": "What term describes the practice of planting trees in an area where there was previously no forest cover?",
-      "options": ["Deforestation", "Afforestation", "Reforestation", "Selective Logging"],
-      "correctIndex": 1,
-      "explanation": "Afforestation refers to establishing a forest on lands that have not supported forests in recent history."
+      "round": "Round 4: Water, Waste & Conservation",
+      "question": "Which of these is a renewable natural resource?",
+      "options": [
+        "Solar energy",
+        "Coal",
+        "Petroleum",
+        "Natural gas"
+      ],
+      "correctIndex": 0,
+      "explanation": "Correct answer: Solar energy. (Round 4: Water, Waste & Conservation)"
     },
     {
       "id": 34,
-      "question": "Which region of India is recognized globally as one of the 36 critical Biodiversity Hotspots?",
-      "options": ["Western Ghats", "Thar Desert", "Rann of Kutch", "Deccan Plateau"],
-      "correctIndex": 0,
-      "explanation": "The Western Ghats is one of India's richest biodiversity hotspots, home to thousands of endemic species."
+      "round": "Round 4: Water, Waste & Conservation",
+      "question": "Which of these is a non-renewable resource?",
+      "options": [
+        "Sunlight",
+        "Wind",
+        "Coal",
+        "Flowing water"
+      ],
+      "correctIndex": 2,
+      "explanation": "Correct answer: Coal. (Round 4: Water, Waste & Conservation)"
     },
     {
       "id": 35,
-      "question": "What type of pollution causes acid rain when combined with atmospheric moisture?",
-      "options": ["Carbon Monoxide and Ozone", "Sulfur Dioxide and Nitrogen Oxides", "Methane and Chlorofluorocarbons", "Lead and Particulate Matter"],
-      "correctIndex": 1,
-      "explanation": "Sulfur dioxide (SO2) and Nitrogen oxides (NOx) react with water vapor to form sulfuric and nitric acids."
+      "round": "Round 4: Water, Waste & Conservation",
+      "question": "What is the best approach to reduce waste?",
+      "options": [
+        "Reduce, reuse and recycle",
+        "Throw everything away",
+        "Burn all waste",
+        "Dump waste into rivers"
+      ],
+      "correctIndex": 0,
+      "explanation": "Correct answer: Reduce, reuse and recycle. (Round 4: Water, Waste & Conservation)"
     },
     {
       "id": 36,
-      "question": "Which insect is regarded as the most essential commercial pollinator of flowering food crops?",
-      "options": ["Dragonfly", "Honeybee", "Ladybird Beetle", "Mosquito"],
-      "correctIndex": 1,
-      "explanation": "Honeybees pollinate approximately one-third of the global crops humans consume."
+      "round": "Round 4: Water, Waste & Conservation",
+      "question": "Which material is generally biodegradable?",
+      "options": [
+        "Vegetable peels",
+        "Plastic bottle",
+        "Aluminium can",
+        "Glass bottle"
+      ],
+      "correctIndex": 0,
+      "explanation": "Correct answer: Vegetable peels. (Round 4: Water, Waste & Conservation)"
     },
     {
       "id": 37,
-      "question": "What does the 3Rs rule of waste management represent?",
-      "options": ["Repair, Replace, Restore", "Reduce, Reuse, Recycle", "Refuse, Recover, Recharge", "Rethink, Refresh, Renew"],
-      "correctIndex": 1,
-      "explanation": "Reduce, Reuse, Recycle is the fundamental hierarchy for minimizing solid waste generation."
+      "round": "Round 4: Water, Waste & Conservation",
+      "question": "How does plastic waste harm nature?",
+      "options": [
+        "It can pollute land and water and harm wildlife",
+        "It always improves soil",
+        "It increases biodiversity",
+        "It produces clean drinking water"
+      ],
+      "correctIndex": 0,
+      "explanation": "Correct answer: It can pollute land and water and harm wildlife. (Round 4: Water, Waste & Conservation)"
     },
     {
       "id": 38,
-      "question": "Which animal was officially reintroduced to Kuno National Park in Madhya Pradesh in 2022?",
-      "options": ["Snow Leopard", "African Cheetah", "One-horned Rhinoceros", "Asiatic Lion"],
+      "round": "Round 4: Water, Waste & Conservation",
+      "question": "Which practice is most helpful for keeping rivers clean?",
+      "options": [
+        "Dumping waste into rivers",
+        "Treating wastewater before discharge",
+        "Throwing plastic into water",
+        "Washing chemicals into drains"
+      ],
       "correctIndex": 1,
-      "explanation": "Cheetahs were translocated from Namibia and South Africa to Kuno National Park under Project Cheetah."
+      "explanation": "Correct answer: Treating wastewater before discharge. (Round 4: Water, Waste & Conservation)"
     },
     {
       "id": 39,
-      "question": "What is the primary purpose of constructing rainwater harvesting structures?",
-      "options": ["Generate hydroelectricity", "Recharge groundwater aquifers", "Prevent soil erosion only", "Increase river salinity"],
-      "correctIndex": 1,
-      "explanation": "Rainwater harvesting collects runoff to percolate into the ground and recharge depleted groundwater tables."
+      "round": "Round 4: Water, Waste & Conservation",
+      "question": "What is soil erosion?",
+      "options": [
+        "Removal of topsoil by wind or water",
+        "Growth of a seed",
+        "Formation of flowers",
+        "Collection of rainwater"
+      ],
+      "correctIndex": 0,
+      "explanation": "Correct answer: Removal of topsoil by wind or water. (Round 4: Water, Waste & Conservation)"
     },
     {
       "id": 40,
-      "question": "Which Indian bird sanctuary in Rajasthan is world-renowned as a wintering ground for migratory birds?",
-      "options": ["Keoladeo National Park (Bharatpur)", "Ranthambore National Park", "Sariska Tiger Reserve", "Desert National Park"],
+      "round": "Round 4: Water, Waste & Conservation",
+      "question": "Which action can help prevent soil erosion?",
+      "options": [
+        "Planting vegetation",
+        "Removing all plants",
+        "Overgrazing",
+        "Cutting trees on slopes"
+      ],
       "correctIndex": 0,
-      "explanation": "Keoladeo Ghana National Park in Bharatpur is a UNESCO World Heritage wetland hosting thousands of migratory waterfowl."
+      "explanation": "Correct answer: Planting vegetation. (Round 4: Water, Waste & Conservation)"
     },
     {
       "id": 41,
-      "question": "Which organic agricultural system avoids synthetic chemical fertilizers and pesticides completely?",
-      "options": ["Hydroponic Farming", "Organic Farming", "Monoculture Farming", "Aeroponic Farming"],
-      "correctIndex": 1,
-      "explanation": "Organic farming relies on natural ecological cycles, green manure, and biological pest control."
+      "round": "Round 5: Nature Challenge",
+      "question": "Why do plants need sunlight?",
+      "options": [
+        "To make food through photosynthesis",
+        "To absorb plastic",
+        "To produce rocks",
+        "To stop seed growth"
+      ],
+      "correctIndex": 0,
+      "explanation": "Correct answer: To make food through photosynthesis. (Round 5: Nature Challenge)"
     },
     {
       "id": 42,
-      "question": "What is the main driver of global coral bleaching events in oceans?",
-      "options": ["Underwater earthquakes", "Elevated sea surface temperatures", "Excessive salt concentration", "Ocean current reversals"],
-      "correctIndex": 1,
-      "explanation": "Sustained high water temperatures cause corals to expel their symbiotic zooxanthellae algae, turning corals bone-white."
+      "round": "Round 5: Nature Challenge",
+      "question": "Which natural process helps return water from plants to the atmosphere?",
+      "options": [
+        "Transpiration",
+        "Germination",
+        "Pollination",
+        "Decomposition"
+      ],
+      "correctIndex": 0,
+      "explanation": "Correct answer: Transpiration. (Round 5: Nature Challenge)"
     },
     {
       "id": 43,
-      "question": "Which treaty or convention focuses on the conservation and wise use of wetlands of international importance?",
-      "options": ["Stockholm Convention", "Ramsar Convention", "Bonn Convention", "Rotterdam Convention"],
-      "correctIndex": 1,
-      "explanation": "The Ramsar Convention on Wetlands was signed in Ramsar, Iran in 1971."
+      "round": "Round 5: Nature Challenge",
+      "question": "What is a wildlife sanctuary?",
+      "options": [
+        "An area where wildlife and habitats are protected",
+        "A place for factories",
+        "A shopping centre",
+        "A waste dumping site"
+      ],
+      "correctIndex": 0,
+      "explanation": "Correct answer: An area where wildlife and habitats are protected. (Round 5: Nature Challenge)"
     },
     {
       "id": 44,
-      "question": "Which of the following is a non-biodegradable pollutant?",
-      "options": ["Fruit peels", "Plastic bags (Polyethylene)", "Cotton cloth", "Fallen leaves"],
-      "correctIndex": 1,
-      "explanation": "Synthetic plastics cannot be readily broken down by natural biological decomposers and persist for centuries."
+      "round": "Round 5: Nature Challenge",
+      "question": "Why should native plants be protected?",
+      "options": [
+        "They are adapted to local ecosystems and support local wildlife",
+        "They always require more pollution",
+        "They cannot support insects",
+        "They destroy every habitat"
+      ],
+      "correctIndex": 0,
+      "explanation": "Correct answer: They are adapted to local ecosystems and support local wildlife. (Round 5: Nature Challenge)"
     },
     {
       "id": 45,
-      "question": "The Vikramshila Gangetic Dolphin Sanctuary in Bihar is located in which district?",
-      "options": ["Patna", "Bhagalpur", "Gaya", "Muzaffarpur"],
-      "correctIndex": 1,
-      "explanation": "Vikramshila Gangetic Dolphin Sanctuary is established along a 60 km stretch of the Ganga in Bhagalpur district."
+      "round": "Round 5: Nature Challenge",
+      "question": "What does sustainable living mean?",
+      "options": [
+        "Using resources responsibly so they remain available in the future",
+        "Using as many resources as possible",
+        "Wasting water and energy",
+        "Cutting forests for convenience"
+      ],
+      "correctIndex": 0,
+      "explanation": "Correct answer: Using resources responsibly so they remain available in the future. (Round 5: Nature Challenge)"
     },
     {
       "id": 46,
-      "question": "What is the process of using living plants to clean up contaminated soil and groundwater called?",
-      "options": ["Biomining", "Phytoremediation", "Composting", "Bioleaching"],
-      "correctIndex": 1,
-      "explanation": "Phytoremediation uses plants to extract, sequester, or detoxify environmental pollutants."
+      "round": "Round 5: Nature Challenge",
+      "question": "Which daily habit is more environmentally friendly?",
+      "options": [
+        "Using reusable bags and bottles",
+        "Using single-use plastic for everything",
+        "Leaving lights on unnecessarily",
+        "Wasting food"
+      ],
+      "correctIndex": 0,
+      "explanation": "Correct answer: Using reusable bags and bottles. (Round 5: Nature Challenge)"
     },
     {
       "id": 47,
-      "question": "Which nocturnal mammal is the only true flying mammal in the animal kingdom?",
-      "options": ["Flying Squirrel", "Bat", "Sugar Glider", "Colugo"],
-      "correctIndex": 1,
-      "explanation": "Bats (Order Chiroptera) are the only mammals capable of sustained, powered flight."
+      "round": "Round 5: Nature Challenge",
+      "question": "How can planting trees help cities?",
+      "options": [
+        "They can provide shade, improve air quality and support wildlife",
+        "They always increase pollution",
+        "They remove all rainfall",
+        "They stop all traffic"
+      ],
+      "correctIndex": 0,
+      "explanation": "Correct answer: They can provide shade, improve air quality and support wildlife. (Round 5: Nature Challenge)"
     },
     {
       "id": 48,
-      "question": "What is the title of Rachel Carson's groundbreaking 1962 book that launched the modern environmental movement?",
-      "options": ["The End of Nature", "Silent Spring", "Our Stolen Future", "A Sand County Almanac"],
-      "correctIndex": 1,
-      "explanation": "Silent Spring documented the detrimental ecological impacts of synthetic pesticides like DDT."
+      "round": "Round 5: Nature Challenge",
+      "question": "Why is protecting oceans important?",
+      "options": [
+        "Oceans support marine life and help regulate Earth's climate",
+        "Oceans contain no living organisms",
+        "Oceans are only useful for transport",
+        "Oceans do not affect nature"
+      ],
+      "correctIndex": 0,
+      "explanation": "Correct answer: Oceans support marine life and help regulate Earth's climate. (Round 5: Nature Challenge)"
     },
     {
       "id": 49,
-      "question": "Which trophic level in an ecological pyramid contains organisms that synthesize their own food?",
-      "options": ["Primary Consumers", "Secondary Consumers", "Primary Producers", "Tertiary Consumers"],
-      "correctIndex": 2,
-      "explanation": "Primary producers (autotrophs like plants and algae) convert solar energy into chemical energy."
+      "round": "Round 5: Nature Challenge",
+      "question": "Which action best protects wildlife?",
+      "options": [
+        "Destroying natural habitats",
+        "Protecting habitats and reducing pollution",
+        "Buying products made from endangered animals",
+        "Throwing waste into forests"
+      ],
+      "correctIndex": 1,
+      "explanation": "Correct answer: Protecting habitats and reducing pollution. (Round 5: Nature Challenge)"
     },
     {
       "id": 50,
-      "question": "What is the theme and core message of Prakriti Utsav — Nature in Action?",
-      "options": ["Industrial Expansion", "Environmental Conservation & Active Sustainability", "Urbanization at all costs", "Extensive Mining"],
-      "correctIndex": 1,
-      "explanation": "Prakriti Utsav celebrates ecological consciousness, conservation, and active sustainable stewardship of nature."
+      "round": "Round 5: Nature Challenge",
+      "question": "Which statement best represents the spirit of Prakriti Utsav 2026?",
+      "options": [
+        "Nature should be protected, respected and enjoyed responsibly",
+        "Natural resources should be wasted",
+        "Wildlife should be kept away from nature",
+        "Pollution is necessary for development"
+      ],
+      "correctIndex": 0,
+      "explanation": "Correct answer: Nature should be protected, respected and enjoyed responsibly. (Round 5: Nature Challenge)"
     }
   ],
   "participants": []
