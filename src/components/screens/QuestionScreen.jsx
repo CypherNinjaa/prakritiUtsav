@@ -4,6 +4,7 @@ import { playClick, playTick } from '../../services/soundEffects';
 
 export default function QuestionScreen({
   question,
+  quizSet,
   questionNumber,
   totalQuestions,
   currentScore,
@@ -143,14 +144,34 @@ export default function QuestionScreen({
             <div style={{
               display: 'flex',
               alignItems: 'center',
-              gap: '6px',
-              fontSize: '14px',
-              fontWeight: 800,
-              color: '#064e3b',
-              marginBottom: '6px'
+              justifyContent: 'space-between',
+              marginBottom: '6px',
+              gap: '8px'
             }}>
-              <Leaf size={16} color="#16a34a" />
-              <span>Question {questionNumber} of {totalQuestions}</span>
+              <div style={{
+                display: 'flex',
+                alignItems: 'center',
+                gap: '6px',
+                fontSize: '14px',
+                fontWeight: 800,
+                color: '#064e3b'
+              }}>
+                <Leaf size={16} color="#16a34a" />
+                <span>Question {questionNumber} of {totalQuestions}</span>
+              </div>
+              {(quizSet || question?.set) && (
+                <span style={{
+                  fontSize: '11px',
+                  fontWeight: 800,
+                  padding: '2px 8px',
+                  borderRadius: '9999px',
+                  background: ((quizSet && quizSet.includes('B')) || question?.set === 'B') ? '#f3e8ff' : '#dcfce7',
+                  color: ((quizSet && quizSet.includes('B')) || question?.set === 'B') ? '#7e22ce' : '#15803d',
+                  border: ((quizSet && quizSet.includes('B')) || question?.set === 'B') ? '1px solid #d8b4fe' : '1px solid #86efac'
+                }}>
+                  {((quizSet && quizSet.includes('B')) || question?.set === 'B') ? '🌲 Set B (Senior)' : '🌿 Set A (Junior)'}
+                </span>
+              )}
             </div>
             <div style={{
               width: '100%',

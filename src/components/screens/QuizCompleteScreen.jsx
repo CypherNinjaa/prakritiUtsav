@@ -124,11 +124,22 @@ export default function QuizCompleteScreen({
               Great Job, {participant?.name || 'Explorer'}!
             </h2>
 
-            {(participant?.classGrade || participant?.rollNo) && (
-              <div style={{ fontSize: '13px', fontWeight: 800, color: '#15803d', marginBottom: '8px' }}>
+            {(participant?.classGrade || participant?.rollNo || participant?.selectedSet) && (
+              <div style={{ fontSize: '13px', fontWeight: 800, color: '#15803d', marginBottom: '8px', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px', flexWrap: 'wrap' }}>
                 {participant.classGrade ? participant.classGrade : ''}
                 {participant.classGrade && participant.rollNo ? ' • ' : ''}
                 {participant.rollNo ? `Roll No: ${participant.rollNo}` : ''}
+                {(participant.classGrade || participant.rollNo) ? ' • ' : ''}
+                <span style={{
+                  fontSize: '11px',
+                  fontWeight: 800,
+                  padding: '2px 8px',
+                  borderRadius: '6px',
+                  background: (participant?.selectedSet === 'B' || participant?.quizSet?.includes('B')) ? '#f3e8ff' : '#dcfce7',
+                  color: (participant?.selectedSet === 'B' || participant?.quizSet?.includes('B')) ? '#6b21a8' : '#166534'
+                }}>
+                  {(participant?.selectedSet === 'B' || participant?.quizSet?.includes('B')) ? '🌲 Set B (Senior)' : '🌿 Set A (Junior)'}
+                </span>
               </div>
             )}
 

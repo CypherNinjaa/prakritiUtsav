@@ -106,11 +106,22 @@ export default function GameOverScreen({
             <div style={{ fontSize: '16px', fontWeight: 800, color: '#0f172a' }}>
               {participant?.name || 'Anonymous'}
             </div>
-            {(participant?.classGrade || participant?.rollNo) && (
-              <div style={{ fontSize: '12px', fontWeight: 600, color: '#7f1d1d', marginTop: '2px' }}>
+            {(participant?.classGrade || participant?.rollNo || participant?.selectedSet) && (
+              <div style={{ fontSize: '12px', fontWeight: 600, color: '#7f1d1d', marginTop: '2px', display: 'flex', alignItems: 'center', gap: '6px', justifyContent: 'center', flexWrap: 'wrap' }}>
                 {participant.classGrade ? participant.classGrade : ''}
                 {participant.classGrade && participant.rollNo ? ' • ' : ''}
                 {participant.rollNo ? `Roll: ${participant.rollNo}` : ''}
+                {(participant.classGrade || participant.rollNo) ? ' • ' : ''}
+                <span style={{
+                  fontSize: '10px',
+                  fontWeight: 800,
+                  padding: '2px 7px',
+                  borderRadius: '6px',
+                  background: (participant?.selectedSet === 'B' || participant?.quizSet?.includes('B')) ? '#f3e8ff' : '#dcfce7',
+                  color: (participant?.selectedSet === 'B' || participant?.quizSet?.includes('B')) ? '#6b21a8' : '#166534'
+                }}>
+                  {(participant?.selectedSet === 'B' || participant?.quizSet?.includes('B')) ? 'Set B (Senior)' : 'Set A (Junior)'}
+                </span>
               </div>
             )}
           </div>

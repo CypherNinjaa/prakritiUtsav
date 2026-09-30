@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useQuiz } from '../../context/QuizContext';
-import { Play, BookOpen, FileText, XCircle, Trophy, User, Hash, ArrowLeft, GraduationCap } from 'lucide-react';
+import { Play, BookOpen, FileText, XCircle, Trophy, User, Hash, ArrowLeft, GraduationCap, Layers, CheckCircle2 } from 'lucide-react';
 import { playClick } from '../../services/soundEffects';
 
 export default function ParticipantReadyScreen({ onBeginQuiz, onBack }) {
@@ -8,9 +8,9 @@ export default function ParticipantReadyScreen({ onBeginQuiz, onBack }) {
   const [name, setName] = useState('');
   const [classGrade, setClassGrade] = useState('');
   const [rollNo, setRollNo] = useState('');
+  const [selectedSet, setSelectedSet] = useState(quizData?.config?.defaultSet || 'A');
   const [error, setError] = useState('');
 
-  const totalQuestions = quizData?.questions?.length || 50;
   const questionsPerSession = quizData?.config?.questionsPerSession || 10;
 
   const handleSubmit = (e) => {
@@ -20,7 +20,7 @@ export default function ParticipantReadyScreen({ onBeginQuiz, onBack }) {
       return;
     }
     if (!classGrade.trim()) {
-      setError('Please enter your class (e.g. Class 6)');
+      setError('Please enter your class (e.g. Class 6 or 11)');
       return;
     }
     if (!rollNo.trim()) {
@@ -31,7 +31,8 @@ export default function ParticipantReadyScreen({ onBeginQuiz, onBack }) {
     onBeginQuiz({
       name: name.trim(),
       classGrade: classGrade.trim(),
-      rollNo: rollNo.trim()
+      rollNo: rollNo.trim(),
+      selectedSet
     });
   };
 
@@ -228,6 +229,103 @@ export default function ParticipantReadyScreen({ onBeginQuiz, onBack }) {
                   onBlur={(e) => e.target.style.borderColor = '#cbd5e1'}
                 />
               </div>
+            </div>
+          </div>
+
+          {/* 3. Question Set Selection (Set A for Juniors, Set B for Seniors) */}
+          <div style={{ marginBottom: '20px' }}>
+            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '8px' }}>
+              <label style={{ fontSize: '13px', fontWeight: 700, color: '#334155', display: 'flex', alignItems: 'center', gap: '6px' }}>
+                <Layers size={16} color="#16a34a" />
+                <span>Select Question Set *</span>
+              </label>
+              <span style={{ fontSize: '11px', color: '#64748b' }}>
+                Choose level before test
+              </span>
+            </div>
+
+            <div className="participant-grid-row" style={{
+              display: 'grid',
+              gridTemplateColumns: '1fr 1fr',
+              gap: '10px'
+            }}>
+              {/* Set A Card */}
+              <button
+                type="button"
+                onClick={() => { playClick(); setSelectedSet('A'); }}
+                style={{
+                  padding: '12px 14px',
+                  borderRadius: '14px',
+                  border: selectedSet === 'A' ? '2.5px solid #16a34a' : '1.5px solid #cbd5e1',
+                  background: selectedSet === 'A' ? 'linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%)' : '#ffffff',
+                  boxShadow: selectedSet === 'A' ? '0 4px 12px rgba(22, 163, 74, 0.18)' : 'none',
+                  textAlign: 'left',
+                  cursor: 'pointer',
+                  position: 'relative',
+                  transition: 'all 0.2s ease',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  gap: '4px'
+                }}
+              >
+                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+                  <span style={{
+                    fontSize: '14px',
+                    fontWeight: 800,
+                    color: selectedSet === 'A' ? '#15803d' : '#1e293b'
+                  }}>
+                    🌿 Set A (Junior)
+                  </span>
+                  {selectedSet === 'A' && (
+                    <CheckCircle2 size={18} color="#16a34a" />
+                  )}
+                </div>
+                <div style={{ fontSize: '12px', fontWeight: 600, color: selectedSet === 'A' ? '#166534' : '#64748b' }}>
+                  Classes 1 to 10
+                </div>
+                <div style={{ fontSize: '11px', color: '#64748b' }}>
+                  50 Eco Basics Questions
+                </div>
+              </button>
+
+              {/* Set B Card */}
+              <button
+                type="button"
+                onClick={() => { playClick(); setSelectedSet('B'); }}
+                style={{
+                  padding: '12px 14px',
+                  borderRadius: '14px',
+                  border: selectedSet === 'B' ? '2.5px solid #7e22ce' : '1.5px solid #cbd5e1',
+                  background: selectedSet === 'B' ? 'linear-gradient(135deg, #faf5ff 0%, #f3e8ff 100%)' : '#ffffff',
+                  boxShadow: selectedSet === 'B' ? '0 4px 12px rgba(126, 34, 206, 0.18)' : 'none',
+                  textAlign: 'left',
+                  cursor: 'pointer',
+                  position: 'relative',
+                  transition: 'all 0.2s ease',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  gap: '4px'
+                }}
+              >
+                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+                  <span style={{
+                    fontSize: '14px',
+                    fontWeight: 800,
+                    color: selectedSet === 'B' ? '#6b21a8' : '#1e293b'
+                  }}>
+                    🌲 Set B (Senior)
+                  </span>
+                  {selectedSet === 'B' && (
+                    <CheckCircle2 size={18} color="#7e22ce" />
+                  )}
+                </div>
+                <div style={{ fontSize: '12px', fontWeight: 600, color: selectedSet === 'B' ? '#7e22ce' : '#64748b' }}>
+                  Class 11, 12 & College
+                </div>
+                <div style={{ fontSize: '11px', color: '#64748b' }}>
+                  50 Ecology & Science Questions
+                </div>
+              </button>
             </div>
           </div>
 

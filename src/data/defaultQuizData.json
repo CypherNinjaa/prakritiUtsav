@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "lastUpdated": "2026-09-30T00:00:00.000Z",
+  "lastUpdated": "2026-09-30T04:00:00.000Z",
   "config": {
     "eventName": "Prakriti Utsav",
     "subEventName": "Nature in Action",
@@ -9,12 +9,15 @@
     "timerEnabled": true,
     "timerSeconds": 20,
     "questionsPerSession": 10,
-    "suddenDeathMode": true
+    "suddenDeathMode": true,
+    "defaultSet": "A"
   },
   "questions": [
     {
       "id": 1,
-      "round": "Round 1: Plants & Living Things",
+      "set": "A",
+      "setName": "Set A (Junior / Classes 1–10)",
+      "round": "Round: Plants & Living Things",
       "question": "Which part of a plant absorbs water and minerals from the soil?",
       "options": [
         "Leaf",
@@ -23,11 +26,13 @@
         "Fruit"
       ],
       "correctIndex": 1,
-      "explanation": "Correct answer: Root. (Round 1: Plants & Living Things)"
+      "explanation": "Correct answer: Root. (Plants & Living Things)"
     },
     {
       "id": 2,
-      "round": "Round 1: Plants & Living Things",
+      "set": "A",
+      "setName": "Set A (Junior / Classes 1–10)",
+      "round": "Round: Plants & Living Things",
       "question": "What do green plants mainly use sunlight for?",
       "options": [
         "Making food",
@@ -36,11 +41,13 @@
         "Making rocks"
       ],
       "correctIndex": 0,
-      "explanation": "Correct answer: Making food. (Round 1: Plants & Living Things)"
+      "explanation": "Correct answer: Making food. (Plants & Living Things)"
     },
     {
       "id": 3,
-      "round": "Round 1: Plants & Living Things",
+      "set": "A",
+      "setName": "Set A (Junior / Classes 1–10)",
+      "round": "Round: Plants & Living Things",
       "question": "Which gas do plants take in during photosynthesis?",
       "options": [
         "Oxygen",
@@ -49,11 +56,13 @@
         "Hydrogen"
       ],
       "correctIndex": 2,
-      "explanation": "Correct answer: Carbon dioxide. (Round 1: Plants & Living Things)"
+      "explanation": "Correct answer: Carbon dioxide. (Plants & Living Things)"
     },
     {
       "id": 4,
-      "round": "Round 1: Plants & Living Things",
+      "set": "A",
+      "setName": "Set A (Junior / Classes 1–10)",
+      "round": "Round: Plants & Living Things",
       "question": "Which gas do plants release during photosynthesis?",
       "options": [
         "Carbon dioxide",
@@ -62,11 +71,13 @@
         "Methane"
       ],
       "correctIndex": 1,
-      "explanation": "Correct answer: Oxygen. (Round 1: Plants & Living Things)"
+      "explanation": "Correct answer: Oxygen. (Plants & Living Things)"
     },
     {
       "id": 5,
-      "round": "Round 1: Plants & Living Things",
+      "set": "A",
+      "setName": "Set A (Junior / Classes 1–10)",
+      "round": "Round: Plants & Living Things",
       "question": "Why are trees important for the environment?",
       "options": [
         "They increase pollution",
@@ -75,11 +86,13 @@
         "They reduce rainfall"
       ],
       "correctIndex": 1,
-      "explanation": "Correct answer: They provide oxygen and habitats. (Round 1: Plants & Living Things)"
+      "explanation": "Correct answer: They provide oxygen and habitats. (Plants & Living Things)"
     },
     {
       "id": 6,
-      "round": "Round 1: Plants & Living Things",
+      "set": "A",
+      "setName": "Set A (Junior / Classes 1–10)",
+      "round": "Round: Plants & Living Things",
       "question": "Which part of a plant usually contains seeds?",
       "options": [
         "Root",
@@ -88,11 +101,13 @@
         "Bark"
       ],
       "correctIndex": 2,
-      "explanation": "Correct answer: Fruit. (Round 1: Plants & Living Things)"
+      "explanation": "Correct answer: Fruit. (Plants & Living Things)"
     },
     {
       "id": 7,
-      "round": "Round 1: Plants & Living Things",
+      "set": "A",
+      "setName": "Set A (Junior / Classes 1–10)",
+      "round": "Round: Plants & Living Things",
       "question": "What is the process by which a seed starts growing into a plant called?",
       "options": [
         "Germination",
@@ -101,11 +116,13 @@
         "Migration"
       ],
       "correctIndex": 0,
-      "explanation": "Correct answer: Germination. (Round 1: Plants & Living Things)"
+      "explanation": "Correct answer: Germination. (Plants & Living Things)"
     },
     {
       "id": 8,
-      "round": "Round 1: Plants & Living Things",
+      "set": "A",
+      "setName": "Set A (Junior / Classes 1–10)",
+      "round": "Round: Plants & Living Things",
       "question": "Which of these is a natural habitat?",
       "options": [
         "Forest",
@@ -114,11 +131,13 @@
         "Parking lot"
       ],
       "correctIndex": 0,
-      "explanation": "Correct answer: Forest. (Round 1: Plants & Living Things)"
+      "explanation": "Correct answer: Forest. (Plants & Living Things)"
     },
     {
       "id": 9,
-      "round": "Round 1: Plants & Living Things",
+      "set": "A",
+      "setName": "Set A (Junior / Classes 1–10)",
+      "round": "Round: Plants & Living Things",
       "question": "Which animal is commonly known as the largest land animal?",
       "options": [
         "Tiger",
@@ -127,11 +146,13 @@
         "Rhino"
       ],
       "correctIndex": 1,
-      "explanation": "Correct answer: Elephant. (Round 1: Plants & Living Things)"
+      "explanation": "Correct answer: Elephant. (Plants & Living Things)"
     },
     {
       "id": 10,
-      "round": "Round 1: Plants & Living Things",
+      "set": "A",
+      "setName": "Set A (Junior / Classes 1–10)",
+      "round": "Round: Plants & Living Things",
       "question": "Which animal is an important pollinator?",
       "options": [
         "Bee",
@@ -140,11 +161,13 @@
         "Deer"
       ],
       "correctIndex": 0,
-      "explanation": "Correct answer: Bee. (Round 1: Plants & Living Things)"
+      "explanation": "Correct answer: Bee. (Plants & Living Things)"
     },
     {
       "id": 11,
-      "round": "Round 2: Animals, Birds & Forests",
+      "set": "A",
+      "setName": "Set A (Junior / Classes 1–10)",
+      "round": "Round: Animals, Birds & Forests",
       "question": "What is pollination?",
       "options": [
         "Movement of pollen between flowers",
@@ -153,11 +176,13 @@
         "Formation of clouds"
       ],
       "correctIndex": 0,
-      "explanation": "Correct answer: Movement of pollen between flowers. (Round 2: Animals, Birds & Forests)"
+      "explanation": "Correct answer: Movement of pollen between flowers. (Animals, Birds & Forests)"
     },
     {
       "id": 12,
-      "round": "Round 2: Animals, Birds & Forests",
+      "set": "A",
+      "setName": "Set A (Junior / Classes 1–10)",
+      "round": "Round: Animals, Birds & Forests",
       "question": "Why are bees important to many ecosystems?",
       "options": [
         "They help pollinate plants",
@@ -166,11 +191,13 @@
         "They produce oxygen"
       ],
       "correctIndex": 0,
-      "explanation": "Correct answer: They help pollinate plants. (Round 2: Animals, Birds & Forests)"
+      "explanation": "Correct answer: They help pollinate plants. (Animals, Birds & Forests)"
     },
     {
       "id": 13,
-      "round": "Round 2: Animals, Birds & Forests",
+      "set": "A",
+      "setName": "Set A (Junior / Classes 1–10)",
+      "round": "Round: Animals, Birds & Forests",
       "question": "Which of these is a herbivore?",
       "options": [
         "Tiger",
@@ -179,11 +206,13 @@
         "Snake"
       ],
       "correctIndex": 1,
-      "explanation": "Correct answer: Cow. (Round 2: Animals, Birds & Forests)"
+      "explanation": "Correct answer: Cow. (Animals, Birds & Forests)"
     },
     {
       "id": 14,
-      "round": "Round 2: Animals, Birds & Forests",
+      "set": "A",
+      "setName": "Set A (Junior / Classes 1–10)",
+      "round": "Round: Animals, Birds & Forests",
       "question": "Which of these is a carnivore?",
       "options": [
         "Deer",
@@ -192,11 +221,13 @@
         "Rabbit"
       ],
       "correctIndex": 2,
-      "explanation": "Correct answer: Tiger. (Round 2: Animals, Birds & Forests)"
+      "explanation": "Correct answer: Tiger. (Animals, Birds & Forests)"
     },
     {
       "id": 15,
-      "round": "Round 2: Animals, Birds & Forests",
+      "set": "A",
+      "setName": "Set A (Junior / Classes 1–10)",
+      "round": "Round: Animals, Birds & Forests",
       "question": "What do we call animals that eat both plants and animals?",
       "options": [
         "Herbivores",
@@ -205,11 +236,13 @@
         "Producers"
       ],
       "correctIndex": 2,
-      "explanation": "Correct answer: Omnivores. (Round 2: Animals, Birds & Forests)"
+      "explanation": "Correct answer: Omnivores. (Animals, Birds & Forests)"
     },
     {
       "id": 16,
-      "round": "Round 2: Animals, Birds & Forests",
+      "set": "A",
+      "setName": "Set A (Junior / Classes 1–10)",
+      "round": "Round: Animals, Birds & Forests",
       "question": "Which animal is known for helping spread seeds by eating fruits?",
       "options": [
         "Many birds",
@@ -218,11 +251,13 @@
         "Crocodiles"
       ],
       "correctIndex": 0,
-      "explanation": "Correct answer: Many birds. (Round 2: Animals, Birds & Forests)"
+      "explanation": "Correct answer: Many birds. (Animals, Birds & Forests)"
     },
     {
       "id": 17,
-      "round": "Round 2: Animals, Birds & Forests",
+      "set": "A",
+      "setName": "Set A (Junior / Classes 1–10)",
+      "round": "Round: Animals, Birds & Forests",
       "question": "Why are forests called homes for biodiversity?",
       "options": [
         "They support many kinds of living organisms",
@@ -231,11 +266,13 @@
         "They prevent all rainfall"
       ],
       "correctIndex": 0,
-      "explanation": "Correct answer: They support many kinds of living organisms. (Round 2: Animals, Birds & Forests)"
+      "explanation": "Correct answer: They support many kinds of living organisms. (Animals, Birds & Forests)"
     },
     {
       "id": 18,
-      "round": "Round 2: Animals, Birds & Forests",
+      "set": "A",
+      "setName": "Set A (Junior / Classes 1–10)",
+      "round": "Round: Animals, Birds & Forests",
       "question": "What happens when a forest is cleared on a large scale?",
       "options": [
         "Habitat loss can occur",
@@ -244,11 +281,13 @@
         "All animals gain new homes"
       ],
       "correctIndex": 0,
-      "explanation": "Correct answer: Habitat loss can occur. (Round 2: Animals, Birds & Forests)"
+      "explanation": "Correct answer: Habitat loss can occur. (Animals, Birds & Forests)"
     },
     {
       "id": 19,
-      "round": "Round 2: Animals, Birds & Forests",
+      "set": "A",
+      "setName": "Set A (Junior / Classes 1–10)",
+      "round": "Round: Animals, Birds & Forests",
       "question": "Which layer of a forest is mainly formed by the tops of tall trees?",
       "options": [
         "Canopy",
@@ -257,11 +296,13 @@
         "Soil bed"
       ],
       "correctIndex": 0,
-      "explanation": "Correct answer: Canopy. (Round 2: Animals, Birds & Forests)"
+      "explanation": "Correct answer: Canopy. (Animals, Birds & Forests)"
     },
     {
       "id": 20,
-      "round": "Round 2: Animals, Birds & Forests",
+      "set": "A",
+      "setName": "Set A (Junior / Classes 1–10)",
+      "round": "Round: Animals, Birds & Forests",
       "question": "Which of these is a major benefit of forests?",
       "options": [
         "They help store carbon",
@@ -270,11 +311,13 @@
         "They remove all wildlife"
       ],
       "correctIndex": 0,
-      "explanation": "Correct answer: They help store carbon. (Round 2: Animals, Birds & Forests)"
+      "explanation": "Correct answer: They help store carbon. (Animals, Birds & Forests)"
     },
     {
       "id": 21,
-      "round": "Round 3: Biodiversity & Natural Resources",
+      "set": "A",
+      "setName": "Set A (Junior / Classes 1–10)",
+      "round": "Round: Biodiversity & Natural Resources",
       "question": "Which practice helps protect forests?",
       "options": [
         "Uncontrolled tree cutting",
@@ -283,11 +326,13 @@
         "Overgrazing"
       ],
       "correctIndex": 1,
-      "explanation": "Correct answer: Afforestation and responsible forest management. (Round 3: Biodiversity & Natural Resources)"
+      "explanation": "Correct answer: Afforestation and responsible forest management. (Biodiversity & Natural Resources)"
     },
     {
       "id": 22,
-      "round": "Round 3: Biodiversity & Natural Resources",
+      "set": "A",
+      "setName": "Set A (Junior / Classes 1–10)",
+      "round": "Round: Biodiversity & Natural Resources",
       "question": "What is biodiversity?",
       "options": [
         "Variety of living organisms",
@@ -296,11 +341,13 @@
         "Number of buildings"
       ],
       "correctIndex": 0,
-      "explanation": "Correct answer: Variety of living organisms. (Round 3: Biodiversity & Natural Resources)"
+      "explanation": "Correct answer: Variety of living organisms. (Biodiversity & Natural Resources)"
     },
     {
       "id": 23,
-      "round": "Round 3: Biodiversity & Natural Resources",
+      "set": "A",
+      "setName": "Set A (Junior / Classes 1–10)",
+      "round": "Round: Biodiversity & Natural Resources",
       "question": "Why is biodiversity important?",
       "options": [
         "It supports healthy and balanced ecosystems",
@@ -309,11 +356,13 @@
         "It removes the need for water"
       ],
       "correctIndex": 0,
-      "explanation": "Correct answer: It supports healthy and balanced ecosystems. (Round 3: Biodiversity & Natural Resources)"
+      "explanation": "Correct answer: It supports healthy and balanced ecosystems. (Biodiversity & Natural Resources)"
     },
     {
       "id": 24,
-      "round": "Round 3: Biodiversity & Natural Resources",
+      "set": "A",
+      "setName": "Set A (Junior / Classes 1–10)",
+      "round": "Round: Biodiversity & Natural Resources",
       "question": "What is an endangered species?",
       "options": [
         "A species at risk of extinction",
@@ -322,11 +371,13 @@
         "A type of soil"
       ],
       "correctIndex": 0,
-      "explanation": "Correct answer: A species at risk of extinction. (Round 3: Biodiversity & Natural Resources)"
+      "explanation": "Correct answer: A species at risk of extinction. (Biodiversity & Natural Resources)"
     },
     {
       "id": 25,
-      "round": "Round 3: Biodiversity & Natural Resources",
+      "set": "A",
+      "setName": "Set A (Junior / Classes 1–10)",
+      "round": "Round: Biodiversity & Natural Resources",
       "question": "Which action can help protect endangered animals?",
       "options": [
         "Destroying habitats",
@@ -335,11 +386,13 @@
         "Removing forests"
       ],
       "correctIndex": 1,
-      "explanation": "Correct answer: Protecting habitats and stopping illegal hunting. (Round 3: Biodiversity & Natural Resources)"
+      "explanation": "Correct answer: Protecting habitats and stopping illegal hunting. (Biodiversity & Natural Resources)"
     },
     {
       "id": 26,
-      "round": "Round 3: Biodiversity & Natural Resources",
+      "set": "A",
+      "setName": "Set A (Junior / Classes 1–10)",
+      "round": "Round: Biodiversity & Natural Resources",
       "question": "What is a food chain?",
       "options": [
         "A sequence showing how energy passes between organisms",
@@ -348,11 +401,13 @@
         "A type of pollution"
       ],
       "correctIndex": 0,
-      "explanation": "Correct answer: A sequence showing how energy passes between organisms. (Round 3: Biodiversity & Natural Resources)"
+      "explanation": "Correct answer: A sequence showing how energy passes between organisms. (Biodiversity & Natural Resources)"
     },
     {
       "id": 27,
-      "round": "Round 3: Biodiversity & Natural Resources",
+      "set": "A",
+      "setName": "Set A (Junior / Classes 1–10)",
+      "round": "Round: Biodiversity & Natural Resources",
       "question": "In a simple food chain, plants are usually called:",
       "options": [
         "Consumers",
@@ -361,11 +416,13 @@
         "Decomposers"
       ],
       "correctIndex": 1,
-      "explanation": "Correct answer: Producers. (Round 3: Biodiversity & Natural Resources)"
+      "explanation": "Correct answer: Producers. (Biodiversity & Natural Resources)"
     },
     {
       "id": 28,
-      "round": "Round 3: Biodiversity & Natural Resources",
+      "set": "A",
+      "setName": "Set A (Junior / Classes 1–10)",
+      "round": "Round: Biodiversity & Natural Resources",
       "question": "What is the role of decomposers such as fungi and many bacteria?",
       "options": [
         "They break down dead organic matter",
@@ -374,11 +431,13 @@
         "They hunt all animals"
       ],
       "correctIndex": 0,
-      "explanation": "Correct answer: They break down dead organic matter. (Round 3: Biodiversity & Natural Resources)"
+      "explanation": "Correct answer: They break down dead organic matter. (Biodiversity & Natural Resources)"
     },
     {
       "id": 29,
-      "round": "Round 3: Biodiversity & Natural Resources",
+      "set": "A",
+      "setName": "Set A (Junior / Classes 1–10)",
+      "round": "Round: Biodiversity & Natural Resources",
       "question": "Which natural resource is essential for plants, animals and humans?",
       "options": [
         "Water",
@@ -387,11 +446,13 @@
         "Petrol"
       ],
       "correctIndex": 0,
-      "explanation": "Correct answer: Water. (Round 3: Biodiversity & Natural Resources)"
+      "explanation": "Correct answer: Water. (Biodiversity & Natural Resources)"
     },
     {
       "id": 30,
-      "round": "Round 3: Biodiversity & Natural Resources",
+      "set": "A",
+      "setName": "Set A (Junior / Classes 1–10)",
+      "round": "Round: Biodiversity & Natural Resources",
       "question": "Which method helps conserve water at home?",
       "options": [
         "Leaving taps running",
@@ -400,11 +461,13 @@
         "Wasting drinking water"
       ],
       "correctIndex": 1,
-      "explanation": "Correct answer: Fixing leaks and using water carefully. (Round 3: Biodiversity & Natural Resources)"
+      "explanation": "Correct answer: Fixing leaks and using water carefully. (Biodiversity & Natural Resources)"
     },
     {
       "id": 31,
-      "round": "Round 4: Water, Waste & Conservation",
+      "set": "A",
+      "setName": "Set A (Junior / Classes 1–10)",
+      "round": "Round: Water, Waste & Conservation",
       "question": "What is rainwater harvesting?",
       "options": [
         "Collecting and storing rainwater",
@@ -413,11 +476,13 @@
         "Turning rain into plastic"
       ],
       "correctIndex": 0,
-      "explanation": "Correct answer: Collecting and storing rainwater. (Round 4: Water, Waste & Conservation)"
+      "explanation": "Correct answer: Collecting and storing rainwater. (Water, Waste & Conservation)"
     },
     {
       "id": 32,
-      "round": "Round 4: Water, Waste & Conservation",
+      "set": "A",
+      "setName": "Set A (Junior / Classes 1–10)",
+      "round": "Round: Water, Waste & Conservation",
       "question": "Why are wetlands important for nature?",
       "options": [
         "They provide habitats and can help reduce flooding",
@@ -426,11 +491,13 @@
         "They contain no plants"
       ],
       "correctIndex": 0,
-      "explanation": "Correct answer: They provide habitats and can help reduce flooding. (Round 4: Water, Waste & Conservation)"
+      "explanation": "Correct answer: They provide habitats and can help reduce flooding. (Water, Waste & Conservation)"
     },
     {
       "id": 33,
-      "round": "Round 4: Water, Waste & Conservation",
+      "set": "A",
+      "setName": "Set A (Junior / Classes 1–10)",
+      "round": "Round: Water, Waste & Conservation",
       "question": "Which of these is a renewable natural resource?",
       "options": [
         "Solar energy",
@@ -439,11 +506,13 @@
         "Natural gas"
       ],
       "correctIndex": 0,
-      "explanation": "Correct answer: Solar energy. (Round 4: Water, Waste & Conservation)"
+      "explanation": "Correct answer: Solar energy. (Water, Waste & Conservation)"
     },
     {
       "id": 34,
-      "round": "Round 4: Water, Waste & Conservation",
+      "set": "A",
+      "setName": "Set A (Junior / Classes 1–10)",
+      "round": "Round: Water, Waste & Conservation",
       "question": "Which of these is a non-renewable resource?",
       "options": [
         "Sunlight",
@@ -452,11 +521,13 @@
         "Flowing water"
       ],
       "correctIndex": 2,
-      "explanation": "Correct answer: Coal. (Round 4: Water, Waste & Conservation)"
+      "explanation": "Correct answer: Coal. (Water, Waste & Conservation)"
     },
     {
       "id": 35,
-      "round": "Round 4: Water, Waste & Conservation",
+      "set": "A",
+      "setName": "Set A (Junior / Classes 1–10)",
+      "round": "Round: Water, Waste & Conservation",
       "question": "What is the best approach to reduce waste?",
       "options": [
         "Reduce, reuse and recycle",
@@ -465,11 +536,13 @@
         "Dump waste into rivers"
       ],
       "correctIndex": 0,
-      "explanation": "Correct answer: Reduce, reuse and recycle. (Round 4: Water, Waste & Conservation)"
+      "explanation": "Correct answer: Reduce, reuse and recycle. (Water, Waste & Conservation)"
     },
     {
       "id": 36,
-      "round": "Round 4: Water, Waste & Conservation",
+      "set": "A",
+      "setName": "Set A (Junior / Classes 1–10)",
+      "round": "Round: Water, Waste & Conservation",
       "question": "Which material is generally biodegradable?",
       "options": [
         "Vegetable peels",
@@ -478,11 +551,13 @@
         "Glass bottle"
       ],
       "correctIndex": 0,
-      "explanation": "Correct answer: Vegetable peels. (Round 4: Water, Waste & Conservation)"
+      "explanation": "Correct answer: Vegetable peels. (Water, Waste & Conservation)"
     },
     {
       "id": 37,
-      "round": "Round 4: Water, Waste & Conservation",
+      "set": "A",
+      "setName": "Set A (Junior / Classes 1–10)",
+      "round": "Round: Water, Waste & Conservation",
       "question": "How does plastic waste harm nature?",
       "options": [
         "It can pollute land and water and harm wildlife",
@@ -491,11 +566,13 @@
         "It produces clean drinking water"
       ],
       "correctIndex": 0,
-      "explanation": "Correct answer: It can pollute land and water and harm wildlife. (Round 4: Water, Waste & Conservation)"
+      "explanation": "Correct answer: It can pollute land and water and harm wildlife. (Water, Waste & Conservation)"
     },
     {
       "id": 38,
-      "round": "Round 4: Water, Waste & Conservation",
+      "set": "A",
+      "setName": "Set A (Junior / Classes 1–10)",
+      "round": "Round: Water, Waste & Conservation",
       "question": "Which practice is most helpful for keeping rivers clean?",
       "options": [
         "Dumping waste into rivers",
@@ -504,11 +581,13 @@
         "Washing chemicals into drains"
       ],
       "correctIndex": 1,
-      "explanation": "Correct answer: Treating wastewater before discharge. (Round 4: Water, Waste & Conservation)"
+      "explanation": "Correct answer: Treating wastewater before discharge. (Water, Waste & Conservation)"
     },
     {
       "id": 39,
-      "round": "Round 4: Water, Waste & Conservation",
+      "set": "A",
+      "setName": "Set A (Junior / Classes 1–10)",
+      "round": "Round: Water, Waste & Conservation",
       "question": "What is soil erosion?",
       "options": [
         "Removal of topsoil by wind or water",
@@ -517,11 +596,13 @@
         "Collection of rainwater"
       ],
       "correctIndex": 0,
-      "explanation": "Correct answer: Removal of topsoil by wind or water. (Round 4: Water, Waste & Conservation)"
+      "explanation": "Correct answer: Removal of topsoil by wind or water. (Water, Waste & Conservation)"
     },
     {
       "id": 40,
-      "round": "Round 4: Water, Waste & Conservation",
+      "set": "A",
+      "setName": "Set A (Junior / Classes 1–10)",
+      "round": "Round: Water, Waste & Conservation",
       "question": "Which action can help prevent soil erosion?",
       "options": [
         "Planting vegetation",
@@ -530,11 +611,13 @@
         "Cutting trees on slopes"
       ],
       "correctIndex": 0,
-      "explanation": "Correct answer: Planting vegetation. (Round 4: Water, Waste & Conservation)"
+      "explanation": "Correct answer: Planting vegetation. (Water, Waste & Conservation)"
     },
     {
       "id": 41,
-      "round": "Round 5: Nature Challenge",
+      "set": "A",
+      "setName": "Set A (Junior / Classes 1–10)",
+      "round": "Round: Nature Challenge",
       "question": "Why do plants need sunlight?",
       "options": [
         "To make food through photosynthesis",
@@ -543,11 +626,13 @@
         "To stop seed growth"
       ],
       "correctIndex": 0,
-      "explanation": "Correct answer: To make food through photosynthesis. (Round 5: Nature Challenge)"
+      "explanation": "Correct answer: To make food through photosynthesis. (Nature Challenge)"
     },
     {
       "id": 42,
-      "round": "Round 5: Nature Challenge",
+      "set": "A",
+      "setName": "Set A (Junior / Classes 1–10)",
+      "round": "Round: Nature Challenge",
       "question": "Which natural process helps return water from plants to the atmosphere?",
       "options": [
         "Transpiration",
@@ -556,11 +641,13 @@
         "Decomposition"
       ],
       "correctIndex": 0,
-      "explanation": "Correct answer: Transpiration. (Round 5: Nature Challenge)"
+      "explanation": "Correct answer: Transpiration. (Nature Challenge)"
     },
     {
       "id": 43,
-      "round": "Round 5: Nature Challenge",
+      "set": "A",
+      "setName": "Set A (Junior / Classes 1–10)",
+      "round": "Round: Nature Challenge",
       "question": "What is a wildlife sanctuary?",
       "options": [
         "An area where wildlife and habitats are protected",
@@ -569,11 +656,13 @@
         "A waste dumping site"
       ],
       "correctIndex": 0,
-      "explanation": "Correct answer: An area where wildlife and habitats are protected. (Round 5: Nature Challenge)"
+      "explanation": "Correct answer: An area where wildlife and habitats are protected. (Nature Challenge)"
     },
     {
       "id": 44,
-      "round": "Round 5: Nature Challenge",
+      "set": "A",
+      "setName": "Set A (Junior / Classes 1–10)",
+      "round": "Round: Nature Challenge",
       "question": "Why should native plants be protected?",
       "options": [
         "They are adapted to local ecosystems and support local wildlife",
@@ -582,11 +671,13 @@
         "They destroy every habitat"
       ],
       "correctIndex": 0,
-      "explanation": "Correct answer: They are adapted to local ecosystems and support local wildlife. (Round 5: Nature Challenge)"
+      "explanation": "Correct answer: They are adapted to local ecosystems and support local wildlife. (Nature Challenge)"
     },
     {
       "id": 45,
-      "round": "Round 5: Nature Challenge",
+      "set": "A",
+      "setName": "Set A (Junior / Classes 1–10)",
+      "round": "Round: Nature Challenge",
       "question": "What does sustainable living mean?",
       "options": [
         "Using resources responsibly so they remain available in the future",
@@ -595,11 +686,13 @@
         "Cutting forests for convenience"
       ],
       "correctIndex": 0,
-      "explanation": "Correct answer: Using resources responsibly so they remain available in the future. (Round 5: Nature Challenge)"
+      "explanation": "Correct answer: Using resources responsibly so they remain available in the future. (Nature Challenge)"
     },
     {
       "id": 46,
-      "round": "Round 5: Nature Challenge",
+      "set": "A",
+      "setName": "Set A (Junior / Classes 1–10)",
+      "round": "Round: Nature Challenge",
       "question": "Which daily habit is more environmentally friendly?",
       "options": [
         "Using reusable bags and bottles",
@@ -608,11 +701,13 @@
         "Wasting food"
       ],
       "correctIndex": 0,
-      "explanation": "Correct answer: Using reusable bags and bottles. (Round 5: Nature Challenge)"
+      "explanation": "Correct answer: Using reusable bags and bottles. (Nature Challenge)"
     },
     {
       "id": 47,
-      "round": "Round 5: Nature Challenge",
+      "set": "A",
+      "setName": "Set A (Junior / Classes 1–10)",
+      "round": "Round: Nature Challenge",
       "question": "How can planting trees help cities?",
       "options": [
         "They can provide shade, improve air quality and support wildlife",
@@ -621,11 +716,13 @@
         "They stop all traffic"
       ],
       "correctIndex": 0,
-      "explanation": "Correct answer: They can provide shade, improve air quality and support wildlife. (Round 5: Nature Challenge)"
+      "explanation": "Correct answer: They can provide shade, improve air quality and support wildlife. (Nature Challenge)"
     },
     {
       "id": 48,
-      "round": "Round 5: Nature Challenge",
+      "set": "A",
+      "setName": "Set A (Junior / Classes 1–10)",
+      "round": "Round: Nature Challenge",
       "question": "Why is protecting oceans important?",
       "options": [
         "Oceans support marine life and help regulate Earth's climate",
@@ -634,11 +731,13 @@
         "Oceans do not affect nature"
       ],
       "correctIndex": 0,
-      "explanation": "Correct answer: Oceans support marine life and help regulate Earth's climate. (Round 5: Nature Challenge)"
+      "explanation": "Correct answer: Oceans support marine life and help regulate Earth's climate. (Nature Challenge)"
     },
     {
       "id": 49,
-      "round": "Round 5: Nature Challenge",
+      "set": "A",
+      "setName": "Set A (Junior / Classes 1–10)",
+      "round": "Round: Nature Challenge",
       "question": "Which action best protects wildlife?",
       "options": [
         "Destroying natural habitats",
@@ -647,11 +746,13 @@
         "Throwing waste into forests"
       ],
       "correctIndex": 1,
-      "explanation": "Correct answer: Protecting habitats and reducing pollution. (Round 5: Nature Challenge)"
+      "explanation": "Correct answer: Protecting habitats and reducing pollution. (Nature Challenge)"
     },
     {
       "id": 50,
-      "round": "Round 5: Nature Challenge",
+      "set": "A",
+      "setName": "Set A (Junior / Classes 1–10)",
+      "round": "Round: Nature Challenge",
       "question": "Which statement best represents the spirit of Prakriti Utsav 2026?",
       "options": [
         "Nature should be protected, respected and enjoyed responsibly",
@@ -660,7 +761,807 @@
         "Pollution is necessary for development"
       ],
       "correctIndex": 0,
-      "explanation": "Correct answer: Nature should be protected, respected and enjoyed responsibly. (Round 5: Nature Challenge)"
+      "explanation": "Correct answer: Nature should be protected, respected and enjoyed responsibly. (Nature Challenge)"
+    },
+    {
+      "id": 51,
+      "setNumber": 1,
+      "set": "B",
+      "setName": "Set B (Senior / Classes 11–12 & College)",
+      "round": "Senior Applied Ecology & Conservation",
+      "question": "A village wants to reduce its dependence on coal and petroleum while also reducing air pollution. Which combination would be most suitable?",
+      "options": [
+        "Coal and diesel",
+        "Solar energy and wind energy",
+        "Petrol and natural gas",
+        "Coal and firewood"
+      ],
+      "correctIndex": 1,
+      "explanation": "Correct answer: Solar energy and wind energy. (Set B — Senior Applied Level)"
+    },
+    {
+      "id": 52,
+      "setNumber": 2,
+      "set": "B",
+      "setName": "Set B (Senior / Classes 11–12 & College)",
+      "round": "Senior Applied Ecology & Conservation",
+      "question": "A farmer continuously grows the same crop and uses large amounts of chemical fertilizers. Which problem may develop over time?",
+      "options": [
+        "Improved biodiversity",
+        "Soil degradation",
+        "Increased forest cover",
+        "Permanent increase in soil fertility"
+      ],
+      "correctIndex": 1,
+      "explanation": "Correct answer: Soil degradation. (Set B — Senior Applied Level)"
+    },
+    {
+      "id": 53,
+      "setNumber": 3,
+      "set": "B",
+      "setName": "Set B (Senior / Classes 11–12 & College)",
+      "round": "Senior Applied Ecology & Conservation",
+      "question": "A lake receives untreated sewage for several months. Which change is most likely to occur?",
+      "options": [
+        "Increase in water quality",
+        "Decrease in pollution",
+        "Reduction in dissolved oxygen",
+        "Increase in drinking-water quality"
+      ],
+      "correctIndex": 2,
+      "explanation": "Correct answer: Reduction in dissolved oxygen. (Set B — Senior Applied Level)"
+    },
+    {
+      "id": 54,
+      "setNumber": 4,
+      "set": "B",
+      "setName": "Set B (Senior / Classes 11–12 & College)",
+      "round": "Senior Applied Ecology & Conservation",
+      "question": "If the number of frogs in a pond decreases sharply, what is the most likely effect on the insects they eat?",
+      "options": [
+        "Their population may increase",
+        "Their population must decrease",
+        "They will immediately disappear",
+        "They will become producers"
+      ],
+      "correctIndex": 0,
+      "explanation": "Correct answer: Their population may increase. (Set B — Senior Applied Level)"
+    },
+    {
+      "id": 55,
+      "setNumber": 5,
+      "set": "B",
+      "setName": "Set B (Senior / Classes 11–12 & College)",
+      "round": "Senior Applied Ecology & Conservation",
+      "question": "Which situation represents sustainable use of a natural resource?",
+      "options": [
+        "Catching fish faster than they reproduce",
+        "Cutting forests without replanting",
+        "Using groundwater faster than recharge",
+        "Harvesting fish at a rate that allows their population to recover"
+      ],
+      "correctIndex": 3,
+      "explanation": "Correct answer: Harvesting fish at a rate that allows their population to recover. (Set B — Senior Applied Level)"
+    },
+    {
+      "id": 56,
+      "setNumber": 6,
+      "set": "B",
+      "setName": "Set B (Senior / Classes 11–12 & College)",
+      "round": "Senior Applied Ecology & Conservation",
+      "question": "Which change would most directly reduce carbon dioxide emissions from electricity production?",
+      "options": [
+        "Increasing coal consumption",
+        "Using more diesel generators",
+        "Increasing solar and wind power",
+        "Burning more firewood"
+      ],
+      "correctIndex": 2,
+      "explanation": "Correct answer: Increasing solar and wind power. (Set B — Senior Applied Level)"
+    },
+    {
+      "id": 57,
+      "setNumber": 7,
+      "set": "B",
+      "setName": "Set B (Senior / Classes 11–12 & College)",
+      "round": "Senior Applied Ecology & Conservation",
+      "question": "Why can excessive groundwater extraction cause water shortages?",
+      "options": [
+        "Groundwater cannot be used by humans",
+        "Extraction may be faster than natural recharge",
+        "Rainwater cannot enter the soil",
+        "Groundwater is always polluted"
+      ],
+      "correctIndex": 1,
+      "explanation": "Correct answer: Extraction may be faster than natural recharge. (Set B — Senior Applied Level)"
+    },
+    {
+      "id": 58,
+      "setNumber": 8,
+      "set": "B",
+      "setName": "Set B (Senior / Classes 11–12 & College)",
+      "round": "Senior Applied Ecology & Conservation",
+      "question": "A pesticide enters a food chain and its concentration becomes highest in birds at the top of the chain. This is called:",
+      "options": [
+        "Decomposition",
+        "Biomagnification",
+        "Photosynthesis",
+        "Transpiration"
+      ],
+      "correctIndex": 1,
+      "explanation": "Correct answer: Biomagnification. (Set B — Senior Applied Level)"
+    },
+    {
+      "id": 59,
+      "setNumber": 9,
+      "set": "B",
+      "setName": "Set B (Senior / Classes 11–12 & College)",
+      "round": "Senior Applied Ecology & Conservation",
+      "question": "If decomposers disappeared from an ecosystem, which change would occur?",
+      "options": [
+        "Dead organic matter would accumulate",
+        "Plants would immediately disappear",
+        "Sunlight would decrease",
+        "Rainfall would stop"
+      ],
+      "correctIndex": 0,
+      "explanation": "Correct answer: Dead organic matter would accumulate. (Set B — Senior Applied Level)"
+    },
+    {
+      "id": 60,
+      "setNumber": 10,
+      "set": "B",
+      "setName": "Set B (Senior / Classes 11–12 & College)",
+      "round": "Senior Applied Ecology & Conservation",
+      "question": "Which of the following is an example of ex-situ conservation?",
+      "options": [
+        "National park",
+        "Wildlife sanctuary",
+        "Botanical garden",
+        "Biosphere reserve"
+      ],
+      "correctIndex": 2,
+      "explanation": "Correct answer: Botanical garden. (Set B — Senior Applied Level)"
+    },
+    {
+      "id": 61,
+      "setNumber": 11,
+      "set": "B",
+      "setName": "Set B (Senior / Classes 11–12 & College)",
+      "round": "Senior Applied Ecology & Conservation",
+      "question": "Why are forests important for maintaining biodiversity?",
+      "options": [
+        "They provide habitats for many organisms",
+        "They prevent every natural disaster",
+        "They eliminate competition",
+        "They contain only plant species"
+      ],
+      "correctIndex": 0,
+      "explanation": "Correct answer: They provide habitats for many organisms. (Set B — Senior Applied Level)"
+    },
+    {
+      "id": 62,
+      "setNumber": 12,
+      "set": "B",
+      "setName": "Set B (Senior / Classes 11–12 & College)",
+      "round": "Senior Applied Ecology & Conservation",
+      "question": "Which combination is most likely to increase soil erosion?",
+      "options": [
+        "Afforestation and terrace farming",
+        "Deforestation and heavy rainfall",
+        "Crop rotation and mulching",
+        "Grass plantation and contour farming"
+      ],
+      "correctIndex": 1,
+      "explanation": "Correct answer: Deforestation and heavy rainfall. (Set B — Senior Applied Level)"
+    },
+    {
+      "id": 63,
+      "setNumber": 13,
+      "set": "B",
+      "setName": "Set B (Senior / Classes 11–12 & College)",
+      "round": "Senior Applied Ecology & Conservation",
+      "question": "Which gas is mainly used by green plants during photosynthesis?",
+      "options": [
+        "Oxygen",
+        "Nitrogen",
+        "Carbon dioxide",
+        "Hydrogen"
+      ],
+      "correctIndex": 2,
+      "explanation": "Correct answer: Carbon dioxide. (Set B — Senior Applied Level)"
+    },
+    {
+      "id": 64,
+      "setNumber": 14,
+      "set": "B",
+      "setName": "Set B (Senior / Classes 11–12 & College)",
+      "round": "Senior Applied Ecology & Conservation",
+      "question": "If the number of herbivores in a grassland increases sharply, what is the most likely immediate effect?",
+      "options": [
+        "Vegetation may decrease",
+        "Vegetation must increase",
+        "Carnivores disappear immediately",
+        "Soil becomes permanently fertile"
+      ],
+      "correctIndex": 0,
+      "explanation": "Correct answer: Vegetation may decrease. (Set B — Senior Applied Level)"
+    },
+    {
+      "id": 65,
+      "setNumber": 15,
+      "set": "B",
+      "setName": "Set B (Senior / Classes 11–12 & College)",
+      "round": "Senior Applied Ecology & Conservation",
+      "question": "Which action follows the principle of Reduce?",
+      "options": [
+        "Buying fewer single-use plastic products",
+        "Using an old jar as a container",
+        "Making new paper from waste paper",
+        "Donating an old bag"
+      ],
+      "correctIndex": 0,
+      "explanation": "Correct answer: Buying fewer single-use plastic products. (Set B — Senior Applied Level)"
+    },
+    {
+      "id": 66,
+      "setNumber": 16,
+      "set": "B",
+      "setName": "Set B (Senior / Classes 11–12 & College)",
+      "round": "Senior Applied Ecology & Conservation",
+      "question": "Why can excessive groundwater extraction become a problem even in a rainy region?",
+      "options": [
+        "Extraction can exceed natural recharge",
+        "Rainwater cannot enter soil",
+        "Groundwater is never renewable",
+        "Rainfall always pollutes groundwater"
+      ],
+      "correctIndex": 0,
+      "explanation": "Correct answer: Extraction can exceed natural recharge. (Set B — Senior Applied Level)"
+    },
+    {
+      "id": 67,
+      "setNumber": 17,
+      "set": "B",
+      "setName": "Set B (Senior / Classes 11–12 & College)",
+      "round": "Senior Applied Ecology & Conservation",
+      "question": "Which environmental benefit is most directly associated with replacing petrol vehicles with electric vehicles powered by solar energy?",
+      "options": [
+        "Lower fossil-fuel use for transport",
+        "Complete elimination of pollution",
+        "Increased coal consumption",
+        "Increased deforestation"
+      ],
+      "correctIndex": 0,
+      "explanation": "Correct answer: Lower fossil-fuel use for transport. (Set B — Senior Applied Level)"
+    },
+    {
+      "id": 68,
+      "setNumber": 18,
+      "set": "B",
+      "setName": "Set B (Senior / Classes 11–12 & College)",
+      "round": "Senior Applied Ecology & Conservation",
+      "question": "Which of the following is a non-renewable resource?",
+      "options": [
+        "Wind",
+        "Solar energy",
+        "Coal",
+        "Sunlight"
+      ],
+      "correctIndex": 2,
+      "explanation": "Correct answer: Coal. (Set B — Senior Applied Level)"
+    },
+    {
+      "id": 69,
+      "setNumber": 19,
+      "set": "B",
+      "setName": "Set B (Senior / Classes 11–12 & College)",
+      "round": "Senior Applied Ecology & Conservation",
+      "question": "Which gas is released in large amounts when fossil fuels are burned?",
+      "options": [
+        "Carbon dioxide",
+        "Oxygen",
+        "Helium",
+        "Hydrogen"
+      ],
+      "correctIndex": 0,
+      "explanation": "Correct answer: Carbon dioxide. (Set B — Senior Applied Level)"
+    },
+    {
+      "id": 70,
+      "setNumber": 20,
+      "set": "B",
+      "setName": "Set B (Senior / Classes 11–12 & College)",
+      "round": "Senior Applied Ecology & Conservation",
+      "question": "Why should plastic waste not be thrown into rivers?",
+      "options": [
+        "It can harm aquatic organisms",
+        "It dissolves rapidly",
+        "It increases oxygen",
+        "It improves water quality"
+      ],
+      "correctIndex": 0,
+      "explanation": "Correct answer: It can harm aquatic organisms. (Set B — Senior Applied Level)"
+    },
+    {
+      "id": 71,
+      "setNumber": 21,
+      "set": "B",
+      "setName": "Set B (Senior / Classes 11–12 & College)",
+      "round": "Senior Applied Ecology & Conservation",
+      "question": "Which sequence correctly represents a food chain?",
+      "options": [
+        "Grass → Grasshopper → Frog → Snake",
+        "Frog → Grass → Snake → Grasshopper",
+        "Snake → Grass → Frog → Eagle",
+        "Eagle → Grasshopper → Grass → Frog"
+      ],
+      "correctIndex": 0,
+      "explanation": "Correct answer: Grass → Grasshopper → Frog → Snake. (Set B — Senior Applied Level)"
+    },
+    {
+      "id": 72,
+      "setNumber": 22,
+      "set": "B",
+      "setName": "Set B (Senior / Classes 11–12 & College)",
+      "round": "Senior Applied Ecology & Conservation",
+      "question": "If the population of snakes decreases considerably in a field ecosystem, which organism may increase?",
+      "options": [
+        "Rats",
+        "Grass",
+        "Trees",
+        "Decomposers"
+      ],
+      "correctIndex": 0,
+      "explanation": "Correct answer: Rats. (Set B — Senior Applied Level)"
+    },
+    {
+      "id": 73,
+      "setNumber": 23,
+      "set": "B",
+      "setName": "Set B (Senior / Classes 11–12 & College)",
+      "round": "Senior Applied Ecology & Conservation",
+      "question": "Which human activity is most likely to cause soil erosion?",
+      "options": [
+        "Afforestation",
+        "Deforestation",
+        "Crop rotation",
+        "Contour farming"
+      ],
+      "correctIndex": 1,
+      "explanation": "Correct answer: Deforestation. (Set B — Senior Applied Level)"
+    },
+    {
+      "id": 74,
+      "setNumber": 24,
+      "set": "B",
+      "setName": "Set B (Senior / Classes 11–12 & College)",
+      "round": "Senior Applied Ecology & Conservation",
+      "question": "Why does planting trees help in reducing atmospheric carbon dioxide?",
+      "options": [
+        "Trees release only nitrogen",
+        "Trees absorb carbon dioxide during photosynthesis",
+        "Trees stop all sunlight",
+        "Trees convert oxygen into nitrogen"
+      ],
+      "correctIndex": 1,
+      "explanation": "Correct answer: Trees absorb carbon dioxide during photosynthesis. (Set B — Senior Applied Level)"
+    },
+    {
+      "id": 75,
+      "setNumber": 25,
+      "set": "B",
+      "setName": "Set B (Senior / Classes 11–12 & College)",
+      "round": "Senior Applied Ecology & Conservation",
+      "question": "Which of the following is a biodegradable material?",
+      "options": [
+        "Plastic bottle",
+        "Glass",
+        "Vegetable peel",
+        "Aluminium can"
+      ],
+      "correctIndex": 2,
+      "explanation": "Correct answer: Vegetable peel. (Set B — Senior Applied Level)"
+    },
+    {
+      "id": 76,
+      "setNumber": 26,
+      "set": "B",
+      "setName": "Set B (Senior / Classes 11–12 & College)",
+      "round": "Senior Applied Ecology & Conservation",
+      "question": "Which layer protects living organisms from much of the Sun's harmful ultraviolet radiation?",
+      "options": [
+        "Troposphere",
+        "Ozone layer",
+        "Soil layer",
+        "Water layer"
+      ],
+      "correctIndex": 1,
+      "explanation": "Correct answer: Ozone layer. (Set B — Senior Applied Level)"
+    },
+    {
+      "id": 77,
+      "setNumber": 27,
+      "set": "B",
+      "setName": "Set B (Senior / Classes 11–12 & College)",
+      "round": "Senior Applied Ecology & Conservation",
+      "question": "Which practice would best help maintain biodiversity in a forest?",
+      "options": [
+        "Replacing all native trees with one species",
+        "Protecting different habitats and native species",
+        "Increasing hunting",
+        "Clearing undergrowth completely"
+      ],
+      "correctIndex": 1,
+      "explanation": "Correct answer: Protecting different habitats and native species. (Set B — Senior Applied Level)"
+    },
+    {
+      "id": 78,
+      "setNumber": 28,
+      "set": "B",
+      "setName": "Set B (Senior / Classes 11–12 & College)",
+      "round": "Senior Applied Ecology & Conservation",
+      "question": "Which activity contributes most directly to air pollution in a crowded city?",
+      "options": [
+        "Vehicle emissions",
+        "Rainwater harvesting",
+        "Tree plantation",
+        "Composting"
+      ],
+      "correctIndex": 0,
+      "explanation": "Correct answer: Vehicle emissions. (Set B — Senior Applied Level)"
+    },
+    {
+      "id": 79,
+      "setNumber": 29,
+      "set": "B",
+      "setName": "Set B (Senior / Classes 11–12 & College)",
+      "round": "Senior Applied Ecology & Conservation",
+      "question": "Which process helps convert organic kitchen waste into useful manure?",
+      "options": [
+        "Composting",
+        "Incineration",
+        "Plastic recycling",
+        "Mining"
+      ],
+      "correctIndex": 0,
+      "explanation": "Correct answer: Composting. (Set B — Senior Applied Level)"
+    },
+    {
+      "id": 80,
+      "setNumber": 30,
+      "set": "B",
+      "setName": "Set B (Senior / Classes 11–12 & College)",
+      "round": "Senior Applied Ecology & Conservation",
+      "question": "Which natural resource is essential for both plants and animals and is often conserved through rainwater harvesting?",
+      "options": [
+        "Water",
+        "Coal",
+        "Petroleum",
+        "Natural gas"
+      ],
+      "correctIndex": 0,
+      "explanation": "Correct answer: Water. (Set B — Senior Applied Level)"
+    },
+    {
+      "id": 81,
+      "setNumber": 31,
+      "set": "B",
+      "setName": "Set B (Senior / Classes 11–12 & College)",
+      "round": "Senior Applied Ecology & Conservation",
+      "question": "What may happen when a persistent pollutant enters a food chain?",
+      "options": [
+        "Its concentration may increase at higher trophic levels",
+        "It immediately becomes harmless",
+        "It turns into oxygen",
+        "It stops moving through the food chain"
+      ],
+      "correctIndex": 0,
+      "explanation": "Correct answer: Its concentration may increase at higher trophic levels. (Set B — Senior Applied Level)"
+    },
+    {
+      "id": 82,
+      "setNumber": 32,
+      "set": "B",
+      "setName": "Set B (Senior / Classes 11–12 & College)",
+      "round": "Senior Applied Ecology & Conservation",
+      "question": "Which is a major cause of water scarcity in many regions?",
+      "options": [
+        "Excessive groundwater use",
+        "Rainwater harvesting",
+        "Water conservation",
+        "Reuse of treated water"
+      ],
+      "correctIndex": 0,
+      "explanation": "Correct answer: Excessive groundwater use. (Set B — Senior Applied Level)"
+    },
+    {
+      "id": 83,
+      "setNumber": 33,
+      "set": "B",
+      "setName": "Set B (Senior / Classes 11–12 & College)",
+      "round": "Senior Applied Ecology & Conservation",
+      "question": "Which action directly helps protect endangered wildlife?",
+      "options": [
+        "Destruction of habitat",
+        "Uncontrolled hunting",
+        "Protection of natural habitats",
+        "Increased pollution"
+      ],
+      "correctIndex": 2,
+      "explanation": "Correct answer: Protection of natural habitats. (Set B — Senior Applied Level)"
+    },
+    {
+      "id": 84,
+      "setNumber": 34,
+      "set": "B",
+      "setName": "Set B (Senior / Classes 11–12 & College)",
+      "round": "Senior Applied Ecology & Conservation",
+      "question": "Which gas contributes significantly to the greenhouse effect?",
+      "options": [
+        "Carbon dioxide",
+        "Oxygen",
+        "Nitrogen",
+        "Argon"
+      ],
+      "correctIndex": 0,
+      "explanation": "Correct answer: Carbon dioxide. (Set B — Senior Applied Level)"
+    },
+    {
+      "id": 85,
+      "setNumber": 35,
+      "set": "B",
+      "setName": "Set B (Senior / Classes 11–12 & College)",
+      "round": "Senior Applied Ecology & Conservation",
+      "question": "Which order correctly represents the 3Rs?",
+      "options": [
+        "Recycle → Reduce → Reuse",
+        "Reduce → Reuse → Recycle",
+        "Reuse → Recycle → Reduce",
+        "Recycle → Reuse → Reduce"
+      ],
+      "correctIndex": 1,
+      "explanation": "Correct answer: Reduce → Reuse → Recycle. (Set B — Senior Applied Level)"
+    },
+    {
+      "id": 86,
+      "setNumber": 36,
+      "set": "B",
+      "setName": "Set B (Senior / Classes 11–12 & College)",
+      "round": "Senior Applied Ecology & Conservation",
+      "question": "Which activity can disturb the balance of an ecosystem?",
+      "options": [
+        "Excessive hunting",
+        "Recycling",
+        "Wildlife protection",
+        "Afforestation"
+      ],
+      "correctIndex": 0,
+      "explanation": "Correct answer: Excessive hunting. (Set B — Senior Applied Level)"
+    },
+    {
+      "id": 87,
+      "setNumber": 37,
+      "set": "B",
+      "setName": "Set B (Senior / Classes 11–12 & College)",
+      "round": "Senior Applied Ecology & Conservation",
+      "question": "Why are bees important to many flowering plants?",
+      "options": [
+        "They help in pollination",
+        "They produce oxygen",
+        "They prevent soil erosion",
+        "They increase rainfall"
+      ],
+      "correctIndex": 0,
+      "explanation": "Correct answer: They help in pollination. (Set B — Senior Applied Level)"
+    },
+    {
+      "id": 88,
+      "setNumber": 38,
+      "set": "B",
+      "setName": "Set B (Senior / Classes 11–12 & College)",
+      "round": "Senior Applied Ecology & Conservation",
+      "question": "Which change is most likely after large-scale deforestation?",
+      "options": [
+        "Increased soil erosion",
+        "Increased forest cover",
+        "Increased wildlife habitat",
+        "Increased biodiversity"
+      ],
+      "correctIndex": 0,
+      "explanation": "Correct answer: Increased soil erosion. (Set B — Senior Applied Level)"
+    },
+    {
+      "id": 89,
+      "setNumber": 39,
+      "set": "B",
+      "setName": "Set B (Senior / Classes 11–12 & College)",
+      "round": "Senior Applied Ecology & Conservation",
+      "question": "Which action can save both water and energy?",
+      "options": [
+        "Repairing leaking taps",
+        "Keeping taps running",
+        "Washing roads with drinking water",
+        "Taking unnecessarily long showers"
+      ],
+      "correctIndex": 0,
+      "explanation": "Correct answer: Repairing leaking taps. (Set B — Senior Applied Level)"
+    },
+    {
+      "id": 90,
+      "setNumber": 40,
+      "set": "B",
+      "setName": "Set B (Senior / Classes 11–12 & College)",
+      "round": "Senior Applied Ecology & Conservation",
+      "question": "Which statement about renewable resources is correct?",
+      "options": [
+        "They can naturally replenish over time",
+        "They can never be used again",
+        "They are always pollution-free",
+        "They are all manufactured by humans"
+      ],
+      "correctIndex": 0,
+      "explanation": "Correct answer: They can naturally replenish over time. (Set B — Senior Applied Level)"
+    },
+    {
+      "id": 91,
+      "setNumber": 41,
+      "set": "B",
+      "setName": "Set B (Senior / Classes 11–12 & College)",
+      "round": "Senior Applied Ecology & Conservation",
+      "question": "Which process helps maintain the balance of oxygen and carbon dioxide in nature?",
+      "options": [
+        "Photosynthesis",
+        "Deforestation",
+        "Burning plastic",
+        "Mining"
+      ],
+      "correctIndex": 0,
+      "explanation": "Correct answer: Photosynthesis. (Set B — Senior Applied Level)"
+    },
+    {
+      "id": 92,
+      "setNumber": 42,
+      "set": "B",
+      "setName": "Set B (Senior / Classes 11–12 & College)",
+      "round": "Senior Applied Ecology & Conservation",
+      "question": "Why is protecting forests important beyond providing timber?",
+      "options": [
+        "Forests support biodiversity and ecological processes",
+        "Forests increase pollution",
+        "Forests eliminate all floods",
+        "Forests contain no microorganisms"
+      ],
+      "correctIndex": 0,
+      "explanation": "Correct answer: Forests support biodiversity and ecological processes. (Set B — Senior Applied Level)"
+    },
+    {
+      "id": 93,
+      "setNumber": 43,
+      "set": "B",
+      "setName": "Set B (Senior / Classes 11–12 & College)",
+      "round": "Senior Applied Ecology & Conservation",
+      "question": "Which activity is most likely to cause noise pollution?",
+      "options": [
+        "Excessive vehicle horns",
+        "Planting trees",
+        "Rainfall",
+        "Composting"
+      ],
+      "correctIndex": 0,
+      "explanation": "Correct answer: Excessive vehicle horns. (Set B — Senior Applied Level)"
+    },
+    {
+      "id": 94,
+      "setNumber": 44,
+      "set": "B",
+      "setName": "Set B (Senior / Classes 11–12 & College)",
+      "round": "Senior Applied Ecology & Conservation",
+      "question": "Which organism generally occupies the first trophic level in a food chain?",
+      "options": [
+        "Tiger",
+        "Grass",
+        "Snake",
+        "Frog"
+      ],
+      "correctIndex": 1,
+      "explanation": "Correct answer: Grass. (Set B — Senior Applied Level)"
+    },
+    {
+      "id": 95,
+      "setNumber": 45,
+      "set": "B",
+      "setName": "Set B (Senior / Classes 11–12 & College)",
+      "round": "Senior Applied Ecology & Conservation",
+      "question": "What can happen when excessive fertilizer enters a lake?",
+      "options": [
+        "Algal growth may increase and oxygen may decrease",
+        "Water becomes automatically pure",
+        "Fish always increase",
+        "Pollution disappears"
+      ],
+      "correctIndex": 0,
+      "explanation": "Correct answer: Algal growth may increase and oxygen may decrease. (Set B — Senior Applied Level)"
+    },
+    {
+      "id": 96,
+      "setNumber": 46,
+      "set": "B",
+      "setName": "Set B (Senior / Classes 11–12 & College)",
+      "round": "Senior Applied Ecology & Conservation",
+      "question": "Which is the most effective way to conserve an endangered animal in the wild?",
+      "options": [
+        "Destroying its habitat",
+        "Protecting its natural habitat",
+        "Increasing hunting",
+        "Removing its food sources"
+      ],
+      "correctIndex": 1,
+      "explanation": "Correct answer: Protecting its natural habitat. (Set B — Senior Applied Level)"
+    },
+    {
+      "id": 97,
+      "setNumber": 47,
+      "set": "B",
+      "setName": "Set B (Senior / Classes 11–12 & College)",
+      "round": "Senior Applied Ecology & Conservation",
+      "question": "Which natural process can help replenish groundwater?",
+      "options": [
+        "Infiltration of rainwater",
+        "Deforestation",
+        "Excessive pumping",
+        "Burning fossil fuels"
+      ],
+      "correctIndex": 0,
+      "explanation": "Correct answer: Infiltration of rainwater. (Set B — Senior Applied Level)"
+    },
+    {
+      "id": 98,
+      "setNumber": 48,
+      "set": "B",
+      "setName": "Set B (Senior / Classes 11–12 & College)",
+      "round": "Senior Applied Ecology & Conservation",
+      "question": "Which is an example of Reuse?",
+      "options": [
+        "Using an old glass jar for storage",
+        "Throwing away the jar",
+        "Processing glass into new glass",
+        "Buying another disposable container"
+      ],
+      "correctIndex": 0,
+      "explanation": "Correct answer: Using an old glass jar for storage. (Set B — Senior Applied Level)"
+    },
+    {
+      "id": 99,
+      "setNumber": 49,
+      "set": "B",
+      "setName": "Set B (Senior / Classes 11–12 & College)",
+      "round": "Senior Applied Ecology & Conservation",
+      "question": "Excessive use of private vehicles in cities most directly increases:",
+      "options": [
+        "Air pollution",
+        "Biodiversity",
+        "Soil formation",
+        "Groundwater recharge"
+      ],
+      "correctIndex": 0,
+      "explanation": "Correct answer: Air pollution. (Set B — Senior Applied Level)"
+    },
+    {
+      "id": 100,
+      "setNumber": 50,
+      "set": "B",
+      "setName": "Set B (Senior / Classes 11–12 & College)",
+      "round": "Senior Applied Ecology & Conservation",
+      "question": "Which statement best describes sustainable development?",
+      "options": [
+        "Using resources as quickly as possible",
+        "Meeting present needs while considering future generations",
+        "Completely stopping all development",
+        "Using natural resources without limits"
+      ],
+      "correctIndex": 1,
+      "explanation": "Correct answer: Meeting present needs while considering future generations. (Set B — Senior Applied Level)"
     }
   ],
   "participants": []

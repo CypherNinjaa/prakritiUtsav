@@ -39,13 +39,28 @@ function QuizApp() {
     setCurrentScreen('ready');
   };
 
-  // Begin Quiz: Participant submits info -> pick randomized questions & start
+  const getSetLabel = (info) => {
+    return (info?.selectedSet === 'B' || info?.quizSet?.includes('B'))
+      ? 'Set B (Senior)'
+      : 'Set A (Junior)';
+  };
+
+  // Begin Quiz: Participant submits info -> pick randomized questions from selected set & start
   const handleBeginQuiz = (participantInfo) => {
     setParticipant(participantInfo);
 
+    const targetSet = participantInfo?.selectedSet || 'A';
     const allQuestions = quizData?.questions || [];
-    // Robust Fisher-Yates shuffle across all 50 questions from all 5 sets
-    const shuffled = [...allQuestions];
+
+    // Filter candidate questions by the selected set ('A' for Juniors, 'B' for Seniors)
+    let candidateQuestions = allQuestions.filter(q => (q.set || 'A') === targetSet);
+    if (candidateQuestions.length === 0) {
+      // Fallback in case set tag is missing
+      candidateQuestions = allQuestions;
+    }
+
+    // Robust Fisher-Yates shuffle across candidate questions of the chosen set
+    const shuffled = [...candidateQuestions];
     for (let i = shuffled.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
       [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
@@ -77,6 +92,7 @@ function QuizApp() {
         // Participant won the quiz!
         await addParticipantRun({
           ...participant,
+          quizSet: getSetLabel(participant),
           score: newScore,
           totalQuestions: sessionQuestions.length,
           completed: true
@@ -94,6 +110,7 @@ function QuizApp() {
 
       await addParticipantRun({
         ...participant,
+        quizSet: getSetLabel(participant),
         score: score,
         totalQuestions: sessionQuestions.length,
         completed: false
@@ -110,6 +127,7 @@ function QuizApp() {
 
     await addParticipantRun({
       ...participant,
+      quizSet: getSetLabel(participant),
       score: score,
       totalQuestions: sessionQuestions.length,
       completed: false
@@ -178,6 +196,7 @@ function QuizApp() {
         {currentScreen === 'quiz' && currentQuestion && (
           <QuestionScreen
             question={currentQuestion}
+            quizSet={getSetLabel(participant)}
             questionNumber={currentQuestionIndex + 1}
             totalQuestions={sessionQuestions.length}
             currentScore={score}

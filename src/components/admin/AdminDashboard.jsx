@@ -47,6 +47,7 @@ export default function AdminDashboard({ onClose, onOpenFileHub }) {
     question: '',
     options: ['', '', '', ''],
     correctIndex: 0,
+    set: 'A',
     explanation: ''
   });
 
@@ -55,6 +56,7 @@ export default function AdminDashboard({ onClose, onOpenFileHub }) {
     timerEnabled: quizData?.config?.timerEnabled ?? true,
     timerSeconds: quizData?.config?.timerSeconds ?? 20,
     questionsPerSession: quizData?.config?.questionsPerSession ?? 10,
+    defaultSet: quizData?.config?.defaultSet ?? 'A',
     adminPin: quizData?.config?.adminPin ?? '1234'
   });
   const [settingsSaved, setSettingsSaved] = useState(false);
@@ -63,7 +65,11 @@ export default function AdminDashboard({ onClose, onOpenFileHub }) {
   const [participantSearch, setParticipantSearch] = useState('');
   const [statusFilter, setStatusFilter] = useState('all'); // 'all' | 'completed' | 'eliminated'
   const [scoreFilter, setScoreFilter] = useState('all'); // 'all' | 'ge5' | 'ge8'
+  const [setFilter, setSetFilter] = useState('all'); // 'all' | 'A' | 'B'
   const [sortBy, setSortBy] = useState('score_desc'); // 'score_desc' | 'recent' | 'name'
+
+  // Question bank set filter
+  const [questionBankSetFilter, setQuestionBankSetFilter] = useState('all'); // 'all' | 'A' | 'B'
 
   // Handle PIN verification
   const handleVerifyPin = (e) => {
@@ -87,12 +93,13 @@ export default function AdminDashboard({ onClose, onOpenFileHub }) {
       return;
     }
 
-    const headers = ['Rank', 'Student Name', 'Class', 'Roll Number', 'Score', 'Total Questions', 'Status', 'Date Time'];
+    const headers = ['Rank', 'Student Name', 'Class', 'Roll Number', 'Quiz Set', 'Score', 'Total Questions', 'Status', 'Date Time'];
     const rows = filteredParticipants.map((p, idx) => [
       idx + 1,
       `"${p.name || ''}"`,
       `"${p.classGrade || ''}"`,
       `"${p.rollNo || ''}"`,
+      `"${p.quizSet || ((p.selectedSet === 'B' || p.quizSet?.includes('B')) ? 'Set B (Senior)' : 'Set A (Junior)')}"`,
       p.score || 0,
       p.totalQuestions || 0,
       p.completed ? 'Completed' : 'Eliminated',
@@ -142,6 +149,7 @@ export default function AdminDashboard({ onClose, onOpenFileHub }) {
       question: '',
       options: ['', '', '', ''],
       correctIndex: 0,
+      set: 'A',
       explanation: ''
     });
   };
@@ -154,6 +162,7 @@ export default function AdminDashboard({ onClose, onOpenFileHub }) {
       question: q.question,
       options: [...q.options],
       correctIndex: q.correctIndex,
+      set: q.set || 'A',
       explanation: q.explanation || ''
     });
     setIsAddingQuestion(true);
@@ -288,15 +297,27 @@ export default function AdminDashboard({ onClose, onOpenFileHub }) {
     ? Math.round((participants.filter(p => p.completed).length / totalParticipants) * 100)
     : 0;
 
-  // Filtered Questions
-  const filteredQuestions = (quizData?.questions || []).filter(q =>
-    q.question.toLowerCase().includes(questionSearch.toLowerCase())
-  );
+  // Filtered Questions by search and set
+  const filteredQuestions = (quizData?.questions || []).filter(q => {
+    const term = questionSearch.toLowerCase();
+    const matchesSearch =
+      (q.question || '').toLowerCase().includes(term) ||
+      (q.options || []).some(opt => (opt || '').toLowerCase().includes(term));
+    if (!matchesSearch) return false;
+
+    if (questionBankSetFilter === 'A') {
+      return (q.set || 'A') === 'A';
+    }
+    if (questionBankSetFilter === 'B') {
+      return q.set === 'B';
+    }
+    return true;
+  });
 
   const completedCount = participants.filter(p => p.completed).length;
   const eliminatedCount = participants.filter(p => !p.completed).length;
 
-  // Filtered & Sorted Participants (Name, Class, Roll No)
+  // Filtered & Sorted Participants (Name, Class, Roll No, Set)
   const filteredParticipants = participants
     .filter(p => {
       // Text search by name, class, or roll number
@@ -314,6 +335,16 @@ export default function AdminDashboard({ onClose, onOpenFileHub }) {
       // Score filter
       if (scoreFilter === 'ge5' && (p.score || 0) < 5) return false;
       if (scoreFilter === 'ge8' && (p.score || 0) < 8) return false;
+
+      // Set filter
+      if (setFilter === 'A') {
+        const isSetB = p.selectedSet === 'B' || p.quizSet?.includes('B');
+        if (isSetB) return false;
+      }
+      if (setFilter === 'B') {
+        const isSetB = p.selectedSet === 'B' || p.quizSet?.includes('B');
+        if (!isSetB) return false;
+      }
 
       return true;
     })
@@ -692,6 +723,64 @@ export default function AdminDashboard({ onClose, onOpenFileHub }) {
                     </button>
                   </div>
 
+                  {/* Set Filter Buttons */}
+                  <div className="admin-filter-pills" style={{ display: 'flex', alignItems: 'center', gap: '6px', flexWrap: 'wrap' }}>
+                    <span style={{ fontSize: '11px', fontWeight: 800, color: '#475569', marginRight: '2px' }}>
+                      Set:
+                    </span>
+                    <button
+                      type="button"
+                      onClick={() => setSetFilter('all')}
+                      style={{
+                        padding: '4px 10px',
+                        borderRadius: '9999px',
+                        fontSize: '11px',
+                        fontWeight: 700,
+                        border: 'none',
+                        cursor: 'pointer',
+                        background: setFilter === 'all' ? '#15803d' : '#ffffff',
+                        color: setFilter === 'all' ? '#ffffff' : '#475569',
+                        boxShadow: setFilter === 'all' ? '0 2px 6px rgba(21, 128, 61, 0.3)' : '0 1px 2px rgba(0,0,0,0.06)'
+                      }}
+                    >
+                      All Sets
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => setSetFilter('A')}
+                      style={{
+                        padding: '4px 10px',
+                        borderRadius: '9999px',
+                        fontSize: '11px',
+                        fontWeight: 700,
+                        border: 'none',
+                        cursor: 'pointer',
+                        background: setFilter === 'A' ? '#166534' : '#ffffff',
+                        color: setFilter === 'A' ? '#ffffff' : '#166534',
+                        boxShadow: setFilter === 'A' ? '0 2px 6px rgba(22, 101, 52, 0.3)' : '0 1px 2px rgba(0,0,0,0.06)'
+                      }}
+                    >
+                      🌿 Set A (Junior)
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => setSetFilter('B')}
+                      style={{
+                        padding: '4px 10px',
+                        borderRadius: '9999px',
+                        fontSize: '11px',
+                        fontWeight: 700,
+                        border: 'none',
+                        cursor: 'pointer',
+                        background: setFilter === 'B' ? '#7e22ce' : '#ffffff',
+                        color: setFilter === 'B' ? '#ffffff' : '#7e22ce',
+                        boxShadow: setFilter === 'B' ? '0 2px 6px rgba(126, 34, 206, 0.3)' : '0 1px 2px rgba(0,0,0,0.06)'
+                      }}
+                    >
+                      🌲 Set B (Senior)
+                    </button>
+                  </div>
+
                   {/* Score & Sort Controls */}
                   <div style={{ display: 'flex', alignItems: 'center', gap: '8px', flexWrap: 'wrap' }}>
                     <div style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>
@@ -745,13 +834,14 @@ export default function AdminDashboard({ onClose, onOpenFileHub }) {
 
               {/* Leaderboard Table (Responsive scroll with Name, Class, Roll No) */}
               <div className="table-responsive" style={{ border: '1px solid #e2e8f0', borderRadius: '14px', overflowX: 'auto', width: '100%' }}>
-                <table style={{ width: '100%', minWidth: '540px', borderCollapse: 'collapse', textAlign: 'left', fontSize: '13px' }}>
+                <table style={{ width: '100%', minWidth: '600px', borderCollapse: 'collapse', textAlign: 'left', fontSize: '13px' }}>
                   <thead style={{ background: '#f8fafc', borderBottom: '1px solid #e2e8f0' }}>
                     <tr>
                       <th style={{ padding: '12px 14px', fontWeight: 800, color: '#475569' }}>Rank</th>
                       <th style={{ padding: '12px 14px', fontWeight: 800, color: '#475569' }}>Student Name</th>
                       <th style={{ padding: '12px 14px', fontWeight: 800, color: '#475569' }}>Class</th>
                       <th style={{ padding: '12px 14px', fontWeight: 800, color: '#475569' }}>Roll No</th>
+                      <th style={{ padding: '12px 14px', fontWeight: 800, color: '#475569' }}>Quiz Set</th>
                       <th style={{ padding: '12px 14px', fontWeight: 800, color: '#475569' }}>Score</th>
                       <th style={{ padding: '12px 14px', fontWeight: 800, color: '#475569' }}>Status</th>
                       <th style={{ padding: '12px 14px', fontWeight: 800, color: '#475569' }}>Date Time</th>
@@ -760,7 +850,7 @@ export default function AdminDashboard({ onClose, onOpenFileHub }) {
                   <tbody>
                     {filteredParticipants.length === 0 ? (
                       <tr>
-                        <td colSpan={7} style={{ padding: '36px', textAlign: 'center', color: '#94a3b8' }}>
+                        <td colSpan={8} style={{ padding: '36px', textAlign: 'center', color: '#94a3b8' }}>
                           No participant attempts found matching your filter.
                         </td>
                       </tr>
@@ -771,6 +861,18 @@ export default function AdminDashboard({ onClose, onOpenFileHub }) {
                           <td style={{ padding: '12px 14px', fontWeight: 700, color: '#0f172a' }}>{p.name}</td>
                           <td style={{ padding: '12px 14px', color: '#15803d', fontWeight: 700 }}>{p.classGrade || '—'}</td>
                           <td style={{ padding: '12px 14px', color: '#475569' }}>{p.rollNo}</td>
+                          <td style={{ padding: '12px 14px' }}>
+                            <span style={{
+                              padding: '2px 8px',
+                              borderRadius: '6px',
+                              fontSize: '11px',
+                              fontWeight: 800,
+                              background: (p.selectedSet === 'B' || p.quizSet?.includes('B')) ? '#f3e8ff' : '#dcfce7',
+                              color: (p.selectedSet === 'B' || p.quizSet?.includes('B')) ? '#6b21a8' : '#166534'
+                            }}>
+                              {(p.selectedSet === 'B' || p.quizSet?.includes('B')) ? '🌲 Set B (Senior)' : '🌿 Set A (Junior)'}
+                            </span>
+                          </td>
                           <td style={{ padding: '12px 14px', fontWeight: 900, color: '#064e3b' }}>{p.score}</td>
                           <td style={{ padding: '12px 14px' }}>
                             <span style={{
@@ -799,39 +901,102 @@ export default function AdminDashboard({ onClose, onOpenFileHub }) {
           {/* TAB 2: QUESTION BANK MANAGER */}
           {activeTab === 'questions' && (
             <div>
-              {/* Question Header & Add Trigger */}
-              <div className="question-action-bar" style={{ display: 'flex', justifyContent: 'space-between', gap: '12px', marginBottom: '20px', flexWrap: 'wrap' }}>
-                <div style={{ position: 'relative', flex: 1, minWidth: '220px' }}>
-                  <Search size={16} color="#94a3b8" style={{ position: 'absolute', left: '12px', top: '12px' }} />
-                  <input
-                    type="text"
-                    value={questionSearch}
-                    onChange={(e) => setQuestionSearch(e.target.value)}
-                    placeholder="Search question bank..."
+              {/* Question Header: Set Filter Tabs + Search & Add Trigger */}
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', marginBottom: '20px' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '8px', flexWrap: 'wrap' }}>
+                  <span style={{ fontSize: '12px', fontWeight: 800, color: '#475569' }}>Filter by Set:</span>
+                  <button
+                    type="button"
+                    onClick={() => { playClick(); setQuestionBankSetFilter('all'); }}
                     style={{
-                      width: '100%',
-                      padding: '10px 12px 10px 36px',
-                      borderRadius: '10px',
-                      border: '1.5px solid #cbd5e1',
-                      fontSize: '14px',
-                      outline: 'none'
+                      padding: '6px 14px',
+                      borderRadius: '9999px',
+                      fontSize: '12px',
+                      fontWeight: 700,
+                      border: 'none',
+                      cursor: 'pointer',
+                      background: questionBankSetFilter === 'all' ? '#15803d' : '#f1f5f9',
+                      color: questionBankSetFilter === 'all' ? '#ffffff' : '#475569',
+                      boxShadow: questionBankSetFilter === 'all' ? '0 2px 6px rgba(21, 128, 61, 0.3)' : 'none'
                     }}
-                  />
+                  >
+                    All Questions ({quizData?.questions?.length || 0})
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => { playClick(); setQuestionBankSetFilter('A'); }}
+                    style={{
+                      padding: '6px 14px',
+                      borderRadius: '9999px',
+                      fontSize: '12px',
+                      fontWeight: 700,
+                      border: 'none',
+                      cursor: 'pointer',
+                      background: questionBankSetFilter === 'A' ? '#166534' : '#f1f5f9',
+                      color: questionBankSetFilter === 'A' ? '#ffffff' : '#166534',
+                      boxShadow: questionBankSetFilter === 'A' ? '0 2px 6px rgba(22, 101, 52, 0.3)' : 'none'
+                    }}
+                  >
+                    🌿 Set A — Junior ({quizData?.questions?.filter(q => (q.set || 'A') === 'A').length || 0})
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => { playClick(); setQuestionBankSetFilter('B'); }}
+                    style={{
+                      padding: '6px 14px',
+                      borderRadius: '9999px',
+                      fontSize: '12px',
+                      fontWeight: 700,
+                      border: 'none',
+                      cursor: 'pointer',
+                      background: questionBankSetFilter === 'B' ? '#7e22ce' : '#f1f5f9',
+                      color: questionBankSetFilter === 'B' ? '#ffffff' : '#7e22ce',
+                      boxShadow: questionBankSetFilter === 'B' ? '0 2px 6px rgba(126, 34, 206, 0.3)' : 'none'
+                    }}
+                  >
+                    🌲 Set B — Senior ({quizData?.questions?.filter(q => q.set === 'B').length || 0})
+                  </button>
                 </div>
 
-                <button
-                  onClick={() => {
-                    playClick();
-                    setEditingQuestionId(null);
-                    setNewQuestionForm({ question: '', options: ['', '', '', ''], correctIndex: 0, explanation: '' });
-                    setIsAddingQuestion(!isAddingQuestion);
-                  }}
-                  className="primary-btn question-add-btn"
-                  style={{ padding: '10px 20px', fontSize: '14px' }}
-                >
-                  <Plus size={16} />
-                  <span>{isAddingQuestion ? 'Cancel' : 'Add New Question'}</span>
-                </button>
+                <div className="question-action-bar" style={{ display: 'flex', justifyContent: 'space-between', gap: '12px', flexWrap: 'wrap' }}>
+                  <div style={{ position: 'relative', flex: 1, minWidth: '220px' }}>
+                    <Search size={16} color="#94a3b8" style={{ position: 'absolute', left: '12px', top: '12px' }} />
+                    <input
+                      type="text"
+                      value={questionSearch}
+                      onChange={(e) => setQuestionSearch(e.target.value)}
+                      placeholder="Search question bank or options..."
+                      style={{
+                        width: '100%',
+                        padding: '10px 12px 10px 36px',
+                        borderRadius: '10px',
+                        border: '1.5px solid #cbd5e1',
+                        fontSize: '14px',
+                        outline: 'none'
+                      }}
+                    />
+                  </div>
+
+                  <button
+                    onClick={() => {
+                      playClick();
+                      setEditingQuestionId(null);
+                      setNewQuestionForm({
+                        question: '',
+                        options: ['', '', '', ''],
+                        correctIndex: 0,
+                        set: questionBankSetFilter === 'B' ? 'B' : 'A',
+                        explanation: ''
+                      });
+                      setIsAddingQuestion(!isAddingQuestion);
+                    }}
+                    className="primary-btn question-add-btn"
+                    style={{ padding: '10px 20px', fontSize: '14px' }}
+                  >
+                    <Plus size={16} />
+                    <span>{isAddingQuestion ? 'Cancel' : 'Add New Question'}</span>
+                  </button>
+                </div>
               </div>
 
               {/* Add / Edit Question Form Modal */}
@@ -846,6 +1011,22 @@ export default function AdminDashboard({ onClose, onOpenFileHub }) {
                   <h3 style={{ fontSize: '16px', fontWeight: 800, color: '#064e3b', marginBottom: '16px' }}>
                     {editingQuestionId ? 'Edit Question' : 'Create New MCQ Question'}
                   </h3>
+
+                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '12px', marginBottom: '14px' }}>
+                    <div>
+                      <label style={{ display: 'block', fontSize: '12px', fontWeight: 700, color: '#334155', marginBottom: '6px' }}>
+                        Question Set *
+                      </label>
+                      <select
+                        value={newQuestionForm.set || 'A'}
+                        onChange={(e) => setNewQuestionForm({ ...newQuestionForm, set: e.target.value })}
+                        style={{ width: '100%', padding: '10px', borderRadius: '10px', border: '1.5px solid #cbd5e1', fontSize: '14px', background: '#ffffff', outline: 'none' }}
+                      >
+                        <option value="A">🌿 Set A — Junior (Classes 1 to 10)</option>
+                        <option value="B">🌲 Set B — Senior (Classes 11, 12 & College)</option>
+                      </select>
+                    </div>
+                  </div>
 
                   <div style={{ marginBottom: '14px' }}>
                     <label style={{ display: 'block', fontSize: '12px', fontWeight: 700, color: '#334155', marginBottom: '6px' }}>
@@ -941,8 +1122,21 @@ export default function AdminDashboard({ onClose, onOpenFileHub }) {
                     gap: '16px'
                   }}>
                     <div style={{ flex: 1 }}>
-                      <div style={{ fontSize: '14px', fontWeight: 800, color: '#0f172a', marginBottom: '8px' }}>
-                        #{idx + 1}. {q.question}
+                      <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '8px', flexWrap: 'wrap' }}>
+                        <span style={{
+                          padding: '2px 8px',
+                          borderRadius: '4px',
+                          fontSize: '11px',
+                          fontWeight: 800,
+                          background: q.set === 'B' ? '#f3e8ff' : '#dcfce7',
+                          color: q.set === 'B' ? '#7e22ce' : '#166534',
+                          border: q.set === 'B' ? '1px solid #d8b4fe' : '1px solid #86efac'
+                        }}>
+                          {q.set === 'B' ? '🌲 Set B (Senior)' : '🌿 Set A (Junior)'}
+                        </span>
+                        <div style={{ fontSize: '14px', fontWeight: 800, color: '#0f172a' }}>
+                          #{idx + 1}. {q.question}
+                        </div>
                       </div>
 
                       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: '8px', fontSize: '12px' }}>
@@ -1057,6 +1251,23 @@ export default function AdminDashboard({ onClose, onOpenFileHub }) {
 
                 <div style={{ marginBottom: '16px' }}>
                   <label style={{ display: 'block', fontSize: '13px', fontWeight: 700, color: '#334155', marginBottom: '6px' }}>
+                    Default Question Set for Participants
+                  </label>
+                  <select
+                    value={settingsForm.defaultSet || 'A'}
+                    onChange={(e) => setSettingsForm({ ...settingsForm, defaultSet: e.target.value })}
+                    style={{ width: '100%', padding: '10px', borderRadius: '10px', border: '1.5px solid #cbd5e1', fontSize: '14px', outline: 'none', background: '#ffffff' }}
+                  >
+                    <option value="A">🌿 Set A — Junior (Classes 1 to 10)</option>
+                    <option value="B">🌲 Set B — Senior (Classes 11, 12 & College)</option>
+                  </select>
+                  <div style={{ fontSize: '11px', color: '#64748b', marginTop: '4px' }}>
+                    Pre-selected set on the student start screen. Can be toggled before beginning the quiz.
+                  </div>
+                </div>
+
+                <div style={{ marginBottom: '16px' }}>
+                  <label style={{ display: 'block', fontSize: '13px', fontWeight: 700, color: '#334155', marginBottom: '6px' }}>
                     Questions Per Session (to Win)
                   </label>
                   <input
@@ -1068,7 +1279,7 @@ export default function AdminDashboard({ onClose, onOpenFileHub }) {
                     style={{ width: '100%', padding: '10px', borderRadius: '10px', border: '1.5px solid #cbd5e1', fontSize: '14px', outline: 'none' }}
                   />
                   <div style={{ fontSize: '11px', color: '#64748b', marginTop: '4px' }}>
-                    Total available questions in bank: {quizData?.questions?.length || 0}
+                    Total available questions in bank: {quizData?.questions?.length || 0} (50 in Set A, 50 in Set B)
                   </div>
                 </div>
 
